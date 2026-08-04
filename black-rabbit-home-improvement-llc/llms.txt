@@ -1,0 +1,39 @@
+# Black Rabbit Home Improvement
+> General contracting services in Eugene, Oregon and the south Willamette Valley. Oregon CCB #260688. (541) 221-1858.
+
+## Services
+- [Kitchen Remodel](https://bannisterderik-tech.github.io/db-demos/black-rabbit-home-improvement-llc/services/kitchen-remodel/): full and partial kitchen renovations. $25,000–$85,000
+- [Bathroom Remodel](https://bannisterderik-tech.github.io/db-demos/black-rabbit-home-improvement-llc/services/bathroom-remodel/): full bath renovations, wet rooms, accessibility. $15,000–$45,000
+- [Home Additions](https://bannisterderik-tech.github.io/db-demos/black-rabbit-home-improvement-llc/services/home-additions/): bump-outs, second stories, full additions. $180–$400 per sq ft
+- [ADU Construction](https://bannisterderik-tech.github.io/db-demos/black-rabbit-home-improvement-llc/services/adu-construction/): detached and attached accessory dwelling units. $150,000–$300,000
+- [Basement Finishing](https://bannisterderik-tech.github.io/db-demos/black-rabbit-home-improvement-llc/services/basement-finishing/): conversions to living space, egress, moisture control. $40,000–$90,000
+- [Deck Construction](https://bannisterderik-tech.github.io/db-demos/black-rabbit-home-improvement-llc/services/deck-construction/): new decks, covers, railings, stairs. $35–$75 per sq ft
+- [Garage Conversion](https://bannisterderik-tech.github.io/db-demos/black-rabbit-home-improvement-llc/services/garage-conversion/): garage to living or rental space. $30,000–$75,000
+- [Window Replacement](https://bannisterderik-tech.github.io/db-demos/black-rabbit-home-improvement-llc/services/window-replacement/): full-frame and insert replacements. $650–$1,600 per window
+- [Siding Replacement](https://bannisterderik-tech.github.io/db-demos/black-rabbit-home-improvement-llc/services/siding-replacement/): lap, panel, and fiber cement with weather barrier. $12,000–$40,000
+- [Roof Replacement](https://bannisterderik-tech.github.io/db-demos/black-rabbit-home-improvement-llc/services/roof-replacement/): tear-off, re-roof, ventilation, flashing. $9,000–$22,000
+- [Structural Repair](https://bannisterderik-tech.github.io/db-demos/black-rabbit-home-improvement-llc/services/structural-repair/): beams, posts, foundations, settling. Quoted after assessment
+- [Interior Remodel](https://bannisterderik-tech.github.io/db-demos/black-rabbit-home-improvement-llc/services/interior-remodel/): open-concept conversions, walls, flooring, finishes. $20,000–$70,000
+- [Exterior Remodel](https://bannisterderik-tech.github.io/db-demos/black-rabbit-home-improvement-llc/services/exterior-remodel/): facades, entries, porches, trim. $8,000–$35,000
+- [Permits & Planning](https://bannisterderik-tech.github.io/db-demos/black-rabbit-home-improvement-llc/services/permits-planning/): drawings, applications, inspection coordination. Included in project scope
+
+## Service areas
+- [Cottage Grove, OR 97424](https://bannisterderik-tech.github.io/db-demos/black-rabbit-home-improvement-llc/areas/cottage-grove/) — Lane County
+- [Eugene, OR 97401](https://bannisterderik-tech.github.io/db-demos/black-rabbit-home-improvement-llc/areas/eugene/) — Lane County
+- [Springfield, OR 97477](https://bannisterderik-tech.github.io/db-demos/black-rabbit-home-improvement-llc/areas/springfield/) — Lane County
+- [Creswell, OR 97426](https://bannisterderik-tech.github.io/db-demos/black-rabbit-home-improvement-llc/areas/creswell/) — Lane County
+- [Dorena, OR 97434](https://bannisterderik-tech.github.io/db-demos/black-rabbit-home-improvement-llc/areas/dorena/) — Lane County
+- [Veneta, OR 97487](https://bannisterderik-tech.github.io/db-demos/black-rabbit-home-improvement-llc/areas/veneta/) — Lane County
+- [Junction City, OR 97448](https://bannisterderik-tech.github.io/db-demos/black-rabbit-home-improvement-llc/areas/junction-city/) — Lane County
+- [Pleasant Hill, OR 97455](https://bannisterderik-tech.github.io/db-demos/black-rabbit-home-improvement-llc/areas/pleasant-hill/) — Lane County
+- [Lowell, OR 97452](https://bannisterderik-tech.github.io/db-demos/black-rabbit-home-improvement-llc/areas/lowell/) — Lane County
+- [Oakridge, OR 97463](https://bannisterderik-tech.github.io/db-demos/black-rabbit-home-improvement-llc/areas/oakridge/) — Lane County
+- [Drain, OR 97435](https://bannisterderik-tech.github.io/db-demos/black-rabbit-home-improvement-llc/areas/drain/) — Douglas County
+- [Harrisburg, OR 97446](https://bannisterderik-tech.github.io/db-demos/black-rabbit-home-improvement-llc/areas/harrisburg/) — Linn County
+
+## Facts
+- Licensed: Oregon CCB #260688
+- Based: Eugene, OR 97401
+- Phone: (541) 221-1858
+- Email: info@black-rabbit.net
+- Serving: Cottage Grove, Eugene, Springfield, Creswell, Dorena, Veneta, Junction City, Pleasant Hill, Lowell, Oakridge, Drain, Harrisburg

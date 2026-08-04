@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 196 64" width="196" height="64" role="img" aria-label="Chuc Finish Carpentry">
+<rect x="0" y="0" width="64" height="64" rx="8" fill="#ffffff"/>
+<rect x="0" y="58" width="64" height="6" rx="0" fill="#008250"/>
+<text x="32.0" y="41.0" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif"
+ font-size="26" font-weight="800" fill="#ffffff" letter-spacing="-1">CF</text>
+<text x="78" y="29.0" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="18" font-weight="700" fill="#ffffff" letter-spacing="-0.3">Chuc Finish</text><text x="78" y="50.0" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="18" font-weight="700" fill="#ffffff" letter-spacing="-0.3">Carpentry</text>
+</svg>
