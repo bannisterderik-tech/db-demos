@@ -1,0 +1,43 @@
+# Stellar Welding
+> Welding and metal fabrication services in Oregon City, Oregon and the Portland metro. Oregon CCB #259624. (503) 765-6613.
+
+## Services
+- [Mobile Welding](https://bannisterderik-tech.github.io/db-demos/stellar-welding-llc/services/mobile-welding/): on-site repair for equipment, gates, structures. $95–$150/hr plus travel
+- [Gates & Metal Fencing](https://bannisterderik-tech.github.io/db-demos/stellar-welding-llc/services/gates-fencing/): driveway gates, ranch gates, ornamental fence. $1,200–$6,000
+- [Handrails & Guardrails](https://bannisterderik-tech.github.io/db-demos/stellar-welding-llc/services/railings/): interior and exterior railings to code. $85–$220 per linear foot
+- [Structural Welding](https://bannisterderik-tech.github.io/db-demos/stellar-welding-llc/services/structural-welding/): beams, columns, connections, repairs. Quoted per project
+- [Equipment & Trailer Repair](https://bannisterderik-tech.github.io/db-demos/stellar-welding-llc/services/equipment-repair/): trailers, buckets, implements, hitches, frames. $150–$900
+- [Custom Fabrication](https://bannisterderik-tech.github.io/db-demos/stellar-welding-llc/services/custom-fabrication/): one-off brackets, frames, racks, mounts. Quoted from drawings
+- [Metal Stairs](https://bannisterderik-tech.github.io/db-demos/stellar-welding-llc/services/stair-fabrication/): industrial and residential steel stairs. $2,500–$9,000
+- [Aluminum Welding](https://bannisterderik-tech.github.io/db-demos/stellar-welding-llc/services/aluminum-welding/): boats, trailers, ramps, marine repair. $110–$170/hr
+- [Stainless Fabrication](https://bannisterderik-tech.github.io/db-demos/stellar-welding-llc/services/stainless-welding/): food service, marine, sanitary work. $110–$180/hr
+- [Ornamental Ironwork](https://bannisterderik-tech.github.io/db-demos/stellar-welding-llc/services/ornamental-ironwork/): decorative panels, brackets, signs, screens. $400–$3,000
+- [Farm & Ranch Repair](https://bannisterderik-tech.github.io/db-demos/stellar-welding-llc/services/farm-repair/): implements, gates, corrals, feeders. $95–$150/hr
+- [Truck & Rack Fabrication](https://bannisterderik-tech.github.io/db-demos/stellar-welding-llc/services/truck-accessories/): headache racks, flat beds, ladder racks, bumpers. $800–$4,500
+- [Beam & Post Repair](https://bannisterderik-tech.github.io/db-demos/stellar-welding-llc/services/beam-repair/): reinforcement, splices, column repair. Quoted on site
+- [Weld Repair Assessment](https://bannisterderik-tech.github.io/db-demos/stellar-welding-llc/services/welding-inspection/): evaluating failed welds and the right fix. $95–$250
+
+## Service areas
+- [Portland, OR 97214](https://bannisterderik-tech.github.io/db-demos/stellar-welding-llc/areas/portland/) — Multnomah County
+- [Gresham, OR 97030](https://bannisterderik-tech.github.io/db-demos/stellar-welding-llc/areas/gresham/) — Multnomah County
+- [Beaverton, OR 97005](https://bannisterderik-tech.github.io/db-demos/stellar-welding-llc/areas/beaverton/) — Washington County
+- [Hillsboro, OR 97124](https://bannisterderik-tech.github.io/db-demos/stellar-welding-llc/areas/hillsboro/) — Washington County
+- [Tigard, OR 97223](https://bannisterderik-tech.github.io/db-demos/stellar-welding-llc/areas/tigard/) — Washington County
+- [Tualatin, OR 97062](https://bannisterderik-tech.github.io/db-demos/stellar-welding-llc/areas/tualatin/) — Washington County
+- [Sherwood, OR 97140](https://bannisterderik-tech.github.io/db-demos/stellar-welding-llc/areas/sherwood/) — Washington County
+- [Lake Oswego, OR 97034](https://bannisterderik-tech.github.io/db-demos/stellar-welding-llc/areas/lake-oswego/) — Clackamas County
+- [West Linn, OR 97068](https://bannisterderik-tech.github.io/db-demos/stellar-welding-llc/areas/west-linn/) — Clackamas County
+- [Oregon City, OR 97045](https://bannisterderik-tech.github.io/db-demos/stellar-welding-llc/areas/oregon-city/) — Clackamas County
+- [Milwaukie, OR 97222](https://bannisterderik-tech.github.io/db-demos/stellar-welding-llc/areas/milwaukie/) — Clackamas County
+- [Happy Valley, OR 97086](https://bannisterderik-tech.github.io/db-demos/stellar-welding-llc/areas/happy-valley/) — Clackamas County
+- [Clackamas, OR 97015](https://bannisterderik-tech.github.io/db-demos/stellar-welding-llc/areas/clackamas/) — Clackamas County
+- [Wilsonville, OR 97070](https://bannisterderik-tech.github.io/db-demos/stellar-welding-llc/areas/wilsonville/) — Clackamas County
+- [Troutdale, OR 97060](https://bannisterderik-tech.github.io/db-demos/stellar-welding-llc/areas/troutdale/) — Multnomah County
+- [Fairview, OR 97024](https://bannisterderik-tech.github.io/db-demos/stellar-welding-llc/areas/fairview/) — Multnomah County
+
+## Facts
+- Licensed: Oregon CCB #259624
+- Based: Oregon City, OR 97045
+- Phone: (503) 765-6613
+- Email: keenan@stellarwelding.com
+- Serving: Portland, Gresham, Beaverton, Hillsboro, Tigard, Tualatin, Sherwood, Lake Oswego, West Linn, Oregon City, Milwaukie, Happy Valley, Clackamas, Wilsonville, Troutdale, Fairview

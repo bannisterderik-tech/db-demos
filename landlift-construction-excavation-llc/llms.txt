@@ -1,0 +1,39 @@
+# Landlift Construction & Excavation
+> Excavation services in Dorena, Oregon and the south Willamette Valley. Oregon CCB #259368. (541) 214-7764.
+
+## Services
+- [Site Preparation](https://bannisterderik-tech.github.io/db-demos/landlift-construction-excavation-llc/services/site-prep/): clearing, grubbing, and grading before a build. $2,500–$12,000 depending on acreage and slope
+- [Land Clearing](https://bannisterderik-tech.github.io/db-demos/landlift-construction-excavation-llc/services/land-clearing/): brush, trees, blackberry, and stump removal. $1,800–$6,000 per acre
+- [Grading & Leveling](https://bannisterderik-tech.github.io/db-demos/landlift-construction-excavation-llc/services/grading-leveling/): finish grade, drainage slope, pad prep, driveway base. $1,200–$5,000
+- [Driveway Construction](https://bannisterderik-tech.github.io/db-demos/landlift-construction-excavation-llc/services/driveway-construction/): gravel driveways, base rock, culverts, turnarounds. $3,000–$15,000
+- [Drainage Systems](https://bannisterderik-tech.github.io/db-demos/landlift-construction-excavation-llc/services/drainage-systems/): french drains, curtain drains, culverts, swales. $1,500–$8,000
+- [Foundation Excavation](https://bannisterderik-tech.github.io/db-demos/landlift-construction-excavation-llc/services/foundation-excavation/): footings, stem walls, basements, crawlspaces. $3,000–$14,000
+- [Septic System Installation](https://bannisterderik-tech.github.io/db-demos/landlift-construction-excavation-llc/services/septic-systems/): drainfields, tanks, repairs, DEQ permitted work. $12,000–$30,000 for a full system
+- [Utility Trenching](https://bannisterderik-tech.github.io/db-demos/landlift-construction-excavation-llc/services/utility-trenching/): water, power, gas, and fiber trenches with proper bedding. $8–$25 per foot
+- [Pond Construction](https://bannisterderik-tech.github.io/db-demos/landlift-construction-excavation-llc/services/pond-construction/): excavation, clay lining, spillways, water rights considerations. $6,000–$25,000
+- [Demolition](https://bannisterderik-tech.github.io/db-demos/landlift-construction-excavation-llc/services/demolition/): outbuildings, slabs, mobile homes, debris haul-off. $2,500–$12,000
+- [Retaining Walls](https://bannisterderik-tech.github.io/db-demos/landlift-construction-excavation-llc/services/retaining-walls/): block, boulder, and timber walls with proper drainage. $45–$110 per face foot
+- [Rock & Gravel](https://bannisterderik-tech.github.io/db-demos/landlift-construction-excavation-llc/services/rock-gravel-delivery/): base rock, drain rock, road mix, placed and compacted. $400–$1,400 per load placed
+- [Culvert Installation](https://bannisterderik-tech.github.io/db-demos/landlift-construction-excavation-llc/services/culvert-installation/): driveway culverts, road crossings, headwalls. $1,200–$4,500
+- [Erosion Control](https://bannisterderik-tech.github.io/db-demos/landlift-construction-excavation-llc/services/erosion-control/): silt fence, straw wattles, seeding, DEQ 1200-C compliance. $800–$4,000
+
+## Service areas
+- [Cottage Grove, OR 97424](https://bannisterderik-tech.github.io/db-demos/landlift-construction-excavation-llc/areas/cottage-grove/) — Lane County
+- [Eugene, OR 97401](https://bannisterderik-tech.github.io/db-demos/landlift-construction-excavation-llc/areas/eugene/) — Lane County
+- [Springfield, OR 97477](https://bannisterderik-tech.github.io/db-demos/landlift-construction-excavation-llc/areas/springfield/) — Lane County
+- [Creswell, OR 97426](https://bannisterderik-tech.github.io/db-demos/landlift-construction-excavation-llc/areas/creswell/) — Lane County
+- [Dorena, OR 97434](https://bannisterderik-tech.github.io/db-demos/landlift-construction-excavation-llc/areas/dorena/) — Lane County
+- [Veneta, OR 97487](https://bannisterderik-tech.github.io/db-demos/landlift-construction-excavation-llc/areas/veneta/) — Lane County
+- [Junction City, OR 97448](https://bannisterderik-tech.github.io/db-demos/landlift-construction-excavation-llc/areas/junction-city/) — Lane County
+- [Pleasant Hill, OR 97455](https://bannisterderik-tech.github.io/db-demos/landlift-construction-excavation-llc/areas/pleasant-hill/) — Lane County
+- [Lowell, OR 97452](https://bannisterderik-tech.github.io/db-demos/landlift-construction-excavation-llc/areas/lowell/) — Lane County
+- [Oakridge, OR 97463](https://bannisterderik-tech.github.io/db-demos/landlift-construction-excavation-llc/areas/oakridge/) — Lane County
+- [Drain, OR 97435](https://bannisterderik-tech.github.io/db-demos/landlift-construction-excavation-llc/areas/drain/) — Douglas County
+- [Harrisburg, OR 97446](https://bannisterderik-tech.github.io/db-demos/landlift-construction-excavation-llc/areas/harrisburg/) — Linn County
+
+## Facts
+- Licensed: Oregon CCB #259368
+- Based: Dorena, OR 97434
+- Phone: (541) 214-7764
+- Email: mc.parsons17@gmail.com
+- Serving: Cottage Grove, Eugene, Springfield, Creswell, Dorena, Veneta, Junction City, Pleasant Hill, Lowell, Oakridge, Drain, Harrisburg

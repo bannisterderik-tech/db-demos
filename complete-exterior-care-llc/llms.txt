@@ -1,0 +1,43 @@
+# Complete Exterior Care
+> Exterior cleaning and care services in Gresham, Oregon and the Portland metro. Oregon CCB #259581. (971) 337-0478.
+
+## Services
+- [Pressure Washing](https://bannisterderik-tech.github.io/db-demos/complete-exterior-care-llc/services/pressure-washing/): driveways, walkways, patios, hardscape. $200–$600
+- [House Washing](https://bannisterderik-tech.github.io/db-demos/complete-exterior-care-llc/services/house-washing/): soft-wash siding cleaning. $350–$900
+- [Roof Cleaning & Moss Removal](https://bannisterderik-tech.github.io/db-demos/complete-exterior-care-llc/services/roof-cleaning/): moss treatment and removal, zinc strips. $400–$1,200
+- [Gutter Cleaning](https://bannisterderik-tech.github.io/db-demos/complete-exterior-care-llc/services/gutter-cleaning/): clearing, flushing downspouts, resealing. $150–$350
+- [Window Cleaning](https://bannisterderik-tech.github.io/db-demos/complete-exterior-care-llc/services/window-cleaning/): interior and exterior, screens, tracks. $150–$450
+- [Deck Cleaning & Sealing](https://bannisterderik-tech.github.io/db-demos/complete-exterior-care-llc/services/deck-cleaning/): cleaning, brightening, sealing wood decks. $400–$1,100
+- [Concrete Sealing](https://bannisterderik-tech.github.io/db-demos/complete-exterior-care-llc/services/concrete-sealing/): driveways and patios after cleaning. $0.50–$1.50 per sq ft
+- [Fence Cleaning & Staining](https://bannisterderik-tech.github.io/db-demos/complete-exterior-care-llc/services/fence-cleaning/): cleaning and staining cedar and treated fence. $450–$1,400
+- [Paver Cleaning & Sanding](https://bannisterderik-tech.github.io/db-demos/complete-exterior-care-llc/services/paver-cleaning/): cleaning, weed removal, polymeric re-sanding. $400–$1,200
+- [Solar Panel Cleaning](https://bannisterderik-tech.github.io/db-demos/complete-exterior-care-llc/services/solar-panel-cleaning/): rinse and soft-wash for panel output. $150–$400
+- [Graffiti Removal](https://bannisterderik-tech.github.io/db-demos/complete-exterior-care-llc/services/graffiti-removal/): chemical and pressure removal. $200–$800
+- [Dryer Vent Cleaning](https://bannisterderik-tech.github.io/db-demos/complete-exterior-care-llc/services/dryer-vent-cleaning/): full vent line clearing. $120–$250
+- [Commercial Pressure Washing](https://bannisterderik-tech.github.io/db-demos/complete-exterior-care-llc/services/commercial-washing/): storefronts, sidewalks, lots, drive-thrus. Quoted by square footage
+- [Rust & Stain Removal](https://bannisterderik-tech.github.io/db-demos/complete-exterior-care-llc/services/rust-stain-removal/): rust, oil, and organic staining. $200–$600
+
+## Service areas
+- [Portland, OR 97214](https://bannisterderik-tech.github.io/db-demos/complete-exterior-care-llc/areas/portland/) — Multnomah County
+- [Gresham, OR 97030](https://bannisterderik-tech.github.io/db-demos/complete-exterior-care-llc/areas/gresham/) — Multnomah County
+- [Beaverton, OR 97005](https://bannisterderik-tech.github.io/db-demos/complete-exterior-care-llc/areas/beaverton/) — Washington County
+- [Hillsboro, OR 97124](https://bannisterderik-tech.github.io/db-demos/complete-exterior-care-llc/areas/hillsboro/) — Washington County
+- [Tigard, OR 97223](https://bannisterderik-tech.github.io/db-demos/complete-exterior-care-llc/areas/tigard/) — Washington County
+- [Tualatin, OR 97062](https://bannisterderik-tech.github.io/db-demos/complete-exterior-care-llc/areas/tualatin/) — Washington County
+- [Sherwood, OR 97140](https://bannisterderik-tech.github.io/db-demos/complete-exterior-care-llc/areas/sherwood/) — Washington County
+- [Lake Oswego, OR 97034](https://bannisterderik-tech.github.io/db-demos/complete-exterior-care-llc/areas/lake-oswego/) — Clackamas County
+- [West Linn, OR 97068](https://bannisterderik-tech.github.io/db-demos/complete-exterior-care-llc/areas/west-linn/) — Clackamas County
+- [Oregon City, OR 97045](https://bannisterderik-tech.github.io/db-demos/complete-exterior-care-llc/areas/oregon-city/) — Clackamas County
+- [Milwaukie, OR 97222](https://bannisterderik-tech.github.io/db-demos/complete-exterior-care-llc/areas/milwaukie/) — Clackamas County
+- [Happy Valley, OR 97086](https://bannisterderik-tech.github.io/db-demos/complete-exterior-care-llc/areas/happy-valley/) — Clackamas County
+- [Clackamas, OR 97015](https://bannisterderik-tech.github.io/db-demos/complete-exterior-care-llc/areas/clackamas/) — Clackamas County
+- [Wilsonville, OR 97070](https://bannisterderik-tech.github.io/db-demos/complete-exterior-care-llc/areas/wilsonville/) — Clackamas County
+- [Troutdale, OR 97060](https://bannisterderik-tech.github.io/db-demos/complete-exterior-care-llc/areas/troutdale/) — Multnomah County
+- [Fairview, OR 97024](https://bannisterderik-tech.github.io/db-demos/complete-exterior-care-llc/areas/fairview/) — Multnomah County
+
+## Facts
+- Licensed: Oregon CCB #259581
+- Based: Gresham, OR 97030
+- Phone: (971) 337-0478
+- Email: info@completeexteriorcare.com
+- Serving: Portland, Gresham, Beaverton, Hillsboro, Tigard, Tualatin, Sherwood, Lake Oswego, West Linn, Oregon City, Milwaukie, Happy Valley, Clackamas, Wilsonville, Troutdale, Fairview

@@ -1,0 +1,39 @@
+# Pacific Breeze Hot Tubs
+> General contracting services in Siletz, Oregon and the Oregon coast. Oregon CCB #259493. (541) 590-3071.
+
+## Services
+- [Kitchen Remodel](https://bannisterderik-tech.github.io/db-demos/pacific-breeze-hot-tubs-llc/services/kitchen-remodel/): full and partial kitchen renovations. $25,000–$85,000
+- [Bathroom Remodel](https://bannisterderik-tech.github.io/db-demos/pacific-breeze-hot-tubs-llc/services/bathroom-remodel/): full bath renovations, wet rooms, accessibility. $15,000–$45,000
+- [Home Additions](https://bannisterderik-tech.github.io/db-demos/pacific-breeze-hot-tubs-llc/services/home-additions/): bump-outs, second stories, full additions. $180–$400 per sq ft
+- [ADU Construction](https://bannisterderik-tech.github.io/db-demos/pacific-breeze-hot-tubs-llc/services/adu-construction/): detached and attached accessory dwelling units. $150,000–$300,000
+- [Basement Finishing](https://bannisterderik-tech.github.io/db-demos/pacific-breeze-hot-tubs-llc/services/basement-finishing/): conversions to living space, egress, moisture control. $40,000–$90,000
+- [Deck Construction](https://bannisterderik-tech.github.io/db-demos/pacific-breeze-hot-tubs-llc/services/deck-construction/): new decks, covers, railings, stairs. $35–$75 per sq ft
+- [Garage Conversion](https://bannisterderik-tech.github.io/db-demos/pacific-breeze-hot-tubs-llc/services/garage-conversion/): garage to living or rental space. $30,000–$75,000
+- [Window Replacement](https://bannisterderik-tech.github.io/db-demos/pacific-breeze-hot-tubs-llc/services/window-replacement/): full-frame and insert replacements. $650–$1,600 per window
+- [Siding Replacement](https://bannisterderik-tech.github.io/db-demos/pacific-breeze-hot-tubs-llc/services/siding-replacement/): lap, panel, and fiber cement with weather barrier. $12,000–$40,000
+- [Roof Replacement](https://bannisterderik-tech.github.io/db-demos/pacific-breeze-hot-tubs-llc/services/roof-replacement/): tear-off, re-roof, ventilation, flashing. $9,000–$22,000
+- [Structural Repair](https://bannisterderik-tech.github.io/db-demos/pacific-breeze-hot-tubs-llc/services/structural-repair/): beams, posts, foundations, settling. Quoted after assessment
+- [Interior Remodel](https://bannisterderik-tech.github.io/db-demos/pacific-breeze-hot-tubs-llc/services/interior-remodel/): open-concept conversions, walls, flooring, finishes. $20,000–$70,000
+- [Exterior Remodel](https://bannisterderik-tech.github.io/db-demos/pacific-breeze-hot-tubs-llc/services/exterior-remodel/): facades, entries, porches, trim. $8,000–$35,000
+- [Permits & Planning](https://bannisterderik-tech.github.io/db-demos/pacific-breeze-hot-tubs-llc/services/permits-planning/): drawings, applications, inspection coordination. Included in project scope
+
+## Service areas
+- [Siletz, OR 97380](https://bannisterderik-tech.github.io/db-demos/pacific-breeze-hot-tubs-llc/areas/siletz/) — Lincoln County
+- [Newport, OR 97365](https://bannisterderik-tech.github.io/db-demos/pacific-breeze-hot-tubs-llc/areas/newport/) — Lincoln County
+- [Lincoln City, OR 97367](https://bannisterderik-tech.github.io/db-demos/pacific-breeze-hot-tubs-llc/areas/lincoln-city/) — Lincoln County
+- [Toledo, OR 97391](https://bannisterderik-tech.github.io/db-demos/pacific-breeze-hot-tubs-llc/areas/toledo/) — Lincoln County
+- [Depoe Bay, OR 97341](https://bannisterderik-tech.github.io/db-demos/pacific-breeze-hot-tubs-llc/areas/depoe-bay/) — Lincoln County
+- [Waldport, OR 97394](https://bannisterderik-tech.github.io/db-demos/pacific-breeze-hot-tubs-llc/areas/waldport/) — Lincoln County
+- [Yachats, OR 97498](https://bannisterderik-tech.github.io/db-demos/pacific-breeze-hot-tubs-llc/areas/yachats/) — Lincoln County
+- [Otis, OR 97368](https://bannisterderik-tech.github.io/db-demos/pacific-breeze-hot-tubs-llc/areas/otis/) — Lincoln County
+- [Logsden, OR 97357](https://bannisterderik-tech.github.io/db-demos/pacific-breeze-hot-tubs-llc/areas/logsden/) — Lincoln County
+- [Eddyville, OR 97343](https://bannisterderik-tech.github.io/db-demos/pacific-breeze-hot-tubs-llc/areas/eddyville/) — Lincoln County
+- [Philomath, OR 97370](https://bannisterderik-tech.github.io/db-demos/pacific-breeze-hot-tubs-llc/areas/philomath/) — Benton County
+- [Corvallis, OR 97330](https://bannisterderik-tech.github.io/db-demos/pacific-breeze-hot-tubs-llc/areas/corvallis/) — Benton County
+
+## Facts
+- Licensed: Oregon CCB #259493
+- Based: Siletz, OR 97380
+- Phone: (541) 590-3071
+- Email: info@pacificbreezehottubs.com
+- Serving: Siletz, Newport, Lincoln City, Toledo, Depoe Bay, Waldport, Yachats, Otis, Logsden, Eddyville, Philomath, Corvallis

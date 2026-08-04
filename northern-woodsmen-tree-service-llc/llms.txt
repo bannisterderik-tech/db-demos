@@ -1,0 +1,43 @@
+# Northern Woodsmen Tree Service
+> Tree service services in Wilsonville, Oregon and the Portland metro. Oregon CCB #259429. (281) 413-9752.
+
+## Services
+- [Tree Removal](https://bannisterderik-tech.github.io/db-demos/northern-woodsmen-tree-service-llc/services/tree-removal/): full removals, hazard trees, tight-access takedowns. $450–$2,500 depending on size and access
+- [Tree Trimming & Pruning](https://bannisterderik-tech.github.io/db-demos/northern-woodsmen-tree-service-llc/services/tree-trimming/): structural pruning, deadwooding, clearance, thinning. $300–$1,200
+- [Stump Grinding](https://bannisterderik-tech.github.io/db-demos/northern-woodsmen-tree-service-llc/services/stump-grinding/): grinding below grade, root chasing, backfill. $120–$450 per stump
+- [Storm & Emergency Tree Service](https://bannisterderik-tech.github.io/db-demos/northern-woodsmen-tree-service-llc/services/emergency-tree-service/): failed trees, limbs on structures, blocked access. Quoted on site; emergency response
+- [Lot Clearing](https://bannisterderik-tech.github.io/db-demos/northern-woodsmen-tree-service-llc/services/lot-clearing/): clearing for building, pasture, or defensible space. $1,500–$8,000 per acre
+- [Hazard Tree Assessment](https://bannisterderik-tech.github.io/db-demos/northern-woodsmen-tree-service-llc/services/hazard-tree-assessment/): risk evaluation, defect identification, written findings. $150–$400
+- [Cabling & Bracing](https://bannisterderik-tech.github.io/db-demos/northern-woodsmen-tree-service-llc/services/cabling-bracing/): support systems for split trunks and heavy limbs. $350–$1,200
+- [Brush Chipping & Haul-Off](https://bannisterderik-tech.github.io/db-demos/northern-woodsmen-tree-service-llc/services/brush-chipping/): chipping, debris removal, chip drop. $200–$700
+- [Tree Planting](https://bannisterderik-tech.github.io/db-demos/northern-woodsmen-tree-service-llc/services/tree-planting/): species selection, siting, staking, establishment. $150–$600 per tree installed
+- [Crown Reduction](https://bannisterderik-tech.github.io/db-demos/northern-woodsmen-tree-service-llc/services/crown-reduction/): lowering height and spread without topping. $400–$1,500
+- [Root Pruning](https://bannisterderik-tech.github.io/db-demos/northern-woodsmen-tree-service-llc/services/root-pruning/): clearance for foundations, sidewalks, and utilities. $300–$900
+- [Arborist Consultation](https://bannisterderik-tech.github.io/db-demos/northern-woodsmen-tree-service-llc/services/arborist-consultation/): health diagnosis, preservation plans, development reports. $150–$500
+- [Defensible Space & Fire Clearance](https://bannisterderik-tech.github.io/db-demos/northern-woodsmen-tree-service-llc/services/defensible-space/): ladder fuel removal, limbing up, clearance zones. $800–$4,000
+- [Tree Lighting Installation](https://bannisterderik-tech.github.io/db-demos/northern-woodsmen-tree-service-llc/services/holiday-lighting/): seasonal lighting in mature trees, install and removal. $400–$2,000
+
+## Service areas
+- [Portland, OR 97214](https://bannisterderik-tech.github.io/db-demos/northern-woodsmen-tree-service-llc/areas/portland/) — Multnomah County
+- [Gresham, OR 97030](https://bannisterderik-tech.github.io/db-demos/northern-woodsmen-tree-service-llc/areas/gresham/) — Multnomah County
+- [Beaverton, OR 97005](https://bannisterderik-tech.github.io/db-demos/northern-woodsmen-tree-service-llc/areas/beaverton/) — Washington County
+- [Hillsboro, OR 97124](https://bannisterderik-tech.github.io/db-demos/northern-woodsmen-tree-service-llc/areas/hillsboro/) — Washington County
+- [Tigard, OR 97223](https://bannisterderik-tech.github.io/db-demos/northern-woodsmen-tree-service-llc/areas/tigard/) — Washington County
+- [Tualatin, OR 97062](https://bannisterderik-tech.github.io/db-demos/northern-woodsmen-tree-service-llc/areas/tualatin/) — Washington County
+- [Sherwood, OR 97140](https://bannisterderik-tech.github.io/db-demos/northern-woodsmen-tree-service-llc/areas/sherwood/) — Washington County
+- [Lake Oswego, OR 97034](https://bannisterderik-tech.github.io/db-demos/northern-woodsmen-tree-service-llc/areas/lake-oswego/) — Clackamas County
+- [West Linn, OR 97068](https://bannisterderik-tech.github.io/db-demos/northern-woodsmen-tree-service-llc/areas/west-linn/) — Clackamas County
+- [Oregon City, OR 97045](https://bannisterderik-tech.github.io/db-demos/northern-woodsmen-tree-service-llc/areas/oregon-city/) — Clackamas County
+- [Milwaukie, OR 97222](https://bannisterderik-tech.github.io/db-demos/northern-woodsmen-tree-service-llc/areas/milwaukie/) — Clackamas County
+- [Happy Valley, OR 97086](https://bannisterderik-tech.github.io/db-demos/northern-woodsmen-tree-service-llc/areas/happy-valley/) — Clackamas County
+- [Clackamas, OR 97015](https://bannisterderik-tech.github.io/db-demos/northern-woodsmen-tree-service-llc/areas/clackamas/) — Clackamas County
+- [Wilsonville, OR 97070](https://bannisterderik-tech.github.io/db-demos/northern-woodsmen-tree-service-llc/areas/wilsonville/) — Clackamas County
+- [Troutdale, OR 97060](https://bannisterderik-tech.github.io/db-demos/northern-woodsmen-tree-service-llc/areas/troutdale/) — Multnomah County
+- [Fairview, OR 97024](https://bannisterderik-tech.github.io/db-demos/northern-woodsmen-tree-service-llc/areas/fairview/) — Multnomah County
+
+## Facts
+- Licensed: Oregon CCB #259429
+- Based: Wilsonville, OR 97070
+- Phone: (281) 413-9752
+- Email: info@northernwoodsmen.com
+- Serving: Portland, Gresham, Beaverton, Hillsboro, Tigard, Tualatin, Sherwood, Lake Oswego, West Linn, Oregon City, Milwaukie, Happy Valley, Clackamas, Wilsonville, Troutdale, Fairview

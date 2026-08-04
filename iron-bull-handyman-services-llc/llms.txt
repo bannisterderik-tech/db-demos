@@ -1,0 +1,43 @@
+# Iron Bull Handyman Services
+> Handyman services in Keizer, Oregon and the Willamette Valley. Oregon CCB #259600. (503) 984-4446.
+
+## Services
+- [Drywall Repair](https://bannisterderik-tech.github.io/db-demos/iron-bull-handyman-services-llc/services/drywall-repair/): patching holes, cracks, water damage, and texture matching. $150–$600 for most single-room repairs
+- [Door Repair & Installation](https://bannisterderik-tech.github.io/db-demos/iron-bull-handyman-services-llc/services/door-repair-installation/): sticking doors, new interior and exterior doors, hardware, weatherstripping. $120–$350 adjustments · $400–$900 installed interior door
+- [Fence Repair](https://bannisterderik-tech.github.io/db-demos/iron-bull-handyman-services-llc/services/fence-repair/): leaning posts, broken rails, gate sag, board replacement. $200–$500 per post · $35–$70 per panel section
+- [Deck Repair](https://bannisterderik-tech.github.io/db-demos/iron-bull-handyman-services-llc/services/deck-repair/): soft boards, loose railings, stairs, sealing. $300–$1,500 depending on framing
+- [Interior Painting](https://bannisterderik-tech.github.io/db-demos/iron-bull-handyman-services-llc/services/interior-painting/): single rooms, trim, ceilings, touch-ups after repairs. $250–$700 per room
+- [Gutter Cleaning & Repair](https://bannisterderik-tech.github.io/db-demos/iron-bull-handyman-services-llc/services/gutter-cleaning/): clearing, resealing, downspout and pitch correction. $150–$300 single story · $250–$450 two story
+- [Light Fixtures & Ceiling Fans](https://bannisterderik-tech.github.io/db-demos/iron-bull-handyman-services-llc/services/light-fixture-installation/): replacing fixtures, ceiling fans, vanity lights, exterior lighting. $120–$280 per fixture · $180–$400 ceiling fan
+- [Faucet & Toilet Repair](https://bannisterderik-tech.github.io/db-demos/iron-bull-handyman-services-llc/services/faucet-toilet-repair/): leaking faucets, running toilets, replacements, shutoff valves. $120–$250 repair · $250–$500 fixture replacement
+- [Tile & Flooring Repair](https://bannisterderik-tech.github.io/db-demos/iron-bull-handyman-services-llc/services/tile-flooring-repair/): cracked tile, loose planks, transitions, subfloor patches. $200–$800
+- [Trim & Molding](https://bannisterderik-tech.github.io/db-demos/iron-bull-handyman-services-llc/services/trim-molding/): baseboard, casing, crown, shoe, repairs after flooring work. $4–$9 per linear foot installed
+- [Shelving & Storage](https://bannisterderik-tech.github.io/db-demos/iron-bull-handyman-services-llc/services/shelving-storage/): closet systems, garage shelving, floating shelves, pantry. $150–$600
+- [TV Mounting](https://bannisterderik-tech.github.io/db-demos/iron-bull-handyman-services-llc/services/tv-mounting/): wall mounts, cable concealment, soundbar brackets. $120–$300
+- [Pressure Washing](https://bannisterderik-tech.github.io/db-demos/iron-bull-handyman-services-llc/services/pressure-washing/): driveways, siding, decks, walkways, moss removal. $200–$500
+- [Window & Screen Repair](https://bannisterderik-tech.github.io/db-demos/iron-bull-handyman-services-llc/services/window-screen-repair/): screen rescreening, sash cords, failed seals, hardware. $60–$150 per screen · $250–$600 sash repair
+
+## Service areas
+- [Keizer, OR 97303](https://bannisterderik-tech.github.io/db-demos/iron-bull-handyman-services-llc/areas/keizer/) — Marion County
+- [Salem, OR 97301](https://bannisterderik-tech.github.io/db-demos/iron-bull-handyman-services-llc/areas/salem/) — Marion County
+- [Turner, OR 97392](https://bannisterderik-tech.github.io/db-demos/iron-bull-handyman-services-llc/areas/turner/) — Marion County
+- [Aumsville, OR 97325](https://bannisterderik-tech.github.io/db-demos/iron-bull-handyman-services-llc/areas/aumsville/) — Marion County
+- [Stayton, OR 97383](https://bannisterderik-tech.github.io/db-demos/iron-bull-handyman-services-llc/areas/stayton/) — Marion County
+- [Sublimity, OR 97385](https://bannisterderik-tech.github.io/db-demos/iron-bull-handyman-services-llc/areas/sublimity/) — Marion County
+- [Silverton, OR 97381](https://bannisterderik-tech.github.io/db-demos/iron-bull-handyman-services-llc/areas/silverton/) — Marion County
+- [Mount Angel, OR 97362](https://bannisterderik-tech.github.io/db-demos/iron-bull-handyman-services-llc/areas/mount-angel/) — Marion County
+- [Woodburn, OR 97071](https://bannisterderik-tech.github.io/db-demos/iron-bull-handyman-services-llc/areas/woodburn/) — Marion County
+- [Hubbard, OR 97032](https://bannisterderik-tech.github.io/db-demos/iron-bull-handyman-services-llc/areas/hubbard/) — Marion County
+- [Gervais, OR 97026](https://bannisterderik-tech.github.io/db-demos/iron-bull-handyman-services-llc/areas/gervais/) — Marion County
+- [Jefferson, OR 97352](https://bannisterderik-tech.github.io/db-demos/iron-bull-handyman-services-llc/areas/jefferson/) — Marion County
+- [Dallas, OR 97338](https://bannisterderik-tech.github.io/db-demos/iron-bull-handyman-services-llc/areas/dallas/) — Polk County
+- [Independence, OR 97351](https://bannisterderik-tech.github.io/db-demos/iron-bull-handyman-services-llc/areas/independence/) — Polk County
+- [Monmouth, OR 97361](https://bannisterderik-tech.github.io/db-demos/iron-bull-handyman-services-llc/areas/monmouth/) — Polk County
+- [Brooks, OR 97305](https://bannisterderik-tech.github.io/db-demos/iron-bull-handyman-services-llc/areas/brooks/) — Marion County
+
+## Facts
+- Licensed: Oregon CCB #259600
+- Based: Keizer, OR 97303
+- Phone: (503) 984-4446
+- Email: handyman.ironbull@gmail.com
+- Serving: Keizer, Salem, Turner, Aumsville, Stayton, Sublimity, Silverton, Mount Angel, Woodburn, Hubbard, Gervais, Jefferson, Dallas, Independence, Monmouth, Brooks
