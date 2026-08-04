@@ -1,0 +1,43 @@
+# Iconic Cleaning
+> Exterior cleaning and care services in Keizer, Oregon and the Willamette Valley. Oregon CCB #262418. (541) 405-0972.
+
+## Services
+- [Pressure Washing](https://bannisterderik-tech.github.io/db-demos/iconic-cleaning-llc/services/pressure-washing/): driveways, walkways, patios, hardscape. $200–$600
+- [House Washing](https://bannisterderik-tech.github.io/db-demos/iconic-cleaning-llc/services/house-washing/): soft-wash siding cleaning. $350–$900
+- [Roof Cleaning & Moss Removal](https://bannisterderik-tech.github.io/db-demos/iconic-cleaning-llc/services/roof-cleaning/): moss treatment and removal, zinc strips. $400–$1,200
+- [Gutter Cleaning](https://bannisterderik-tech.github.io/db-demos/iconic-cleaning-llc/services/gutter-cleaning/): clearing, flushing downspouts, resealing. $150–$350
+- [Window Cleaning](https://bannisterderik-tech.github.io/db-demos/iconic-cleaning-llc/services/window-cleaning/): interior and exterior, screens, tracks. $150–$450
+- [Deck Cleaning & Sealing](https://bannisterderik-tech.github.io/db-demos/iconic-cleaning-llc/services/deck-cleaning/): cleaning, brightening, sealing wood decks. $400–$1,100
+- [Concrete Sealing](https://bannisterderik-tech.github.io/db-demos/iconic-cleaning-llc/services/concrete-sealing/): driveways and patios after cleaning. $0.50–$1.50 per sq ft
+- [Fence Cleaning & Staining](https://bannisterderik-tech.github.io/db-demos/iconic-cleaning-llc/services/fence-cleaning/): cleaning and staining cedar and treated fence. $450–$1,400
+- [Paver Cleaning & Sanding](https://bannisterderik-tech.github.io/db-demos/iconic-cleaning-llc/services/paver-cleaning/): cleaning, weed removal, polymeric re-sanding. $400–$1,200
+- [Solar Panel Cleaning](https://bannisterderik-tech.github.io/db-demos/iconic-cleaning-llc/services/solar-panel-cleaning/): rinse and soft-wash for panel output. $150–$400
+- [Graffiti Removal](https://bannisterderik-tech.github.io/db-demos/iconic-cleaning-llc/services/graffiti-removal/): chemical and pressure removal. $200–$800
+- [Dryer Vent Cleaning](https://bannisterderik-tech.github.io/db-demos/iconic-cleaning-llc/services/dryer-vent-cleaning/): full vent line clearing. $120–$250
+- [Commercial Pressure Washing](https://bannisterderik-tech.github.io/db-demos/iconic-cleaning-llc/services/commercial-washing/): storefronts, sidewalks, lots, drive-thrus. Quoted by square footage
+- [Rust & Stain Removal](https://bannisterderik-tech.github.io/db-demos/iconic-cleaning-llc/services/rust-stain-removal/): rust, oil, and organic staining. $200–$600
+
+## Service areas
+- [Keizer, OR 97303](https://bannisterderik-tech.github.io/db-demos/iconic-cleaning-llc/areas/keizer/) — Marion County
+- [Salem, OR 97301](https://bannisterderik-tech.github.io/db-demos/iconic-cleaning-llc/areas/salem/) — Marion County
+- [Turner, OR 97392](https://bannisterderik-tech.github.io/db-demos/iconic-cleaning-llc/areas/turner/) — Marion County
+- [Aumsville, OR 97325](https://bannisterderik-tech.github.io/db-demos/iconic-cleaning-llc/areas/aumsville/) — Marion County
+- [Stayton, OR 97383](https://bannisterderik-tech.github.io/db-demos/iconic-cleaning-llc/areas/stayton/) — Marion County
+- [Sublimity, OR 97385](https://bannisterderik-tech.github.io/db-demos/iconic-cleaning-llc/areas/sublimity/) — Marion County
+- [Silverton, OR 97381](https://bannisterderik-tech.github.io/db-demos/iconic-cleaning-llc/areas/silverton/) — Marion County
+- [Mount Angel, OR 97362](https://bannisterderik-tech.github.io/db-demos/iconic-cleaning-llc/areas/mount-angel/) — Marion County
+- [Woodburn, OR 97071](https://bannisterderik-tech.github.io/db-demos/iconic-cleaning-llc/areas/woodburn/) — Marion County
+- [Hubbard, OR 97032](https://bannisterderik-tech.github.io/db-demos/iconic-cleaning-llc/areas/hubbard/) — Marion County
+- [Gervais, OR 97026](https://bannisterderik-tech.github.io/db-demos/iconic-cleaning-llc/areas/gervais/) — Marion County
+- [Jefferson, OR 97352](https://bannisterderik-tech.github.io/db-demos/iconic-cleaning-llc/areas/jefferson/) — Marion County
+- [Dallas, OR 97338](https://bannisterderik-tech.github.io/db-demos/iconic-cleaning-llc/areas/dallas/) — Polk County
+- [Independence, OR 97351](https://bannisterderik-tech.github.io/db-demos/iconic-cleaning-llc/areas/independence/) — Polk County
+- [Monmouth, OR 97361](https://bannisterderik-tech.github.io/db-demos/iconic-cleaning-llc/areas/monmouth/) — Polk County
+- [Brooks, OR 97305](https://bannisterderik-tech.github.io/db-demos/iconic-cleaning-llc/areas/brooks/) — Marion County
+
+## Facts
+- Licensed: Oregon CCB #262418
+- Based: Keizer, OR 97303
+- Phone: (541) 405-0972
+- Email: iconiccleaning@icloud.com
+- Serving: Keizer, Salem, Turner, Aumsville, Stayton, Sublimity, Silverton, Mount Angel, Woodburn, Hubbard, Gervais, Jefferson, Dallas, Independence, Monmouth, Brooks

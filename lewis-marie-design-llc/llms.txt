@@ -1,0 +1,43 @@
+# Lewis Marie Design
+> General contracting services in Portland, Oregon and the Portland metro. Oregon CCB #261585. (503) 208-5008.
+
+## Services
+- [Kitchen Remodel](https://bannisterderik-tech.github.io/db-demos/lewis-marie-design-llc/services/kitchen-remodel/): full and partial kitchen renovations. $25,000–$85,000
+- [Bathroom Remodel](https://bannisterderik-tech.github.io/db-demos/lewis-marie-design-llc/services/bathroom-remodel/): full bath renovations, wet rooms, accessibility. $15,000–$45,000
+- [Home Additions](https://bannisterderik-tech.github.io/db-demos/lewis-marie-design-llc/services/home-additions/): bump-outs, second stories, full additions. $180–$400 per sq ft
+- [ADU Construction](https://bannisterderik-tech.github.io/db-demos/lewis-marie-design-llc/services/adu-construction/): detached and attached accessory dwelling units. $150,000–$300,000
+- [Basement Finishing](https://bannisterderik-tech.github.io/db-demos/lewis-marie-design-llc/services/basement-finishing/): conversions to living space, egress, moisture control. $40,000–$90,000
+- [Deck Construction](https://bannisterderik-tech.github.io/db-demos/lewis-marie-design-llc/services/deck-construction/): new decks, covers, railings, stairs. $35–$75 per sq ft
+- [Garage Conversion](https://bannisterderik-tech.github.io/db-demos/lewis-marie-design-llc/services/garage-conversion/): garage to living or rental space. $30,000–$75,000
+- [Window Replacement](https://bannisterderik-tech.github.io/db-demos/lewis-marie-design-llc/services/window-replacement/): full-frame and insert replacements. $650–$1,600 per window
+- [Siding Replacement](https://bannisterderik-tech.github.io/db-demos/lewis-marie-design-llc/services/siding-replacement/): lap, panel, and fiber cement with weather barrier. $12,000–$40,000
+- [Roof Replacement](https://bannisterderik-tech.github.io/db-demos/lewis-marie-design-llc/services/roof-replacement/): tear-off, re-roof, ventilation, flashing. $9,000–$22,000
+- [Structural Repair](https://bannisterderik-tech.github.io/db-demos/lewis-marie-design-llc/services/structural-repair/): beams, posts, foundations, settling. Quoted after assessment
+- [Interior Remodel](https://bannisterderik-tech.github.io/db-demos/lewis-marie-design-llc/services/interior-remodel/): open-concept conversions, walls, flooring, finishes. $20,000–$70,000
+- [Exterior Remodel](https://bannisterderik-tech.github.io/db-demos/lewis-marie-design-llc/services/exterior-remodel/): facades, entries, porches, trim. $8,000–$35,000
+- [Permits & Planning](https://bannisterderik-tech.github.io/db-demos/lewis-marie-design-llc/services/permits-planning/): drawings, applications, inspection coordination. Included in project scope
+
+## Service areas
+- [Portland, OR 97214](https://bannisterderik-tech.github.io/db-demos/lewis-marie-design-llc/areas/portland/) — Multnomah County
+- [Gresham, OR 97030](https://bannisterderik-tech.github.io/db-demos/lewis-marie-design-llc/areas/gresham/) — Multnomah County
+- [Beaverton, OR 97005](https://bannisterderik-tech.github.io/db-demos/lewis-marie-design-llc/areas/beaverton/) — Washington County
+- [Hillsboro, OR 97124](https://bannisterderik-tech.github.io/db-demos/lewis-marie-design-llc/areas/hillsboro/) — Washington County
+- [Tigard, OR 97223](https://bannisterderik-tech.github.io/db-demos/lewis-marie-design-llc/areas/tigard/) — Washington County
+- [Tualatin, OR 97062](https://bannisterderik-tech.github.io/db-demos/lewis-marie-design-llc/areas/tualatin/) — Washington County
+- [Sherwood, OR 97140](https://bannisterderik-tech.github.io/db-demos/lewis-marie-design-llc/areas/sherwood/) — Washington County
+- [Lake Oswego, OR 97034](https://bannisterderik-tech.github.io/db-demos/lewis-marie-design-llc/areas/lake-oswego/) — Clackamas County
+- [West Linn, OR 97068](https://bannisterderik-tech.github.io/db-demos/lewis-marie-design-llc/areas/west-linn/) — Clackamas County
+- [Oregon City, OR 97045](https://bannisterderik-tech.github.io/db-demos/lewis-marie-design-llc/areas/oregon-city/) — Clackamas County
+- [Milwaukie, OR 97222](https://bannisterderik-tech.github.io/db-demos/lewis-marie-design-llc/areas/milwaukie/) — Clackamas County
+- [Happy Valley, OR 97086](https://bannisterderik-tech.github.io/db-demos/lewis-marie-design-llc/areas/happy-valley/) — Clackamas County
+- [Clackamas, OR 97015](https://bannisterderik-tech.github.io/db-demos/lewis-marie-design-llc/areas/clackamas/) — Clackamas County
+- [Wilsonville, OR 97070](https://bannisterderik-tech.github.io/db-demos/lewis-marie-design-llc/areas/wilsonville/) — Clackamas County
+- [Troutdale, OR 97060](https://bannisterderik-tech.github.io/db-demos/lewis-marie-design-llc/areas/troutdale/) — Multnomah County
+- [Fairview, OR 97024](https://bannisterderik-tech.github.io/db-demos/lewis-marie-design-llc/areas/fairview/) — Multnomah County
+
+## Facts
+- Licensed: Oregon CCB #261585
+- Based: Portland, OR 97214
+- Phone: (503) 208-5008
+- Email: info@lewismarie.com
+- Serving: Portland, Gresham, Beaverton, Hillsboro, Tigard, Tualatin, Sherwood, Lake Oswego, West Linn, Oregon City, Milwaukie, Happy Valley, Clackamas, Wilsonville, Troutdale, Fairview
