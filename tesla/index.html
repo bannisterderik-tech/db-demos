@@ -83,8 +83,8 @@ nav button.on svg{filter:drop-shadow(0 0 8px rgba(255,255,255,.6))}
 nav .spacer{flex:1}
 
 main{position:relative;overflow:hidden}
-.panel{position:absolute;inset:0;padding:34px 40px 40px;overflow-y:auto;opacity:0;pointer-events:none;transform:translateY(14px) scale(.995);transition:opacity .5s,transform .6s cubic-bezier(.2,.8,.2,1)}
-.panel.on{opacity:1;pointer-events:auto;transform:none}
+.panel{position:absolute;inset:0;padding:34px 40px 40px;overflow-y:auto;opacity:0;pointer-events:none;visibility:hidden;transform:translateY(14px) scale(.995);transition:opacity .45s,transform .55s cubic-bezier(.2,.8,.2,1),visibility 0s .55s}
+.panel.on{opacity:1;pointer-events:auto;visibility:visible;transform:none;transition:opacity .45s,transform .55s cubic-bezier(.2,.8,.2,1),visibility 0s}
 .panel::-webkit-scrollbar{width:0}
 .ph{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;margin-bottom:28px;gap:20px}
 .ph h2{font-family:var(--display);font-size:clamp(26px,3vw,40px);letter-spacing:.18em;font-weight:400}
@@ -246,6 +246,66 @@ body.immersive #exitImm{display:grid}
 .stage iframe{flex:1;width:100%;min-height:352px;border:0;border-radius:14px;background:#121214}
 .venue{color:var(--dim);font-size:15px;line-height:1.5;letter-spacing:.02em}
 .venue b{color:var(--txt);font-weight:500}
+
+/* ---------- arcade ---------- */
+.arcade{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.arcade.hide{display:none}
+.gtile{position:relative;min-height:150px;height:calc((100vh - 84px - 74px - 140px)/3);max-height:200px;padding:20px 22px;border-radius:20px;overflow:hidden;text-align:left;display:flex;flex-direction:column;justify-content:flex-end;gap:6px;
+  background:linear-gradient(160deg,#121215,#060607);box-shadow:inset 0 0 0 1px var(--line),0 20px 40px -24px #000;transition:transform .2s,box-shadow .3s}
+.gtile::before{content:"";position:absolute;width:220px;height:220px;right:-70px;top:-90px;border-radius:50%;background:radial-gradient(circle,var(--c) 0%,transparent 65%);opacity:.45;transition:opacity .3s}
+.gtile:active{transform:scale(.96);box-shadow:inset 0 0 0 1px rgba(255,255,255,.4)}
+.gtile .num{position:absolute;top:18px;left:22px;font-family:var(--display);font-size:12px;color:var(--mute);letter-spacing:.2em}
+.gtile .tg{position:absolute;top:16px;right:16px;font-family:var(--cond);font-size:11px;letter-spacing:.24em;padding:5px 10px;border-radius:999px;color:#fff;background:rgba(227,25,55,.85)}
+.gtile .tg.p2{background:rgba(255,255,255,.12);color:#ddd}
+.gtile h3{position:relative;font-family:var(--display);font-weight:400;font-size:clamp(15px,1.45vw,19px);letter-spacing:.1em;line-height:1.25}
+.gtile p{position:relative;font-size:13.5px;color:var(--dim);line-height:1.35}
+#playBack{display:none}
+.big-q{font-family:var(--body);font-weight:300;font-size:clamp(26px,3vw,42px);line-height:1.25;text-align:center;max-width:980px;margin:0 auto}
+.gcard{padding:44px 48px;min-height:min(40vh,320px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;text-align:center}
+.gcard.slam{animation:slam .6s cubic-bezier(.2,1.6,.4,1)}
+.grow{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+.grow .btn{min-width:200px}
+.score2{display:flex;gap:40px;justify-content:center;margin-top:20px;font-family:var(--cond);letter-spacing:.3em;color:var(--dim);font-size:14px}
+.score2 b{display:block;font-family:var(--display);font-weight:400;font-size:40px;color:#fff;letter-spacing:0;margin-top:6px;text-align:center}
+/* drag tree */
+.duel{display:grid;grid-template-columns:1fr auto 1fr;gap:22px;height:calc(100vh - 84px - 74px - 120px);min-height:420px}
+.lane{border-radius:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;touch-action:none;background:linear-gradient(160deg,#121215,#060607);box-shadow:inset 0 0 0 1px var(--line-hi);transition:box-shadow .2s,background .2s}
+.lane .pn{font-family:var(--display);font-size:clamp(22px,2.6vw,36px);letter-spacing:.2em}
+.lane .rt{font-family:var(--display);font-size:clamp(30px,3.6vw,52px);color:#fff}
+.lane .wins{font-family:var(--cond);letter-spacing:.3em;color:var(--dim);font-size:14px}
+.lane .hint{font-family:var(--cond);letter-spacing:.4em;color:var(--mute);font-size:12px}
+.lane.win{background:linear-gradient(160deg,rgba(60,224,138,.25),#060607);box-shadow:inset 0 0 0 2px #3ce08a,0 0 50px rgba(60,224,138,.35)}
+.lane.foul{background:linear-gradient(160deg,rgba(227,25,55,.35),#060607);box-shadow:inset 0 0 0 2px #ff2340,0 0 50px rgba(227,25,55,.45)}
+.tree{display:flex;flex-direction:column;align-items:center;gap:14px;padding:24px 30px;width:230px}
+.tree .row2{display:flex;gap:18px}
+.bulb2{width:58px;height:58px;border-radius:50%;background:#141416;box-shadow:inset 0 2px 6px #000,0 0 0 3px #0a0a0a,0 0 0 4px rgba(255,255,255,.18);transition:background .05s,box-shadow .05s}
+.bulb2.sm{width:30px;height:30px}
+.bulb2.on.w{background:#fff;box-shadow:0 0 20px #fff,0 0 0 3px #0a0a0a,0 0 0 4px rgba(255,255,255,.4)}
+.bulb2.on.a{background:#ffb020;box-shadow:0 0 30px #ffb020,0 0 0 3px #0a0a0a,0 0 0 4px #ffd27a}
+.bulb2.on.g{background:#3ce08a;box-shadow:0 0 40px #3ce08a,0 0 0 3px #0a0a0a,0 0 0 4px #a5f5c9}
+.bulb2.on.r{background:#ff2340;box-shadow:0 0 40px #ff2340,0 0 0 3px #0a0a0a,0 0 0 4px #ff8a9a}
+.treeMsg{font-family:var(--cond);letter-spacing:.2em;text-transform:uppercase;color:var(--dim);font-size:13px;text-align:center;min-height:2.6em}
+/* love slots */
+.slots-wrap{display:grid;grid-template-columns:auto 1fr;gap:44px;align-items:center}
+.machine{padding:30px;display:flex;flex-direction:column;align-items:center;gap:16px}
+.reels{position:relative;display:flex;gap:12px;padding:12px;border-radius:18px;background:#000;box-shadow:0 0 0 3px #0a0a0a,0 0 0 5px #8e8e96,0 0 0 6px #fff,inset 0 0 40px #000}
+.reel{width:clamp(130px,13vw,190px);height:270px;overflow:hidden;border-radius:10px;background:linear-gradient(180deg,#0a0a0b,#1b1b1f 50%,#0a0a0b)}
+.strip{will-change:transform}
+.strip div{height:90px;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 10px;font-family:var(--display);font-size:clamp(12px,1.15vw,16px);letter-spacing:.06em;line-height:1.3;color:#e9e9ec}
+.reels::before,.reels::after{content:"";position:absolute;left:4px;right:4px;height:2px;background:#ff2340;box-shadow:0 0 12px #ff2340;z-index:2}
+.reels::before{top:102px}.reels::after{top:192px}
+.reels .shade{position:absolute;inset:12px;border-radius:10px;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.85),transparent 35%,transparent 65%,rgba(0,0,0,.85))}
+/* scratch */
+.scratch-wrap{display:flex;flex-direction:column;align-items:center;gap:24px}
+.ticket{position:relative;width:min(640px,90%);aspect-ratio:16/8;border-radius:22px;overflow:hidden;box-shadow:0 0 0 3px #0a0a0a,0 0 0 5px #8e8e96,0 0 0 6px #fff,0 30px 60px #000}
+.ticket .prize{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:24px;text-align:center;background:radial-gradient(ellipse at center,#3a0010,#0a0002 75%)}
+.ticket .prize b{font-family:var(--display);font-weight:400;font-size:clamp(22px,2.6vw,36px);letter-spacing:.06em;line-height:1.25}
+.ticket canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none;transition:opacity .6s}
+/* tap war */
+.war{display:grid;grid-template-columns:1fr 1fr;gap:18px;height:calc(100vh - 84px - 74px - 200px);min-height:380px}
+.rope{position:relative;height:16px;border-radius:8px;background:linear-gradient(90deg,#ff2340,#1b1b1f 45%,#1b1b1f 55%,#fff);margin:18px 0 6px}
+.rope i{position:absolute;top:50%;left:50%;width:34px;height:34px;margin:-17px 0 0 -17px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,#9a9aa2 50%,#3a3a40);box-shadow:0 4px 14px #000;transition:left .08s}
+.warMsg{text-align:center;font-family:var(--display);font-size:clamp(22px,2.6vw,34px);letter-spacing:.12em;min-height:1.4em}
 
 /* ---------- play ---------- */
 .seg{display:inline-flex;padding:6px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--line-hi);gap:4px}
@@ -436,6 +496,9 @@ body.lit #ignite{opacity:0;visibility:hidden}
   .hero{grid-row:auto;padding:30px 24px}
   .scenes,.vibes{grid-template-columns:1fr 1fr}
   .wyr{grid-template-columns:1fr}
+  .arcade{grid-template-columns:1fr 1fr}.gtile{height:150px}
+  .duel{grid-template-columns:1fr 1fr;height:auto}.tree{grid-column:1/-1;grid-row:1;width:auto}.lane{min-height:220px}
+  .slots-wrap{grid-template-columns:1fr}.reel{width:28vw}
   .vibe-wrap{grid-template-columns:1fr 1fr}.vibe-mid{grid-column:1/-1;grid-row:1}.pad{margin:0 auto}
   .bar{grid-template-columns:110px 1fr 44px}
   .rl-btn{padding:0 14px;letter-spacing:.12em}
@@ -608,15 +671,10 @@ body.lit #ignite{opacity:0;visibility:hidden}
     <!-- PLAY -->
     <section class="panel" id="p-play">
       <div class="ph">
-        <div><h2 class="chrome">PASSENGER SEAT</h2><p>Games for red lights, parking lots and waiting on the table.</p></div>
-        <div class="seg" id="playSeg">
-          <button data-g="wheel" class="on">Spin</button>
-          <button data-g="vibe">Vibe Check</button>
-          <button data-g="deck">Ask Me</button>
-          <button data-g="wyr">Would You</button>
-          <button class="kc" id="kcBtn">Kiss Cam</button>
-        </div>
+        <div><h2 class="chrome" id="playTitle">ARCADE</h2><p id="playSub">12 games for red lights, parking lots and waiting on the table.</p></div>
+        <button class="btn ghost" id="playBack">← All games</button>
       </div>
+      <div class="arcade stagger" id="arcade"></div>
 
       <div class="game" id="g-deck">
         <div class="deck-wrap">
@@ -641,7 +699,7 @@ body.lit #ignite{opacity:0;visibility:hidden}
         <div style="display:flex;justify-content:center;margin-top:28px"><button class="btn" id="wyrNext">Next one</button></div>
       </div>
 
-      <div class="game on" id="g-wheel">
+      <div class="game" id="g-wheel">
         <div class="wheel-wrap">
           <div class="wheel-box" id="wheelBox"><canvas id="wheel" width="920" height="920"></canvas><div class="pin"></div><div class="hub">SPIN</div></div>
           <div class="wheel-side">
@@ -652,6 +710,13 @@ body.lit #ignite{opacity:0;visibility:hidden}
           </div>
         </div>
       </div>
+      <div class="game" id="g-tree"></div>
+      <div class="game" id="g-slots"></div>
+      <div class="game" id="g-tod"></div>
+      <div class="game" id="g-tap"></div>
+      <div class="game" id="g-scratch"></div>
+      <div class="game" id="g-mlt"></div>
+      <div class="game" id="g-nhie"></div>
       <div class="game" id="g-vibe">
         <div class="vibe-wrap" id="vibeWrap">
           <button class="pad" data-who="0"><svg viewBox="0 0 100 110" class="fp"></svg><span>DRIVER</span></button>
@@ -881,7 +946,7 @@ $$('nav button').forEach(b => b.addEventListener('click', () => {
   $$('.panel').forEach(p => p.classList.toggle('on', p.id === 'p-'+b.dataset.p));
   store.set('tab', b.dataset.p); if(document.body.classList.contains('lit')) SFX.nav();
   raceOn = b.dataset.p === 'race'; ambPreview = b.dataset.p === 'ambience';
-  if(b.dataset.p==='play') drawWheel();
+  if(b.dataset.p==='sound') $$('.trk img[data-src]').forEach(im => { im.src = im.dataset.src; im.removeAttribute('data-src') });
 }));
 
 /* ================= clock / date / countdown ================= */
@@ -1199,7 +1264,7 @@ const TRACKS = [
   {t:'Epiphany', a:'Futuristic ft. NF', id:'SXSF1QZA6Wo'}
 ];
 $('#tracks').innerHTML = TRACKS.map((k,i) => `<button class="trk" data-i="${i}"><span class="n">${String(i+1).padStart(2,'0')}</span>
-  <img loading="lazy" alt="" src="https://i.ytimg.com/vi/${k.id}/mqdefault.jpg"><span style="min-width:0"><div class="tt">${k.t}</div><div class="ar">${k.a}</div></span>
+  <img alt="" data-src="https://i.ytimg.com/vi/${k.id}/mqdefault.jpg"><span style="min-width:0"><div class="tt">${k.t}</div><div class="ar">${k.a}</div></span>
   <span class="eq paused"><i></i><i></i><i></i><i></i></span></button>`).join('');
 let yt = null, ytLoad = null, ti = store.get('track', 0) % TRACKS.length, ytPlaying = false, shuffle = false, failStreak = 0;
 function loadYT(){
@@ -1385,12 +1450,238 @@ function wyr(){ wyrI = (wyrI + 1 + Math.floor(Math.random()*(WYR.length-1))) % W
 $$('.wyr .opt').forEach(o => o.addEventListener('click', () => { $$('.wyr .opt').forEach(x=>x.classList.toggle('pick', x===o)) }));
 $('#wyrNext').addEventListener('click', wyr); wyr();
 
-/* game tabs */
-$$('#playSeg button[data-g]').forEach(b => b.addEventListener('click', () => {
-  $$('#playSeg button[data-g]').forEach(x=>x.classList.toggle('on',x===b));
-  $$('.game').forEach(g=>g.classList.toggle('on', g.id==='g-'+b.dataset.g));
-  if(b.dataset.g==='wheel') drawWheel();
-}));
+/* ================= arcade: every game builds itself the first time it opens ================= */
+const NAMES = ['Derik', 'Cam'];
+const GAMES = [
+  {g:'wheel', n:'Red Light Spin', d:'Spin it at every red light', tg:'HOT', c:'#e31937'},
+  {g:'tree', n:'Drag Tree', d:'Reflex duel on the Christmas tree', tg:'2P', c:'#3ce08a'},
+  {g:'slots', n:'Love Slots', d:'Pull the lever, do what it says', tg:'NEW', c:'#ffb020'},
+  {g:'tod', n:'Truth or Dare', d:'Sweet, flirty or spicy', c:'#ff5c8a'},
+  {g:'vibe', n:'Vibe Check', d:'Two thumbs. One score. 1000%.', tg:'2P', c:'#ff2340'},
+  {g:'tap', n:'Tap War', d:'Ten seconds. Tap like your life depends on it.', tg:'2P', c:'#5a7bff'},
+  {g:'scratch', n:'Scratch & Win', d:'Scratch the chrome, claim the prize', tg:'NEW', c:'#c9c9cf'},
+  {g:'mlt', n:'Most Likely To', d:'Derik or Cam? Vote.', tg:'2P', c:'#00e0b0'},
+  {g:'nhie', n:'Never Have I Ever', d:'Keep score. No lying.', c:'#ff9a2e'},
+  {g:'deck', n:'Ask Me', d:'Questions in three spice levels', c:'#9d9da6'},
+  {g:'wyr', n:'Would You Rather', d:'Pick a side, defend it', c:'#7a7aff'},
+  {g:'kiss', n:'Kiss Cam', d:'The whole crowd is watching', tg:'LIVE', c:'#ff2340'}
+];
+$('#arcade').innerHTML = GAMES.map((k,i) => `<button class="gtile" data-g="${k.g}" style="--c:${k.c}"><span class="num">${String(i+1).padStart(2,'0')}</span>${k.tg ? `<span class="tg ${k.tg==='2P'?'p2':''}">${k.tg}</span>` : ''}<h3 class="chrome">${k.n.toUpperCase()}</h3><p>${k.d}</p></button>`).join('');
+const built = {};
+function openGame(g){
+  if(g === 'kiss') return kissCam();
+  const k = GAMES.find(x => x.g === g);
+  if(!built[g] && BUILD[g]){ BUILD[g](); built[g] = true }
+  $('#arcade').classList.add('hide');
+  $$('.game').forEach(x => x.classList.toggle('on', x.id === 'g-' + g));
+  $('#playTitle').textContent = k.n.toUpperCase(); $('#playSub').textContent = k.d;
+  $('#playBack').style.display = 'inline-flex';
+  if(g === 'wheel') drawWheel();
+  if(g === 'scratch') newTicket?.();
+}
+function closeGame(){
+  $('#arcade').classList.remove('hide'); $$('.game').forEach(x => x.classList.remove('on'));
+  $('#playTitle').textContent = 'ARCADE'; $('#playSub').textContent = '12 games for red lights, parking lots and waiting on the table.';
+  $('#playBack').style.display = 'none';
+}
+$('#arcade').addEventListener('click', e => { const t = e.target.closest('.gtile'); if(t){ SFX.nav(); openGame(t.dataset.g) } });
+$('#playBack').addEventListener('click', closeGame);
+const rand = a => a[Math.floor(Math.random()*a.length)];
+const shuffled = a => a.map(v => [Math.random(), v]).sort((x,y) => x[0]-y[0]).map(v => v[1]);
+const slamIn = el => { el.classList.remove('slam'); void el.offsetWidth; el.classList.add('slam') };
+let newTicket = null;
+
+const BUILD = {
+  /* ---------- drag tree: reflex duel ---------- */
+  tree(){
+    $('#g-tree').innerHTML = `<div class="duel">
+      <button class="lane" data-p="0"><div class="pn">${NAMES[0].toUpperCase()}</div><div class="rt" id="rt0">—</div><div class="wins" id="tw0">0 WINS</div><div class="hint">TAP ON GREEN</div></button>
+      <div class="card carbon tree">
+        <div class="row2"><i class="bulb2 sm w" data-k="s"></i><i class="bulb2 sm w" data-k="s"></i></div>
+        <i class="bulb2 a" data-k="a1"></i><i class="bulb2 a" data-k="a2"></i><i class="bulb2 a" data-k="a3"></i>
+        <i class="bulb2 g" data-k="g"></i><i class="bulb2 r" data-k="r"></i>
+        <button class="btn red" id="treeGo" style="min-width:150px">STAGE</button>
+        <div class="treeMsg" id="treeMsg">Fingers ready. Tap the instant it goes green.</div>
+      </div>
+      <button class="lane" data-p="1"><div class="pn">${NAMES[1].toUpperCase()}</div><div class="rt" id="rt1">—</div><div class="wins" id="tw1">0 WINS</div><div class="hint">TAP ON GREEN</div></button></div>`;
+    let state = 'idle', greenAt = 0, timers = [], times = [null, null], winner = -1;
+    const wins = [0, 0], bulbs = k => $$(`#g-tree .bulb2[data-k="${k}"]`), lit = (k, on = true) => bulbs(k).forEach(b => b.classList.toggle('on', on));
+    const msg = t => $('#treeMsg').textContent = t;
+    function reset(){ timers.forEach(clearTimeout); timers = []; ['s','a1','a2','a3','g','r'].forEach(k => lit(k, false)); $$('#g-tree .lane').forEach(l => l.classList.remove('win','foul')); times = [null, null]; winner = -1; $('#rt0').textContent = $('#rt1').textContent = '—' }
+    const at = (ms, fn) => timers.push(setTimeout(fn, ms));
+    $('#treeGo').addEventListener('click', () => {
+      if(state === 'staging') return; reset(); state = 'staging'; msg('Staged…');
+      lit('s'); tone(520, .08, 'square', .03);
+      const t1 = 900 + Math.random()*500;
+      ['a1','a2','a3'].forEach((k,i) => at(t1 + i*450, () => { lit(k); tone(700, .12, 'square', .05) }));
+      at(t1 + 900 + 450 + Math.random()*1300, () => { state = 'green'; greenAt = performance.now(); lit('g'); tone(1400, .35, 'square', .07); msg('GO GO GO') });
+    });
+    $$('#g-tree .lane').forEach(l => l.addEventListener('pointerdown', e => {
+      e.preventDefault(); const p = +l.dataset.p, o = 1 - p;
+      if(state === 'staging'){
+        timers.forEach(clearTimeout); state = 'done'; lit('r'); l.classList.add('foul'); $$('#g-tree .lane')[o].classList.add('win');
+        wins[o]++; $('#tw' + o).textContent = wins[o] + ' WINS'; $('#rt' + p).textContent = 'FOUL';
+        tone(160, .5, 'sawtooth', .08); msg(`${NAMES[p]} jumped the light. ${NAMES[o]} wins.`); return;
+      }
+      if(state !== 'green' || times[p] !== null) return;
+      times[p] = (performance.now() - greenAt)/1000; $('#rt' + p).textContent = times[p].toFixed(3) + ' s';
+      if(winner < 0){
+        winner = p; wins[p]++; l.classList.add('win'); $('#tw' + p).textContent = wins[p] + ' WINS';
+        msg(`${NAMES[p]} wins in ${times[p].toFixed(3)} s`); chime();
+        const r = l.getBoundingClientRect(); burst('sparks', 60, r.left + r.width/2, r.top + r.height/2);
+        at(1800, () => { state = 'done' });
+      }
+    }));
+  },
+
+  /* ---------- love slots ---------- */
+  slots(){
+    const R = [
+      ['Kiss','Whisper to','Massage','Tickle','Squeeze','Nibble','Hold','Trace a heart on'],
+      ['their hand','their neck','their cheek','their ear','their shoulder','their knee','their lips','their forehead'],
+      ['for 5 seconds','slowly','at the next red light','like you mean it','for 10 seconds','until the song ends','with eye contact','twice']
+    ], H = 90, REPS = 12;
+    $('#g-slots').innerHTML = `<div class="slots-wrap"><div class="card carbon machine"><div class="reels">${R.map((r,i) => `<div class="reel"><div class="strip" id="strip${i}">${Array.from({length:REPS}, () => r.map(x => `<div>${x}</div>`).join('')).join('')}</div></div>`).join('')}<div class="shade"></div></div></div>
+      <div><div class="label">Tonight's order</div><div class="result chrome" id="slotRes" style="font-family:var(--display);font-size:clamp(24px,2.6vw,38px);letter-spacing:.04em;line-height:1.25;margin:14px 0 26px;min-height:2.6em">—</div>
+      <button class="btn red" id="slotPull" style="min-width:220px">PULL THE LEVER</button><p class="fine" style="margin-top:18px">Driver keeps both hands on the wheel. Passenger does the rest.</p></div></div>`;
+    const pos = [0, 0, 0]; let spinning = false;
+    const place = (i, idx, ms) => { const st = $('#strip' + i); st.style.transition = ms ? `transform ${ms}ms cubic-bezier(.12,.82,.22,1)` : 'none'; st.style.transform = `translateY(${-(idx - 1)*H}px)` };
+    R.forEach((r,i) => { pos[i] = r.length + Math.floor(Math.random()*r.length); place(i, pos[i], 0) });
+    $('#slotPull').addEventListener('click', () => {
+      if(spinning) return; spinning = true; $('#slotRes').textContent = '…';
+      const pick = R.map(r => Math.floor(Math.random()*r.length));
+      let ticking = setInterval(() => tone(1500 + Math.random()*500, .02, 'square', .025), 70);
+      R.forEach((r,i) => {
+        const n = r.length; place(i, pos[i] % n + n, 0);
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          pos[i] = n*(REPS - 2) + pick[i]; place(i, pos[i], 1800 + i*650);
+          setTimeout(() => tone(300, .12, 'square', .06), 1800 + i*650);
+        }));
+      });
+      setTimeout(() => {
+        clearInterval(ticking); spinning = false;
+        const res = `${R[0][pick[0]]} ${R[1][pick[1]]} ${R[2][pick[2]]}.`;
+        $('#slotRes').textContent = res[0].toUpperCase() + res.slice(1); chime(); burst('hearts', 50);
+      }, 1800 + 2*650 + 100);
+    });
+  },
+
+  /* ---------- truth or dare ---------- */
+  tod(){
+    const T = {
+      Sweet: {truth:["What's your favorite memory of us?","When did you first know you liked me?","What song makes you think of me?","What's one thing I do that always makes you smile?","What's your dream trip with me?","What did you think when you first saw me?","What's the best date we've ever had?","What's something you've never told me?"],
+              dare:["Give me your best compliment, with eye contact.","Hold my hand until the next stop.","Sing the chorus of the song that's playing.","Do your best impression of me.","Tell me three things you love about me, fast.","Take a selfie together, right now.","Pick the next song and dedicate it to me.","Give me a 10-second shoulder rub (passenger only)."]},
+      Flirty: {truth:["What's the most attractive thing I do without realizing?","What outfit of mine is your favorite?","Where's the most fun place you've been kissed?","What's your favorite thing about my smile?","What's the boldest move you've ever made on a date?","What's one thing you want to do with me tonight?","What did you think about when you got ready tonight?","Rate tonight's chemistry from 1 to 10."],
+               dare:["Kiss me at the next red light.","Whisper something you've never said out loud.","Give me a flirty nickname and use it all night.","Describe our perfect night in three words.","Hold eye contact for 10 seconds without laughing.","Kiss the back of my hand like a gentleman.","Text me something flirty right now — while I'm next to you.","Slow dance with me in the parking lot."]},
+      Spicy: {truth:["What's the first thing you noticed about me tonight?","What's your biggest turn-on that you've never admitted?","What's a fantasy date you've never told anyone about?","Best kiss of your life — who, where, why?","What's something you want me to do more often?","What's the most daring thing on your bucket list?","What are you thinking about right now? Be honest.","What's my most irresistible feature?"],
+              dare:["Kiss me like it's the last red light on earth.","Whisper what you want to do after dinner.","Kiss my neck. Three seconds. Passenger only.","Let me pick your next dare.","Give me a kiss for every song we've played tonight.","Describe me in one word — and make it count.","Trade seats at the restaurant so we sit side by side.","Next red light: winner of a staring contest picks dessert."]}
+    };
+    let lvl = 'Flirty';
+    $('#g-tod').innerHTML = `<div class="chips" id="todLvl" style="justify-content:center;margin:0 0 22px">${Object.keys(T).map(k => `<button data-k="${k}" class="${k==='Flirty'?'on':''}">${k}</button>`).join('')}</div>
+      <div class="card gcard" id="todCard"><div class="label" id="todKind">Choose</div><div class="big-q chrome" id="todQ">Truth… or dare?</div></div>
+      <div class="grow"><button class="btn" id="todT">TRUTH</button><button class="btn red" id="todD">DARE</button><button class="btn ghost" id="todR">RANDOM</button></div>`;
+    $('#todLvl').addEventListener('click', e => { const b = e.target.closest('button'); if(!b) return; lvl = b.dataset.k; $$('#todLvl button').forEach(x => x.classList.toggle('on', x === b)) });
+    const show = kind => { $('#todKind').textContent = `${lvl} · ${kind}`; $('#todQ').textContent = rand(T[lvl][kind]); slamIn($('#todCard')); tone(kind === 'dare' ? 440 : 880, .2, 'triangle', .06); if(kind === 'dare') burst('sparks', 40) };
+    $('#todT').addEventListener('click', () => show('truth')); $('#todD').addEventListener('click', () => show('dare'));
+    $('#todR').addEventListener('click', () => show(Math.random() < .5 ? 'truth' : 'dare'));
+  },
+
+  /* ---------- tap war ---------- */
+  tap(){
+    $('#g-tap').innerHTML = `<div class="rope"><i id="ropeK"></i></div><div class="warMsg chrome" id="warMsg">Ready when you are</div>
+      <div class="war" style="margin-top:14px"><button class="lane" data-p="0"><div class="pn">${NAMES[0].toUpperCase()}</div><div class="rt" id="tc0">0</div><div class="hint">TAP TAP TAP</div></button>
+      <button class="lane" data-p="1"><div class="pn">${NAMES[1].toUpperCase()}</div><div class="rt" id="tc1">0</div><div class="hint">TAP TAP TAP</div></button></div>
+      <div class="grow"><button class="btn red" id="warGo">START · 10 SECONDS</button></div>`;
+    let live = false, c = [0, 0], tmr = 0;
+    const rope = () => { const d = c[1] - c[0], tot = Math.max(10, c[0] + c[1]); $('#ropeK').style.left = (50 + Math.max(-48, Math.min(48, d/tot*120))) + '%' };
+    $('#warGo').addEventListener('click', () => {
+      if(live) return; c = [0, 0]; $('#tc0').textContent = $('#tc1').textContent = 0; rope(); $$('#g-tap .lane').forEach(l => l.classList.remove('win'));
+      let n = 3; $('#warMsg').textContent = n; tone(660, .15, 'square', .05);
+      const cd = setInterval(() => {
+        n--; if(n > 0){ $('#warMsg').textContent = n; tone(660, .15, 'square', .05); return }
+        clearInterval(cd); live = true; $('#warMsg').textContent = 'GO!'; tone(1320, .3, 'square', .07);
+        let left = 10; tmr = setInterval(() => {
+          left--; $('#warMsg').textContent = left > 0 ? left + 's' : '';
+          if(left <= 0){
+            clearInterval(tmr); live = false;
+            const w = c[0] === c[1] ? -1 : c[0] > c[1] ? 0 : 1;
+            $('#warMsg').textContent = w < 0 ? 'Dead heat. Kiss to settle it.' : `${NAMES[w]} wins ${c[w]}–${c[1-w]}`;
+            if(w >= 0){ $$('#g-tap .lane')[w].classList.add('win'); chime(); SFX.cheer(); burst('hearts', 70) }
+          }
+        }, 1000);
+      }, 700);
+    });
+    $$('#g-tap .lane').forEach(l => l.addEventListener('pointerdown', e => {
+      e.preventDefault(); if(!live) return; const p = +l.dataset.p; c[p]++; $('#tc' + p).textContent = c[p]; rope();
+      if(c[p] % 5 === 0) tone(p ? 1200 : 900, .02, 'square', .02);
+    }));
+  },
+
+  /* ---------- scratch & win ---------- */
+  scratch(){
+    const PRIZES = ["Dessert's on me","A foot rub tonight","You pick the next 3 songs","A slow dance in the parking lot","Breakfast in bed","Winner plans the next date","One free “I was right”","A 10-minute massage","Movie night — your pick","Unlimited kisses at red lights","Shotgun, forever","A surprise is coming…"];
+    $('#g-scratch').innerHTML = `<div class="scratch-wrap"><div class="ticket"><div class="prize"><div class="label">You won</div><b class="chrome" id="prizeTxt"></b></div><canvas id="scr" width="1280" height="640"></canvas></div>
+      <div class="grow" style="margin:0"><button class="btn red" id="newTicket">NEW TICKET</button></div><p class="fine">Scratch the chrome with a finger.</p></div>`;
+    const cv = $('#scr'), x = cv.getContext('2d', {willReadFrequently:true});
+    let done = false, moves = 0, last = null;
+    newTicket = () => {
+      done = false; moves = 0; cv.style.opacity = 1; $('#prizeTxt').textContent = rand(PRIZES);
+      x.globalCompositeOperation = 'source-over';
+      const g = x.createLinearGradient(0,0,cv.width,cv.height);
+      [[0,'#f4f4f6'],[.25,'#8e8e96'],[.5,'#ffffff'],[.75,'#6d6d75'],[1,'#d6d6dc']].forEach(([o,c]) => g.addColorStop(o,c));
+      x.fillStyle = g; x.fillRect(0,0,cv.width,cv.height);
+      for(let i = 0; i < 260; i++){ x.fillStyle = `rgba(255,255,255,${Math.random()*.5})`; x.fillRect(Math.random()*cv.width, Math.random()*cv.height, 2, 2) }
+      x.fillStyle = 'rgba(20,20,24,.75)'; x.font = '64px Michroma'; x.textAlign = 'center'; x.textBaseline = 'middle';
+      x.fillText('SCRATCH HERE', cv.width/2, cv.height/2); x.font = '28px "Saira Condensed"'; x.fillText('B A N N I S T E R   ·   P R I Z E', cv.width/2, cv.height/2 + 70);
+    };
+    const pt = e => { const r = cv.getBoundingClientRect(); return [(e.clientX - r.left)/r.width*cv.width, (e.clientY - r.top)/r.height*cv.height] };
+    function scratchAt(e){
+      if(done) return; const [px, py] = pt(e);
+      x.globalCompositeOperation = 'destination-out'; x.lineCap = 'round'; x.lineWidth = 90;
+      x.beginPath(); x.moveTo(...(last || [px, py])); x.lineTo(px, py); x.stroke(); last = [px, py];
+      if(++moves % 6 === 0){ tone(3000 + Math.random()*1500, .015, 'square', .012); check() }
+    }
+    function check(){
+      const d = x.getImageData(0, 0, cv.width, cv.height).data; let clear = 0, n = 0;
+      for(let i = 3; i < d.length; i += 4*97){ n++; if(d[i] < 40) clear++ }
+      if(clear/n > .5){ done = true; cv.style.opacity = 0; chime(); SFX.cheer(); burst('hearts', 80) }
+    }
+    cv.addEventListener('pointerdown', e => { e.preventDefault(); cv.setPointerCapture(e.pointerId); last = null; scratchAt(e) });
+    cv.addEventListener('pointermove', e => { if(e.buttons || e.pointerType === 'touch') scratchAt(e) });
+    cv.addEventListener('pointerup', () => last = null);
+    $('#newTicket').addEventListener('click', newTicket);
+    newTicket();
+  },
+
+  /* ---------- most likely to ---------- */
+  mlt(){
+    const Q = shuffled(["fall asleep during a movie","plan a surprise trip","cry at a commercial","get lost even with GPS","order dessert first","start a dance party","text back in 0.2 seconds","get pulled over","forget an anniversary","adopt a stray animal","win a karaoke battle","eat the last fry","say “I love you” first","laugh at their own joke","plan the next date","steal the blankets","sing in the shower","become famous","be late tonight","propose a road trip at midnight"]);
+    let i = 0; const tally = [0, 0];
+    $('#g-mlt').innerHTML = `<div class="card gcard" id="mltCard"><div class="label">Who's more likely to…</div><div class="big-q chrome" id="mltQ"></div></div>
+      <div class="grow"><button class="btn" data-p="0">${NAMES[0].toUpperCase()}</button><button class="btn red" data-p="1">${NAMES[1].toUpperCase()}</button><button class="btn ghost" data-p="2">BOTH</button></div>
+      <div class="score2"><div>${NAMES[0].toUpperCase()}<b id="ml0">0</b></div><div>${NAMES[1].toUpperCase()}<b id="ml1">0</b></div></div>`;
+    const showQ = () => { $('#mltQ').textContent = Q[i % Q.length] + '?'; slamIn($('#mltCard')) };
+    $$('#g-mlt .grow .btn').forEach(b => b.addEventListener('click', () => {
+      const p = +b.dataset.p; if(p < 2) tally[p]++; else { tally[0]++; tally[1]++ }
+      $('#ml0').textContent = tally[0]; $('#ml1').textContent = tally[1];
+      tone(p === 1 ? 1100 : 800, .15, 'triangle', .06); i++; setTimeout(showQ, 180);
+    }));
+    showQ();
+  },
+
+  /* ---------- never have i ever ---------- */
+  nhie(){
+    const Q = shuffled(["sung in the car at a red light","gone skinny dipping","stalked an ex online","said “I love you” first","been on a blind date","faked being sick to skip something","cried during a Pixar movie","kissed someone in the rain","sent a text to the wrong person","danced on a table","gotten a speeding ticket","eaten dessert for dinner","pretended to know a song","fallen asleep on a date","had a crush on a teacher","gone a whole day in pajamas","taken a spontaneous road trip","laughed so hard I cried in public","been the first to text after a date","snuck into a hotel pool"]);
+    let i = 0; const sc = [0, 0];
+    $('#g-nhie').innerHTML = `<div class="card gcard" id="nhCard"><div class="label">Never have I ever…</div><div class="big-q chrome" id="nhQ"></div></div>
+      <div class="grow"><button class="btn" data-p="0">${NAMES[0].toUpperCase()} HAS</button><button class="btn red" data-p="1">${NAMES[1].toUpperCase()} HAS</button><button class="btn ghost" id="nhNext">NEXT</button></div>
+      <div class="score2"><div>${NAMES[0].toUpperCase()}<b id="nh0">0</b></div><div>${NAMES[1].toUpperCase()}<b id="nh1">0</b></div></div>`;
+    const showQ = () => { $('#nhQ').textContent = '…' + Q[i % Q.length] + '.'; slamIn($('#nhCard')) };
+    $$('#g-nhie .grow .btn[data-p]').forEach(b => b.addEventListener('click', () => { const p = +b.dataset.p; sc[p]++; $('#nh' + p).textContent = sc[p]; tone(p ? 1100 : 800, .15, 'triangle', .06); b.animate([{transform:'scale(1.12)'},{transform:'none'}], {duration:250}) }));
+    $('#nhNext').addEventListener('click', () => { i++; showQ() });
+    showQ();
+  }
+};
 
 /* ================= fx: hearts + sparks ================= */
 const fx = $('#fx'), fctx = fx.getContext('2d'), parts = [];
@@ -1434,7 +1725,9 @@ const SETS = {
   Dessert: ['Gelato','Crème brûlée','Molten cake','Cheesecake','Churros','Tiramisu','Donuts','Skip it — drinks'],
   'Next stop': ['Rooftop bar','Scenic overlook','Late-night diner','Arcade','Live music','Bookstore','Long drive home','Stargazing'],
   Drinks: ['Old fashioned','Espresso martini','Champagne','Margarita','Negroni','Mocktail','Red wine','Surprise me'],
-  Loser: ['Picks the music','Buys dessert','Gives a compliment','Plans next date','Slow dances in the parking lot','Tells a secret']
+  Loser: ['Picks the music','Buys dessert','Gives a compliment','Plans next date','Slow dances in the parking lot','Tells a secret'],
+  'Next date': ['Sunset picnic','Cooking class','Concert','Coast road trip','Spa day','Bowling','Wine tasting','Hot air balloon'],
+  'Compliment': ['Their smile','Their laugh','Their style','Their eyes','Their kindness','Their humor','Their voice','Their vibe']
 };
 // what each Red Light result says and does: [subtitle, effect, [button label, action]]
 const RED = {
@@ -1511,7 +1804,7 @@ document.fonts?.ready.then(drawWheel);
 
 /* red light button: straight to a Red Light spin */
 $('#rlBtn').addEventListener('click', () => {
-  go('play'); $('#playSeg button[data-g="wheel"]').click();
+  go('play'); openGame('wheel');
   if(setName !== 'Red Light') $('#wheelSets button[data-k="Red Light"]').click();
   setTimeout(spinWheel, 400);
 });
@@ -1562,7 +1855,6 @@ function kissCam(){
   [523, 659, 784, 1047].forEach((f,i) => tone(f, .25, 'triangle', .07, i*.12)); SFX.cheer();
   burst('hearts', 70); kcTimer = setInterval(() => burst('hearts', 14, innerWidth*(.2 + Math.random()*.6), innerHeight*.8), 700);
 }
-$('#kcBtn').addEventListener('click', kissCam);
 $('#kisscam').addEventListener('click', () => { $('#kisscam').classList.remove('on'); clearInterval(kcTimer) });
 
 /* ================= race ================= */
