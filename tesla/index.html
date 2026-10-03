@@ -119,10 +119,12 @@ main{position:relative;overflow:hidden}
 .gauge .unit{font-family:var(--cond);letter-spacing:.4em;color:var(--dim);margin-top:10px;font-size:14px}
 
 /* ---------- ambience ---------- */
-.scenes{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.scenes{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 .scene{height:230px;border-radius:var(--r);overflow:hidden;position:relative;text-align:left;padding:26px;display:flex;flex-direction:column;justify-content:flex-end;
   box-shadow:inset 0 0 0 1px var(--line-hi),0 30px 50px -30px #000;transition:transform .3s}
 .scene:active{transform:scale(.97)}
+.scene canvas.sw{filter:none;transform:none;animation:none;width:100%;height:100%}
+.scene .live-tag{position:absolute;top:18px;right:18px;z-index:1;font-family:var(--cond);font-size:11px;letter-spacing:.3em;padding:6px 10px;border-radius:999px;background:rgba(227,25,55,.9);color:#fff}
 .scene .sw{position:absolute;inset:0;filter:blur(18px) saturate(1.2);transform:scale(1.3);animation:drift 12s ease-in-out infinite alternate}
 .scene::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.85),transparent 65%)}
 .scene h3,.scene p{position:relative;z-index:1}
@@ -146,6 +148,9 @@ main{position:relative;overflow:hidden}
 @keyframes breathe{0%,100%{opacity:.35}50%{opacity:0}}
 #ambient .amb-word{position:absolute;left:0;right:0;bottom:9vh;text-align:center;font-family:var(--display);letter-spacing:.8em;font-size:16px;color:rgba(255,255,255,.35)}
 #ambient .amb-time{position:absolute;left:0;right:0;top:40%;transform:translateY(-50%);text-align:center;font-family:var(--display);font-size:clamp(70px,12vw,180px);color:rgba(255,255,255,.12);letter-spacing:.05em}
+#ambCanvas{position:absolute;inset:0;width:100%;height:100%;display:none}
+#ambient.cv .blob,#ambient.cv .breath,#ambient.cv .amb-time{display:none}
+#ambient.cv #ambCanvas{display:block}
 #ambDim{position:absolute;inset:0;background:#000;pointer-events:none}
 
 /* ---------- soundtrack ---------- */
@@ -190,34 +195,67 @@ main{position:relative;overflow:hidden}
 .chips button{min-height:48px;padding:0 20px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--line-hi);font-family:var(--cond);letter-spacing:.16em;text-transform:uppercase;font-size:14px;color:var(--dim)}
 .chips button.on{color:#000;background:#e8e8ec}
 
-/* ---------- launch ---------- */
-.launch{display:grid;grid-template-columns:1.3fr 1fr;gap:24px;min-height:100%}
-.speedo{position:relative;display:grid;place-items:center;padding:30px;overflow:hidden}
-.speedo svg{width:min(100%,62vh);height:auto}
+/* ---------- race ---------- */
+.carbon{background:
+  linear-gradient(160deg,rgba(255,255,255,.06),rgba(0,0,0,.55) 40%,rgba(0,0,0,.82)),
+  linear-gradient(27deg,#151517 5px,transparent 5px) 0 5px,
+  linear-gradient(207deg,#151517 5px,transparent 5px) 10px 0,
+  linear-gradient(27deg,#232326 5px,transparent 5px) 0 10px,
+  linear-gradient(207deg,#232326 5px,transparent 5px) 10px 5px,
+  linear-gradient(90deg,#1b1b1e 10px,transparent 10px),
+  linear-gradient(#1d1d20 25%,#19191b 25%,#19191b 50%,transparent 50%,transparent 75%,#242427 75%,#242427);
+  background-color:#131315;background-size:100% 100%,20px 20px,20px 20px,20px 20px,20px 20px,20px 20px,20px 20px}
+.race{display:grid;grid-template-rows:auto 1fr auto;gap:18px;min-height:100%}
+.shift{display:flex;align-items:center;gap:20px;padding:14px 26px}
+.leds{flex:1;display:flex;gap:8px;justify-content:center}
+.led{flex:1;max-width:58px;height:18px;border-radius:9px;background:#141416;box-shadow:inset 0 1px 3px #000,inset 0 0 0 1px rgba(255,255,255,.06);transition:background .06s,box-shadow .06s}
+.led.on.g{background:#2bff88;box-shadow:0 0 16px #2bff88,inset 0 1px 1px rgba(255,255,255,.7)}
+.led.on.y{background:#ffb020;box-shadow:0 0 16px #ffb020,inset 0 1px 1px rgba(255,255,255,.7)}
+.led.on.r{background:#ff2340;box-shadow:0 0 18px #ff2340,inset 0 1px 1px rgba(255,255,255,.7)}
+.leds.flash .led{animation:ledflash .14s steps(1) infinite}
+@keyframes ledflash{0%{background:#fff;box-shadow:0 0 24px #fff}50%{background:#ff2340;box-shadow:0 0 24px #ff2340}}
+.shift .tag{font-family:var(--display);font-size:14px;letter-spacing:.24em;color:var(--dim);min-width:130px}
+.shift .tag.r{text-align:right;color:var(--txt)}
+.cluster{display:grid;grid-template-columns:1fr 1.45fr 1fr;gap:18px;min-height:0}
+.pod{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;gap:12px;overflow:hidden}
+.pod svg,.pod canvas{width:100%;max-width:min(290px,34vh);aspect-ratio:1;height:auto}
+.pod .read{font-family:var(--display);font-size:clamp(24px,2.4vw,34px);line-height:1}
+.pod .read small{font-family:var(--cond);font-size:14px;letter-spacing:.3em;color:var(--dim);margin-left:8px}
+.gread{display:flex;gap:26px;font-family:var(--cond);letter-spacing:.24em;font-size:12px;color:var(--dim);text-align:center}
+.gread b{display:block;font-family:var(--display);font-weight:400;font-size:19px;color:var(--txt);letter-spacing:.02em;margin-top:4px}
+.speedo{position:relative;display:grid;place-items:center;padding:18px;overflow:hidden}
+.speedo svg{width:100%;max-width:min(100%,50vh);height:auto;position:relative}
 .speedo .center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none}
-.speedo .mph{font-family:var(--display);font-size:clamp(90px,10vw,150px);line-height:1;letter-spacing:-.02em}
+.speedo .mph{font-family:var(--display);font-size:clamp(70px,7.5vw,124px);line-height:1;letter-spacing:-.02em}
 .speedo .mph-u{font-family:var(--cond);letter-spacing:.5em;color:var(--dim);margin-top:8px}
-.speedo .timer{font-family:var(--display);font-size:28px;margin-top:22px;letter-spacing:.1em;color:var(--red)}
+.speedo .timer{font-family:var(--display);font-size:26px;margin-top:16px;letter-spacing:.1em;color:#ff3b55;text-shadow:0 0 18px rgba(227,25,55,.7)}
 .speedo.go{animation:shake .08s linear infinite}
 @keyframes shake{0%{transform:translate(0,0)}25%{transform:translate(1.5px,-1px)}50%{transform:translate(-1px,1.5px)}75%{transform:translate(1px,1px)}}
 .streaks{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .4s}
 .speedo.go .streaks{opacity:1}
 .streaks i{position:absolute;height:1px;width:40%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.7),transparent);animation:zip .5s linear infinite}
 @keyframes zip{from{transform:translateX(160%)}to{transform:translateX(-260%)}}
-.lside{display:flex;flex-direction:column;gap:24px}
-.splits{padding:30px 32px}
-.split{display:flex;justify-content:space-between;align-items:baseline;padding:18px 0;border-bottom:1px solid var(--line)}
-.split:last-child{border:0}
-.split .v{font-family:var(--display);font-size:36px}
-.split .v.best{font-size:22px;color:var(--dim)}
-.lcontrols{padding:28px 32px;display:flex;flex-direction:column;gap:14px}
-.lcontrols .state{font-family:var(--cond);letter-spacing:.3em;text-transform:uppercase;font-size:15px;color:var(--dim);display:flex;align-items:center;gap:12px}
+.tele{display:grid;grid-template-columns:repeat(4,1fr) 1.8fr;gap:18px}
+.stat{padding:18px 22px;display:flex;flex-direction:column;justify-content:space-between;gap:10px}
+.stat .v{font-family:var(--display);font-size:clamp(20px,2.1vw,30px)}
+.stat .v.best{color:var(--dim)}
+.lcontrols{padding:16px 20px;display:flex;flex-direction:column;gap:10px}
+.lcontrols .row{display:flex;gap:12px}
+.lcontrols .row .btn{flex:1;min-height:54px;font-size:14px;padding:0 12px}
+.lcontrols .state{font-family:var(--cond);letter-spacing:.3em;text-transform:uppercase;font-size:14px;color:var(--dim);display:flex;align-items:center;gap:12px}
 .dot{width:10px;height:10px;border-radius:50%;background:var(--mute)}
 .dot.armed{background:#ffb020;box-shadow:0 0 12px #ffb020;animation:blink 1s infinite}
 .dot.live{background:var(--red);box-shadow:0 0 14px var(--red)}
 .dot.ok{background:#3ce08a;box-shadow:0 0 12px #3ce08a}
 @keyframes blink{50%{opacity:.25}}
-.fine{color:var(--mute);font-size:13px;line-height:1.5;letter-spacing:.03em}
+.fine{color:var(--mute);font-size:12.5px;line-height:1.45;letter-spacing:.03em}
+
+/* racing stripes on the cockpit hero */
+.hero>*{position:relative}
+.hero .stripes{position:absolute;top:-25%;right:14%;height:150%;display:flex;gap:12px;transform:rotate(14deg);pointer-events:none}
+.hero .stripes i{display:block;width:30px;background:linear-gradient(180deg,transparent,rgba(227,25,55,.85) 25%,rgba(227,25,55,.85) 75%,transparent);box-shadow:0 0 40px rgba(227,25,55,.25)}
+.hero .stripes i:last-child{width:10px;background:linear-gradient(180deg,transparent,rgba(235,235,240,.8) 25%,rgba(235,235,240,.8) 75%,transparent)}
+.hero .streak{position:absolute}
 
 /* ---------- ignition ---------- */
 #ignite{position:fixed;inset:0;z-index:100;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:56px;background:radial-gradient(ellipse at 50% 55%,#141416 0%,#000 60%);transition:opacity 1s,visibility 1s}
@@ -251,7 +289,9 @@ body.lit #ignite{opacity:0;visibility:hidden}
   nav .spacer{display:none}
   nav button{width:64px;height:68px;font-size:9px}
   .panel{padding:22px 16px 30px}
-  .cockpit,.launch,.deck-wrap,.wheel-wrap{grid-template-columns:1fr}
+  .cockpit,.cluster,.deck-wrap,.wheel-wrap{grid-template-columns:1fr}
+  .tele{grid-template-columns:1fr 1fr}.lcontrols{grid-column:1/-1}
+  .shift .tag{display:none}
   .hero{grid-row:auto;padding:30px 24px}
   .scenes,.vibes{grid-template-columns:1fr 1fr}
   .wyr{grid-template-columns:1fr}
@@ -259,8 +299,10 @@ body.lit #ignite{opacity:0;visibility:hidden}
   .face{padding:30px}
   .wheel-box{margin:0 auto;width:min(80vw,400px);height:min(80vw,400px)}
   .gauge svg{width:130px;height:130px}
+  .scenes{grid-template-columns:1fr 1fr}
 }
 @media (max-width:560px){.scenes,.vibes{grid-template-columns:1fr}}
+@media (max-height:760px) and (min-width:1001px){.fine{display:none}}
 @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important}}
 </style>
 </head>
@@ -299,7 +341,7 @@ body.lit #ignite{opacity:0;visibility:hidden}
     <button data-p="sound"><svg viewBox="0 0 32 32"><path d="M12 24V8l14-3v16"/><circle cx="8.5" cy="24" r="3.5"/><circle cx="22.5" cy="21" r="3.5"/></svg>Sound</button>
     <button data-p="play"><svg viewBox="0 0 32 32"><rect x="6" y="6" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="1.3"/><circle cx="20" cy="20" r="1.3"/><circle cx="16" cy="16" r="1.3"/></svg>Play</button>
     <div class="spacer"></div>
-    <button data-p="launch"><svg viewBox="0 0 32 32"><path d="M18 4L8 18h7l-2 10 11-15h-7z"/></svg>Launch</button>
+    <button data-p="race"><svg viewBox="0 0 32 32"><path d="M18 4L8 18h7l-2 10 11-15h-7z"/></svg>Race</button>
   </nav>
 
   <main>
@@ -307,6 +349,7 @@ body.lit #ignite{opacity:0;visibility:hidden}
     <section class="panel on" id="p-cockpit">
       <div class="cockpit stagger">
         <div class="card hero">
+          <div class="stripes"><i></i><i></i></div>
           <div class="streak"></div>
           <div>
             <div class="label">Local time</div>
@@ -341,13 +384,7 @@ body.lit #ignite{opacity:0;visibility:hidden}
         </div>
 
         <div class="card gauge">
-          <svg viewBox="0 0 200 200">
-            <defs>
-              <linearGradient id="gChrome" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".45" stop-color="#7d7d85"/><stop offset=".55" stop-color="#f4f4f6"/><stop offset="1" stop-color="#55555c"/></linearGradient>
-            </defs>
-            <circle cx="100" cy="100" r="84" fill="none" stroke="#1a1a1d" stroke-width="12" stroke-dasharray="395.8 527.8" transform="rotate(135 100 100)" stroke-linecap="round"/>
-            <circle id="miniArc" cx="100" cy="100" r="84" fill="none" stroke="url(#gChrome)" stroke-width="12" stroke-dasharray="0 527.8" transform="rotate(135 100 100)" stroke-linecap="round" style="transition:stroke-dasharray .6s"/>
-          </svg>
+          <svg viewBox="0 0 400 400" id="miniDial"></svg>
           <div>
             <div class="label">GPS Speed</div>
             <div class="read chrome" id="miniSpeed">0</div>
@@ -421,31 +458,44 @@ body.lit #ignite{opacity:0;visibility:hidden}
       </div>
     </section>
 
-    <!-- LAUNCH -->
-    <section class="panel" id="p-launch">
-      <div class="launch">
-        <div class="card speedo" id="speedo">
-          <div class="streaks" id="streaks"></div>
-          <svg viewBox="0 0 400 400" id="bigDial"></svg>
-          <div class="center">
-            <div class="mph chrome" id="bigSpeed">0</div>
-            <div class="mph-u">MPH</div>
-            <div class="timer" id="runTimer">0.00</div>
+    <!-- RACE -->
+    <section class="panel" id="p-race">
+      <div class="race">
+        <div class="card carbon shift">
+          <span class="tag" id="gearTag">READY</span>
+          <div class="leds" id="leds"></div>
+          <span class="tag r" id="kwTag">0 KW</span>
+        </div>
+        <div class="cluster">
+          <div class="card carbon pod">
+            <div class="label">Power</div>
+            <svg viewBox="0 0 400 400" id="powDial"></svg>
+            <div class="read chrome" id="powRead">0<small>KW</small></div>
+          </div>
+          <div class="card carbon speedo" id="speedo">
+            <div class="streaks" id="streaks"></div>
+            <svg viewBox="0 0 400 400" id="bigDial"></svg>
+            <div class="center">
+              <div class="mph chrome" id="bigSpeed">0</div>
+              <div class="mph-u">MPH</div>
+              <div class="timer" id="runTimer">0.00</div>
+            </div>
+          </div>
+          <div class="card carbon pod">
+            <div class="label">G-Force</div>
+            <canvas id="gMeter" width="560" height="560"></canvas>
+            <div class="gread"><div>LONG<b id="gLon">0.00</b></div><div>LAT<b id="gLat">0.00</b></div><div>PEAK<b id="gPeak">0.00</b></div></div>
           </div>
         </div>
-        <div class="lside">
-          <div class="card splits">
-            <div class="label" style="margin-bottom:6px">Run sheet</div>
-            <div class="split"><span class="label">0 – 30</span><span class="v" id="s30">—</span></div>
-            <div class="split"><span class="label">0 – 60</span><span class="v chrome" id="s60">—</span></div>
-            <div class="split"><span class="label">Peak</span><span class="v" id="sPeak">—</span></div>
-            <div class="split"><span class="label">Best 0 – 60</span><span class="v best" id="sBest">—</span></div>
-          </div>
+        <div class="tele">
+          <div class="card stat"><span class="label">0 – 30</span><span class="v" id="s30">—</span></div>
+          <div class="card stat"><span class="label">0 – 60</span><span class="v chrome" id="s60">—</span></div>
+          <div class="card stat"><span class="label">Peak</span><span class="v" id="sPeak">—</span></div>
+          <div class="card stat"><span class="label">Best 0 – 60</span><span class="v best" id="sBest">—</span></div>
           <div class="card lcontrols">
             <div class="state"><span class="dot" id="lDot"></span><span id="lState">Standby</span></div>
-            <button class="btn red" id="armBtn">Arm GPS timer</button>
-            <button class="btn ghost" id="demoBtn">Show-off demo</button>
-            <p class="fine">Passenger-operated. Closed course only — obey the law, keep it classy. GPS updates about once a second, so times are approximate; the car's own Track Mode is the real stopwatch.</p>
+            <div class="row"><button class="btn red" id="armBtn">Arm GPS timer</button><button class="btn ghost" id="demoBtn">Show-off demo</button></div>
+            <p class="fine">Passenger-operated · closed course only. GPS-based (~1 update/sec), so times, kW and g are estimates.</p>
           </div>
         </div>
       </div>
@@ -453,7 +503,7 @@ body.lit #ignite{opacity:0;visibility:hidden}
   </main>
 </div>
 
-<div id="ambient"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="breath"></div><div class="amb-time" id="ambTime"></div><div class="amb-word" id="ambWord"></div><div id="ambDim"></div></div>
+<div id="ambient"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><canvas id="ambCanvas"></canvas><div class="breath"></div><div class="amb-time" id="ambTime"></div><div class="amb-word" id="ambWord"></div><div id="ambDim"></div></div>
 <div class="toast" id="toast"></div>
 
 <script>
@@ -520,7 +570,7 @@ document.addEventListener('visibilitychange', () => { if(document.visibilityStat
 $('#startBtn').addEventListener('click', () => {
   revSound(); keepAwake();
   let b = 0; const surge = setInterval(()=>{ b += .08; boost = Math.sin(Math.min(b,Math.PI))*.9; if(b>=Math.PI){ boost=0; clearInterval(surge) } }, 30);
-  setTimeout(()=>document.body.classList.add('lit'), 500);
+  setTimeout(()=>{ document.body.classList.add('lit'); setTimeout(sweepAll, 700) }, 500);
   startGeo();
 });
 $('#fsBtn').addEventListener('click', () => {
@@ -534,6 +584,7 @@ $$('nav button').forEach(b => b.addEventListener('click', () => {
   $$('nav button').forEach(x => x.classList.toggle('on', x===b));
   $$('.panel').forEach(p => p.classList.toggle('on', p.id === 'p-'+b.dataset.p));
   store.set('tab', b.dataset.p);
+  raceOn = b.dataset.p === 'race'; ambPreview = b.dataset.p === 'ambience';
   if(b.dataset.p==='play') drawWheel();
 }));
 
@@ -597,7 +648,8 @@ function moon(){
 moon();
 
 /* ================= geolocation: speed + weather ================= */
-let here = null, geoId = null, speedListeners = [], wxDone = false;
+let here = null, geoId = null, speedListeners = [], wxDone = false, prevFix = null;
+const CAR_KG = 1900, gps = {mph:0, lon:0, lat:0, kw:0};
 const WMO = {0:'Clear',1:'Mostly clear',2:'Partly cloudy',3:'Overcast',45:'Fog',48:'Fog',51:'Drizzle',53:'Drizzle',55:'Drizzle',61:'Rain',63:'Rain',65:'Heavy rain',71:'Snow',73:'Snow',75:'Snow',80:'Showers',81:'Showers',82:'Showers',95:'Storms',96:'Storms',99:'Storms'};
 function startGeo(){
   if(!navigator.geolocation){ $('#gpsState').textContent = 'no GPS'; return }
@@ -606,6 +658,19 @@ function startGeo(){
   geoId = navigator.geolocation.watchPosition(p => {
     here = {lat:p.coords.latitude, lon:p.coords.longitude};
     const mph = p.coords.speed != null && p.coords.speed >= 0 ? p.coords.speed * 2.23694 : 0;
+    const t = p.timestamp/1000, v = mph/2.23694, h = p.coords.heading;
+    if(prevFix){
+      const dt = t - prevFix.t;
+      if(dt > .2 && dt < 5){
+        const clampG = g => Math.max(-1.6, Math.min(1.6, g));
+        let lat = 0;
+        if(h != null && prevFix.h != null && !isNaN(h) && !isNaN(prevFix.h) && v > 2){ const dh = ((h - prevFix.h + 540) % 360 - 180) * Math.PI/180; lat = v*dh/dt/9.81 }
+        gps.lon = gps.lon*.4 + clampG((v - prevFix.v)/dt/9.81)*.6;
+        gps.lat = gps.lat*.4 + clampG(lat)*.6;
+      }
+    }
+    prevFix = {t, v, h};
+    gps.mph = mph; gps.kw = Math.max(0, (CAR_KG*gps.lon*9.81*v + .31*v*v*v)/1000);
     $('#gpsState').textContent = 'GPS live';
     speedListeners.forEach(fn => fn(mph, p.timestamp));
     if(!wxDone){ wxDone = true; weather() }
@@ -622,14 +687,49 @@ async function weather(){
     $('#skySunset').innerHTML = `${t.hm}<span>${t.ap}</span>`;
   }catch{ $('#hdrWx').textContent = '' }
 }
-// mini gauge
-speedListeners.push(mph => {
-  $('#miniSpeed').textContent = Math.round(mph);
-  $('#miniArc').setAttribute('stroke-dasharray', `${Math.min(mph/160,1)*395.8} 527.8`);
-});
+/* ================= racing gauges ================= */
+let gid = 0;
+function makeGauge(svg, o){
+  const id = 'gg' + (gid++), A0 = 135, SW = 270, C = 200;
+  const P = (deg, r) => { const a = deg*Math.PI/180; return [C + r*Math.cos(a), C + r*Math.sin(a)] };
+  const arc = (v0, v1, r) => { const [x0,y0] = P(A0+SW*v0/o.max, r), [x1,y1] = P(A0+SW*v1/o.max, r); return `M${x0} ${y0} A${r} ${r} 0 ${SW*(v1-v0)/o.max > 180 ? 1 : 0} 1 ${x1} ${y1}` };
+  let s = `<defs>
+    <linearGradient id="${id}b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".3" stop-color="#55555d"/><stop offset=".5" stop-color="#f7f7f9"/><stop offset=".75" stop-color="#3e3e46"/><stop offset="1" stop-color="#d0d0d6"/></linearGradient>
+    <linearGradient id="${id}a" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#8e8e96"/><stop offset=".55" stop-color="#fff"/><stop offset="1" stop-color="#ff2340"/></linearGradient>
+    <radialGradient id="${id}h" cx=".35" cy=".3"><stop offset="0" stop-color="#fff"/><stop offset=".5" stop-color="#8a8a92"/><stop offset="1" stop-color="#1c1c20"/></radialGradient>
+    <radialGradient id="${id}f"><stop offset="0" stop-color="#18181c"/><stop offset=".85" stop-color="#060607"/><stop offset="1" stop-color="#000"/></radialGradient>
+    <filter id="${id}g" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+    <circle cx="200" cy="200" r="198" fill="url(#${id}b)"/>
+    <circle cx="200" cy="200" r="187" fill="url(#${id}f)" stroke="#000" stroke-width="3"/>
+    <path d="${arc(o.red, o.max, 172)}" fill="none" stroke="#e31937" stroke-width="9" opacity=".9" filter="url(#${id}g)"/>`;
+  for(let v = 0; v <= o.max; v += o.minor){
+    const deg = A0 + SW*v/o.max, major = v % o.major === 0, [x1,y1] = P(deg, 178), [x2,y2] = P(deg, major ? 152 : 164);
+    s += `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${v >= o.red ? '#ff4060' : '#fff'}" stroke-opacity="${major ? .95 : .4}" stroke-width="${major ? 3 : 1.4}"/>`;
+    if(o.labelEvery && v % o.labelEvery === 0){ const [tx,ty] = P(deg, 128); s += `<text x="${tx}" y="${ty}" fill="${v >= o.red ? '#ff4060' : '#b5b5bd'}" font-family="Michroma" font-size="${o.font||16}" text-anchor="middle" dominant-baseline="middle">${v/(o.div||1)}</text>` }
+  }
+  const nf = o.needleFrom || 0;
+  s += `<path d="${arc(0, o.max, 104)}" fill="none" stroke="#141417" stroke-width="7" stroke-linecap="round"/>
+    <path class="live" d="${arc(0, o.max, 104)}" fill="none" stroke="url(#${id}a)" stroke-width="7" stroke-linecap="round" pathLength="1000" stroke-dasharray="0 1000" filter="url(#${id}g)"/>
+    <g class="nd" transform="rotate(${A0+90} 200 200)"><path d="M196 ${200-nf} L199 24 L201 24 L204 ${200-nf} Z" fill="#ff2340" filter="url(#${id}g)"/></g>
+    ${o.hollow ? '' : `<circle cx="200" cy="200" r="24" fill="url(#${id}h)" stroke="#000" stroke-width="2"/>`}
+    ${o.unit ? `<text x="200" y="300" fill="#6a6a72" font-family="Saira Condensed" font-size="18" letter-spacing="6" text-anchor="middle">${o.unit}</text>` : ''}`;
+  svg.innerHTML = s;
+  const live = svg.querySelector('.live'), nd = svg.querySelector('.nd');
+  return {
+    frac(p){ p = Math.max(0, Math.min(1, p)); live.setAttribute('stroke-dasharray', `${p*1000} 1000`); nd.setAttribute('transform', `rotate(${A0 + SW*p + 90} 200 200)`) },
+    set(v){ this.frac(v/o.max) }
+  };
+}
+const miniG = makeGauge($('#miniDial'), {max:160, minor:10, major:40, labelEvery:40, red:130, font:24});
+const speedG = makeGauge($('#bigDial'), {max:160, minor:5, major:20, labelEvery:20, red:130, needleFrom:118, hollow:true, font:15});
+const powG = makeGauge($('#powDial'), {max:400, minor:10, major:50, labelEvery:100, red:340, font:20, unit:'KW'});
+let sweeping = false;
+speedListeners.push(mph => { $('#miniSpeed').textContent = Math.round(mph); if(!sweeping) miniG.set(mph) });
 
 /* ================= ambience ================= */
 const SCENES = [
+  {n:'Night Run', d:'Chrome sun, endless highway', c:['#fff','#e31937','#333'], cv:'run', w:'N I G H T   R U N'},
+  {n:'Warp', d:'Ludicrous, visualized', c:['#fff','#e31937','#333'], cv:'warp', w:'W A R P'},
   {n:'Liquid Chrome', d:'Mercury and moonlight', c:['#ffffff','#7b7b86','#2a2a33'], w:'C H R O M E'},
   {n:'Midnight', d:'Deep cobalt after dark', c:['#1b3cff','#0a1a66','#5a7bff'], w:'M I D N I G H T'},
   {n:'Ember', d:'Low fire, slow burn', c:['#ff3b1f','#ff9a2e','#7a0b0b'], w:'E M B E R'},
@@ -638,18 +738,142 @@ const SCENES = [
   {n:'Aurora', d:'Teal shimmer, northern sky', c:['#00e0b0','#1460ff','#06352e'], w:'A U R O R A'}
 ];
 $('#scenes').innerHTML = SCENES.map((s,i)=>`<button class="scene" data-i="${i}">
-  <div class="sw" style="background:radial-gradient(circle at 25% 30%,${s.c[0]},transparent 55%),radial-gradient(circle at 75% 70%,${s.c[1]},transparent 55%),radial-gradient(circle at 60% 20%,${s.c[2]},transparent 60%),#000"></div>
+  ${s.cv ? `<canvas class="sw" data-cv="${s.cv}"></canvas><span class="live-tag">LIVE</span>` :
+  `<div class="sw" style="background:radial-gradient(circle at 25% 30%,${s.c[0]},transparent 55%),radial-gradient(circle at 75% 70%,${s.c[1]},transparent 55%),radial-gradient(circle at 60% 20%,${s.c[2]},transparent 60%),#000"></div>`}
   <h3>${s.n.toUpperCase()}</h3><p>${s.d}</p></button>`).join('');
+
+function makeRun(){
+  const stars = Array.from({length:140}, () => [Math.random(), Math.random(), Math.random()]);
+  const lanes = [-1.05,-.4,.4,1.05];
+  const car = z => { const x = lanes[Math.floor(Math.random()*4)]; return {x, z: z ?? 3 + Math.random()*55} };
+  const cars = Array.from({length:16}, () => car());
+  const ridge = (u, k) => Math.abs(Math.sin(u*6.3 + k))*.5 + Math.abs(Math.sin(u*15.1 + k*2))*.3 + Math.abs(Math.sin(u*39 + k*3))*.12;
+  return (c, w, h, t, dt) => {
+    const hz = h*.55, cx = w/2, proj = (X, z) => [cx + X*w*.42/z, hz + (h - hz)/z];
+    let g = c.createLinearGradient(0,0,0,hz); g.addColorStop(0,'#000'); g.addColorStop(1,'#120a10');
+    c.fillStyle = g; c.fillRect(0,0,w,hz);
+    for(const s of stars){ c.globalAlpha = (.15 + .6*s[2]) * (.6 + .4*Math.sin(t*2 + s[0]*60)); c.fillStyle = '#fff'; c.fillRect(s[0]*w, s[1]*hz*.8, 1.3, 1.3) }
+    c.globalAlpha = 1;
+    // chrome-to-red sun with scrolling cut bars
+    const R = Math.min(w, h)*.24, sy = hz - R*.2;
+    c.save(); c.beginPath(); c.rect(0,0,w,hz); c.clip();
+    const sg = c.createLinearGradient(0, sy-R, 0, sy+R);
+    sg.addColorStop(0,'#ffffff'); sg.addColorStop(.38,'#9d9da6'); sg.addColorStop(.5,'#ff3b55'); sg.addColorStop(1,'#4a000c');
+    c.shadowColor = 'rgba(255,40,70,.55)'; c.shadowBlur = R*.5;
+    c.beginPath(); c.arc(cx, sy, R, 0, 7); c.fillStyle = sg; c.fill(); c.shadowBlur = 0;
+    c.fillStyle = '#0d080c';
+    const top = sy - R*.45;
+    for(let i = 0; i < 8; i++){ const k = (i + (t*.35) % 1)/8; c.fillRect(cx - R, top + k*(hz - top), R*2, 1 + k*R*.075) }
+    c.restore();
+    // mountains with a chrome rim
+    for(const [k, amp, col] of [[2.1, .16, '#060507'], [4.7, .09, '#030304']]){
+      c.beginPath(); c.moveTo(0, hz);
+      for(let x = 0; x <= w; x += 6){ const u = x/w, dip = 1 - .75*Math.exp(-((u - .5)**2)/.015); c.lineTo(x, hz - ridge(u, k)*h*amp*dip) }
+      c.lineTo(w, hz); c.closePath(); c.fillStyle = col; c.fill();
+      const rim = c.createLinearGradient(0,0,w,0);
+      [[0,'rgba(80,80,90,.2)'],[.3,'rgba(240,240,250,.8)'],[.5,'rgba(255,60,85,.5)'],[.7,'rgba(240,240,250,.8)'],[1,'rgba(80,80,90,.2)']].forEach(([o,cc]) => rim.addColorStop(o,cc));
+      c.strokeStyle = rim; c.lineWidth = 1.2; c.stroke();
+    }
+    // ground + perspective grid
+    c.fillStyle = '#020203'; c.fillRect(0, hz, w, h - hz);
+    const off = (t*2.2) % 1;
+    for(let k = 0; k < 42; k++){
+      const z = .9 + (k + 1 - off)*.7, y = hz + (h - hz)/z;
+      c.strokeStyle = `rgba(210,210,225,${Math.min(.55, 1.1/z)})`; c.lineWidth = 1;
+      c.beginPath(); c.moveTo(0, y); c.lineTo(w, y); c.stroke();
+    }
+    for(let X = -24; X <= 24; X += 1.6){
+      const [x0, y0] = proj(X, .6);
+      c.strokeStyle = 'rgba(210,210,225,.16)'; c.beginPath(); c.moveTo(x0, y0); c.lineTo(cx, hz); c.stroke();
+    }
+    // road
+    const [l0, b0] = proj(-1.5, .6), [r0] = proj(1.5, .6);
+    c.beginPath(); c.moveTo(l0, b0); c.lineTo(cx, hz); c.lineTo(r0, b0); c.closePath();
+    const rg = c.createLinearGradient(0, hz, 0, h); rg.addColorStop(0,'#000'); rg.addColorStop(1,'#0c0c0f'); c.fillStyle = rg; c.fill();
+    c.save(); c.shadowColor = '#ff2340'; c.shadowBlur = 14; c.strokeStyle = '#ff4a62'; c.lineWidth = 2.5;
+    c.beginPath(); c.moveTo(l0, b0); c.lineTo(cx, hz); c.moveTo(r0, b0); c.lineTo(cx, hz); c.stroke(); c.restore();
+    const doff = (t*16) % 3;
+    for(let k = 0; k < 20; k++){
+      const z0 = .7 + k*3 - doff, z1 = z0 + 1.3; if(z0 < .62) continue;
+      const [a1, a2] = proj(-.035, z0), [b1, b2] = proj(.035, z0), [c1, c2] = proj(.035, z1), [d1, d2] = proj(-.035, z1);
+      c.fillStyle = `rgba(255,255,255,${Math.min(.85, 2/z0)})`;
+      c.beginPath(); c.moveTo(a1, a2); c.lineTo(b1, b2); c.lineTo(c1, c2); c.lineTo(d1, d2); c.fill();
+    }
+    // traffic: oncoming headlights (left) streak past, tail lights (right) pulled away from
+    cars.sort((a, b) => b.z - a.z);
+    for(const k of cars){
+      const oncoming = k.x < 0;
+      k.z -= dt*(oncoming ? 26 : 5);
+      if(k.z < .7) Object.assign(k, car(60));
+      const [px, py] = proj(k.x, k.z), sp = w*.05/k.z, rad = Math.max(1, w*.006/k.z);
+      const col = oncoming ? '255,255,255' : '255,35,64', a = Math.min(1, 6/k.z);
+      c.save(); c.shadowColor = `rgba(${col},1)`; c.shadowBlur = rad*4; c.fillStyle = `rgba(${col},${a})`;
+      for(const sx of [-sp/2, sp/2]){
+        c.beginPath(); c.arc(px + sx, py - rad, rad, 0, 7); c.fill();
+        if(oncoming && k.z < 14){ const [qx, qy] = proj(k.x + (sx > 0 ? .07 : -.07), k.z + 1.4); c.strokeStyle = `rgba(${col},${a*.35})`; c.lineWidth = rad; c.beginPath(); c.moveTo(px + sx, py - rad); c.lineTo(qx, qy); c.stroke() }
+      }
+      c.restore();
+    }
+    const v = c.createRadialGradient(cx, h*.55, h*.2, cx, h*.55, Math.max(w, h)*.75);
+    v.addColorStop(0,'rgba(0,0,0,0)'); v.addColorStop(1,'rgba(0,0,0,.7)'); c.fillStyle = v; c.fillRect(0,0,w,h);
+  };
+}
+function makeWarp(){
+  const pts = Array.from({length:380}, () => ({a: Math.random()*Math.PI*2, z: Math.random(), s: .5 + Math.random()}));
+  return (c, w, h, t, dt) => {
+    c.fillStyle = 'rgba(0,0,0,.32)'; c.fillRect(0,0,w,h);
+    const cx = w/2 + Math.sin(t*.6)*w*.05, cy = h/2 + Math.cos(t*.45)*h*.05, M = Math.hypot(w, h)*.6;
+    const core = c.createRadialGradient(cx, cy, 0, cx, cy, M*.35);
+    core.addColorStop(0,'rgba(255,60,85,.35)'); core.addColorStop(.4,'rgba(255,40,70,.06)'); core.addColorStop(1,'rgba(0,0,0,0)');
+    c.fillStyle = core; c.fillRect(0,0,w,h);
+    for(let i = 0; i < 16; i++){
+      const z = (i/16 + t*.22) % 1, r = Math.pow(z, 2.6)*M;
+      c.beginPath(); c.arc(cx, cy, r, 0, 7);
+      c.strokeStyle = i % 5 === 0 ? `rgba(255,40,70,${z*.7})` : `rgba(235,235,245,${z*.35})`;
+      c.lineWidth = .5 + z*5; c.stroke();
+    }
+    c.lineCap = 'round';
+    for(const p of pts){
+      const r0 = p.z*p.z*M; p.z += dt*(.18 + p.z*1.6)*p.s;
+      if(p.z > 1){ p.z = .02; p.a = Math.random()*Math.PI*2 }
+      const r1 = p.z*p.z*M, ca = Math.cos(p.a), sa = Math.sin(p.a);
+      c.strokeStyle = `rgba(255,255,255,${Math.min(1, p.z*1.4)})`; c.lineWidth = .4 + p.z*2.4;
+      c.beginPath(); c.moveTo(cx + ca*r0, cy + sa*r0); c.lineTo(cx + ca*r1, cy + sa*r1); c.stroke();
+    }
+  };
+}
+const MAKERS = {run: makeRun, warp: makeWarp};
+const previews = $$('.scene canvas').map(cv => ({cv, ctx: cv.getContext('2d'), draw: MAKERS[cv.dataset.cv]()}));
+const ac = $('#ambCanvas'), acx = ac.getContext('2d');
+let ambDraw = null, ambPreview = false, ambLast = 0;
+function fit(cv, ctx){
+  const w = cv.clientWidth, h = cv.clientHeight;
+  if(cv.width !== Math.round(w*DPR) || cv.height !== Math.round(h*DPR)){ cv.width = Math.round(w*DPR); cv.height = Math.round(h*DPR); ctx.setTransform(DPR,0,0,DPR,0,0) }
+  return [w, h];
+}
+function ambLoop(now){
+  const t = now/1000, dt = Math.min(.05, t - (ambLast || t)); ambLast = t;
+  if(amb.classList.contains('on') && ambDraw){ const [w, h] = fit(ac, acx); ambDraw(acx, w, h, t, dt) }
+  else if(ambPreview) for(const p of previews){ const [w, h] = fit(p.cv, p.ctx); if(w) p.draw(p.ctx, w, h, t, dt) }
+  requestAnimationFrame(ambLoop);
+}
+requestAnimationFrame(ambLoop);
+
 const amb = $('#ambient');
 $$('.scene').forEach(b => b.addEventListener('click', () => {
   const s = SCENES[b.dataset.i];
-  amb.querySelector('.b1').style.background = s.c[0];
-  amb.querySelector('.b2').style.background = s.c[1];
-  amb.querySelector('.b3').style.background = s.c[2];
+  amb.classList.toggle('cv', !!s.cv);
+  ambDraw = s.cv ? MAKERS[s.cv]() : null;
+  if(s.cv){ acx.setTransform(1,0,0,1,0,0); acx.fillStyle = '#000'; acx.fillRect(0,0,ac.width,ac.height) }
+  else {
+    amb.querySelector('.b1').style.background = s.c[0];
+    amb.querySelector('.b2').style.background = s.c[1];
+    amb.querySelector('.b3').style.background = s.c[2];
+  }
   $('#ambWord').textContent = s.w;
   amb.classList.add('on'); keepAwake();
 }));
-amb.addEventListener('click', () => amb.classList.remove('on'));
+amb.addEventListener('click', () => { amb.classList.remove('on'); setTimeout(() => { if(!amb.classList.contains('on')) ambDraw = null }, 1400) });
 const br = $('#ambBright');
 function setBright(v){ $('#ambDim').style.opacity = (1 - v/100)*.92; $('#ambBrightV').textContent = v+'%'; store.set('bright', +v) }
 br.value = store.get('bright', 70); setBright(br.value);
@@ -808,43 +1032,91 @@ function spinWheel(){
 }
 document.fonts?.ready.then(drawWheel);
 
-/* ================= launch ================= */
-const dial = $('#bigDial'), MAX = 160, A0 = 135, SWEEP = 270, CX = 200, CY = 200, RD = 170;
-const pt = (deg, r) => { const rad = deg*Math.PI/180; return [CX + r*Math.cos(rad), CY + r*Math.sin(rad)] };
-(function buildDial(){
-  let s = `<defs><linearGradient id="dc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".4" stop-color="#6e6e76"/><stop offset=".55" stop-color="#fafafa"/><stop offset="1" stop-color="#3d3d44"/></linearGradient>
-    <linearGradient id="dr" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff"/><stop offset=".7" stop-color="#ff5068"/><stop offset="1" stop-color="#e31937"/></linearGradient>
-    <filter id="glow"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-    <circle cx="200" cy="200" r="194" fill="none" stroke="url(#dc)" stroke-width="2" opacity=".6"/>`;
-  for(let v=0; v<=MAX; v+=5){
-    const deg = A0 + SWEEP*v/MAX, major = v%20===0, [x1,y1] = pt(deg, RD), [x2,y2] = pt(deg, RD - (major?18:8));
-    s += `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${v>=120?'#e31937':'#fff'}" stroke-opacity="${major?.9:.35}" stroke-width="${major?2.5:1.2}"/>`;
-    if(major){ const [tx,ty] = pt(deg, RD-38); s += `<text x="${tx}" y="${ty}" fill="#8a8a93" font-family="Saira Condensed" font-size="15" text-anchor="middle" dominant-baseline="middle">${v}</text>` }
-  }
-  const [ax,ay] = pt(A0, 140), [bx2,by2] = pt(A0+SWEEP, 140);
-  s += `<path d="M${ax} ${ay} A140 140 0 1 1 ${bx2} ${by2}" fill="none" stroke="#141417" stroke-width="10" stroke-linecap="round"/>
-        <path id="dialArc" d="M${ax} ${ay} A140 140 0 1 1 ${bx2} ${by2}" fill="none" stroke="url(#dr)" stroke-width="10" stroke-linecap="round" filter="url(#glow)" pathLength="1000" stroke-dasharray="0 1000"/>
-        <g id="needle"><line x1="200" y1="200" x2="200" y2="58" stroke="#e31937" stroke-width="3" stroke-linecap="round" filter="url(#glow)"/></g>`;
-  dial.innerHTML = s;
-  $('#streaks').innerHTML = Array.from({length:14},(_,i)=>`<i style="top:${5+i*6.5}%;animation-delay:${-(i*.13)%.5}s;animation-duration:${.35+(i%4)*.08}s"></i>`).join('');
-})();
-function setDial(mph){
-  const p = Math.max(0, Math.min(mph/MAX, 1));
-  $('#dialArc').setAttribute('stroke-dasharray', `${p*1000} 1000`);
-  $('#needle').setAttribute('transform', `rotate(${A0 + SWEEP*p + 90} 200 200)`);
-  $('#bigSpeed').textContent = Math.round(mph);
+/* ================= race ================= */
+const LEDN = 15;
+$('#leds').innerHTML = Array.from({length:LEDN}, (_,i) => `<i class="led ${i < 5 ? 'g' : i < 10 ? 'y' : 'r'}"></i>`).join('');
+const leds = $$('.led');
+let ledLit = -1;
+function setLeds(frac){
+  const n = Math.round(Math.max(0, Math.min(1, frac)) * LEDN);
+  if(n !== ledLit){ ledLit = n; leds.forEach((l,i) => l.classList.toggle('on', i < n)) }
+  $('#leds').classList.toggle('flash', frac > .94);
 }
-setDial(0);
+$('#streaks').innerHTML = Array.from({length:14},(_,i)=>`<i style="top:${5+i*6.5}%;animation-delay:${-(i*.13)%.5}s;animation-duration:${.35+(i%4)*.08}s"></i>`).join('');
+
+function sweepAll(){
+  sweeping = true; const t0 = performance.now(), D = 1700;
+  (function step(now){
+    const k = Math.min((now - t0)/D, 1), p = Math.sin(Math.PI * k);
+    miniG.frac(p); speedG.frac(p); powG.frac(p); setLeds(p);
+    if(k < 1) return requestAnimationFrame(step);
+    sweeping = false; setLeds(0); miniG.set(gps.mph); speedG.set(tel.mph); powG.set(0);
+  })(t0);
+}
+
+// telemetry shown on the cluster: GPS normally, simulated during the demo
+const tel = {mph:0, lon:0, lat:0, kw:0}, disp = {lon:0, lat:0, kw:0}, trail = [];
+let peakG = 0, raceOn = false;
+function setDial(mph){ tel.mph = mph; if(!sweeping) speedG.set(mph); $('#bigSpeed').textContent = Math.round(mph) }
+
+const gc = $('#gMeter'), gx = gc.getContext('2d');
+function drawG(){
+  const S = gc.width, C = S/2, R = C - 30, sc = R/1.5;
+  gx.clearRect(0,0,S,S);
+  const bz = gx.createLinearGradient(0,0,S,S);
+  [[0,'#fff'],[.3,'#55555d'],[.5,'#f7f7f9'],[.75,'#3e3e46'],[1,'#d0d0d6']].forEach(([o,c]) => bz.addColorStop(o,c));
+  gx.beginPath(); gx.arc(C,C,C-2,0,7); gx.fillStyle = bz; gx.fill();
+  const f = gx.createRadialGradient(C,C,0,C,C,C-14); f.addColorStop(0,'#18181c'); f.addColorStop(.85,'#060607'); f.addColorStop(1,'#000');
+  gx.beginPath(); gx.arc(C,C,C-15,0,7); gx.fillStyle = f; gx.fill();
+  gx.lineWidth = 2;
+  [.5,1,1.5].forEach(g => {
+    gx.beginPath(); gx.arc(C,C,g*sc,0,7); gx.setLineDash(g === 1 ? [] : [6,8]);
+    gx.strokeStyle = g === 1 ? 'rgba(255,255,255,.4)' : 'rgba(255,255,255,.16)'; gx.stroke();
+  });
+  gx.setLineDash([]); gx.strokeStyle = 'rgba(255,255,255,.12)';
+  gx.beginPath(); gx.moveTo(C-R,C); gx.lineTo(C+R,C); gx.moveTo(C,C-R); gx.lineTo(C,C+R); gx.stroke();
+  gx.fillStyle = '#7a7a82'; gx.font = '500 22px "Saira Condensed"'; gx.textAlign = 'center';
+  gx.fillText('ACCEL', C, C - sc*1.5 + 34); gx.fillText('BRAKE', C, C + sc*1.5 - 18);
+  gx.font = '20px Michroma'; gx.fillStyle = '#5a5a62'; gx.fillText('1G', C + sc*.72, C - sc*.72);
+  trail.forEach(([x,y],i) => {
+    gx.beginPath(); gx.arc(C + x*sc, C - y*sc, 3 + 6*i/trail.length, 0, 7);
+    gx.fillStyle = `rgba(255,35,64,${.5*i/trail.length})`; gx.fill();
+  });
+  const dx = C + disp.lat*sc, dy = C - disp.lon*sc;
+  gx.save(); gx.shadowColor = '#ff2340'; gx.shadowBlur = 34;
+  gx.beginPath(); gx.arc(dx,dy,15,0,7); gx.fillStyle = '#ff2340'; gx.fill(); gx.restore();
+  gx.beginPath(); gx.arc(dx,dy,6,0,7); gx.fillStyle = '#fff'; gx.fill();
+}
+let trailTick = 0;
+function raceLoop(){
+  const src = mode === 'demo' ? tel : gps;
+  disp.lon += (src.lon - disp.lon)*.18; disp.lat += (src.lat - disp.lat)*.18; disp.kw += (src.kw - disp.kw)*.18;
+  if(raceOn){
+    if(++trailTick % 3 === 0){ trail.push([disp.lat, disp.lon]); if(trail.length > 40) trail.shift() }
+    peakG = Math.max(peakG, Math.hypot(disp.lat, disp.lon));
+    drawG();
+    $('#gLon').textContent = disp.lon.toFixed(2); $('#gLat').textContent = disp.lat.toFixed(2); $('#gPeak').textContent = peakG.toFixed(2);
+    $('#powRead').innerHTML = `${Math.round(disp.kw)}<small>KW</small>`; $('#kwTag').textContent = Math.round(disp.kw) + ' KW';
+    if(!sweeping){
+      powG.set(disp.kw);
+      const running = mode === 'live' || mode === 'demo';
+      setLeds(running ? disp.kw/393 : tel.mph/100);
+    }
+  }
+  requestAnimationFrame(raceLoop);
+}
+requestAnimationFrame(raceLoop);
+drawG();
+document.fonts?.ready.then(drawG);
 
 let mode = 'idle', tStart = 0, peak = 0, got30 = false, got60 = false, timerRaf = 0, lastMph = 0;
 const best = () => store.get('best60', null);
 function showBest(){ const b = best(); $('#sBest').textContent = b ? b.toFixed(2)+' s' : '—' }
 showBest();
-function setState(dot, txt){ $('#lDot').className = 'dot ' + dot; $('#lState').textContent = txt }
-function resetRun(){ peak=0; got30=got60=false; $('#s30').textContent='—'; $('#s60').textContent='—'; $('#sPeak').textContent='—'; $('#runTimer').textContent='0.00' }
+function setState(dot, txt, tag){ $('#lDot').className = 'dot ' + dot; $('#lState').textContent = txt; $('#gearTag').textContent = tag || 'READY' }
+function resetRun(){ peak=0; peakG=0; trail.length=0; got30=got60=false; $('#s30').textContent='—'; $('#s60').textContent='—'; $('#sPeak').textContent='—'; $('#runTimer').textContent='0.00' }
 function runTimer(){ if(mode!=='live') return; $('#runTimer').textContent = ((performance.now()-tStart)/1000).toFixed(2); timerRaf = requestAnimationFrame(runTimer) }
 function onSpeed(mph, at){
-  // at: seconds since run start (for demo) or performance time
   peak = Math.max(peak, mph); $('#sPeak').textContent = Math.round(peak) + ' mph';
   const el = (at - tStart)/1000;
   if(!got30 && mph >= 30){ got30 = true; $('#s30').textContent = el.toFixed(2)+' s' }
@@ -857,7 +1129,7 @@ function onSpeed(mph, at){
 function finishRun(el){
   cancelAnimationFrame(timerRaf); $('#runTimer').textContent = el.toFixed(2);
   $('#speedo').classList.remove('go'); boost = 0;
-  setState('ok', mode==='demo' ? 'Demo complete' : `0–60 in ${el.toFixed(2)} s`);
+  setState('ok', mode==='demo' ? 'Demo complete' : `0–60 in ${el.toFixed(2)} s`, el.toFixed(2) + ' S');
   mode = 'done'; $('#armBtn').textContent = 'Arm GPS timer';
 }
 speedListeners.push((mph) => {
@@ -865,7 +1137,7 @@ speedListeners.push((mph) => {
   if(mode === 'demo') return;
   setDial(mph);
   const now = performance.now();
-  if(mode === 'armed' && mph >= 1.5){ mode = 'live'; tStart = now - 600; setState('live','Recording'); $('#speedo').classList.add('go'); runTimer() }
+  if(mode === 'armed' && mph >= 1.5){ mode = 'live'; tStart = now - 600; setState('live','Recording','LAUNCH'); $('#speedo').classList.add('go'); runTimer() }
   if(mode === 'live'){ onSpeed(mph, now); boost = Math.min(mph/120, .6) }
   if(mode === 'live' && mph < 1 && (now - tStart) > 3000){ cancelAnimationFrame(timerRaf); $('#speedo').classList.remove('go'); boost=0; mode='idle'; setState('', 'Run aborted') }
 });
@@ -873,26 +1145,29 @@ $('#armBtn').addEventListener('click', () => {
   if(mode === 'armed' || mode === 'live'){ mode='idle'; cancelAnimationFrame(timerRaf); $('#speedo').classList.remove('go'); boost=0; setState('','Standby'); $('#armBtn').textContent='Arm GPS timer'; return }
   startGeo(); resetRun();
   if(lastMph > 1.5){ toast('Come to a full stop first'); return }
-  mode = 'armed'; setState('armed', 'Armed — launch when ready'); $('#armBtn').textContent = 'Disarm';
+  mode = 'armed'; setState('armed', 'Armed — launch when ready', 'ARMED'); $('#armBtn').textContent = 'Disarm';
 });
 $('#demoBtn').addEventListener('click', () => {
   if(mode==='live' || mode==='demo') return;
   resetRun(); mode = 'demo'; revSound();
-  setState('live','Demo launch'); $('#speedo').classList.add('go');
-  const T = 3.1; // seconds to 60 for the show
+  setState('live','Demo launch','LAUNCH'); $('#speedo').classList.add('go');
+  const T = 3.1; // roughly a Model 3 Performance pull: ~1.4 s to 30, 3.1 s to 60
   tStart = performance.now();
   (function step(){
     if(mode!=='demo') return;
-    const el = (performance.now()-tStart)/1000;
-    // roughly a Model 3 Performance pull: ~1.4 s to 30, 3.1 s to 60
+    const el = Math.max((performance.now()-tStart)/1000, .001);
     const mph = Math.min(96, 60 * Math.pow(el/T, .85));
+    const v = mph/2.23694, a = mph < 96 ? .85*v/el : 0;
+    tel.lon = Math.min(1.05, a/9.81); tel.lat = .07*Math.sin(el*4.2);
+    tel.kw = Math.min(393, (CAR_KG*tel.lon*9.81*v + .31*v*v*v)/1000);
     setDial(mph); boost = Math.min(mph/100, .9);
     $('#runTimer').textContent = el.toFixed(2);
     onSpeed(mph, performance.now());
-    if(mode==='demo') requestAnimationFrame(step);
-    else { // coast the needle back down
-      let v = mph; const down = () => { v = Math.max(0, v - 2.2); setDial(v); if(v>0) requestAnimationFrame(down) }; setTimeout(down, 900);
-    }
+    if(mode==='demo') return requestAnimationFrame(step);
+    // lift off: regen pulls you forward in the seat while the needle falls
+    tel.kw = 0; tel.lat = 0; let s = mph;
+    const down = () => { s = Math.max(0, s - .9); tel.lon = s > 0 ? -.3 : 0; setDial(s); if(s > 0 && mode === 'done') requestAnimationFrame(down); else tel.lon = 0 };
+    setTimeout(down, 700);
   })();
 });
 
