@@ -866,14 +866,27 @@ let wakeLock;
 async function keepAwake(){ try{ wakeLock = await navigator.wakeLock?.request('screen') }catch{} }
 document.addEventListener('visibilitychange', () => { if(document.visibilityState==='visible' && document.body.classList.contains('lit')) keepAwake() });
 $('#startBtn').addEventListener('click', () => {
-  revSound(); keepAwake();
+  revSound(); keepAwake(); if(!fsEl()) nativeFull().catch(() => {});
   let b = 0; const surge = setInterval(()=>{ b += .08; boost = Math.sin(Math.min(b,Math.PI))*.9; if(b>=Math.PI){ boost=0; clearInterval(surge) } }, 30);
   setTimeout(()=>{ document.body.classList.add('lit'); setTimeout(sweepAll, 700) }, 500);
   startGeo();
 });
 /* theater mode: the Tesla shows youtube.com chromeless, and its redirect page carries that over */
 const HOME = /github\.io$/.test(location.hostname) ? location.origin + location.pathname : 'https://bannisterderik-tech.github.io/db-demos/tesla/';
-const openTheater = () => { $('#theater').classList.add('on'); SFX.nav() };
+const fsEl = () => document.fullscreenElement || document.webkitFullscreenElement;
+function nativeFull(){
+  const el = document.documentElement, req = el.requestFullscreen || el.webkitRequestFullscreen;
+  if(!req) return Promise.reject();
+  try{ return Promise.resolve(req.call(el, {navigationUI:'hide'})) }catch(e){ return Promise.reject(e) }
+}
+// one tap: real browser full screen if the car allows it, otherwise straight into the YouTube theater route
+function openTheater(){
+  SFX.nav();
+  if(fsEl()){ (document.exitFullscreen || document.webkitExitFullscreen)?.call(document); return }
+  if(/youtube\.com/.test(document.referrer)) return toast('Already in theater mode — ✕ top-right exits');
+  nativeFull().then(() => setTimeout(() => { if(!fsEl()) location.href = 'https://www.youtube.com/redirect?q=' + encodeURIComponent(HOME) }, 350))
+              .catch(() => { location.href = 'https://www.youtube.com/redirect?q=' + encodeURIComponent(HOME) });
+}
 $('#fsBtn').addEventListener('click', openTheater);
 $('#thLink1').addEventListener('click', openTheater);
 $('#thClose').addEventListener('click', () => $('#theater').classList.remove('on'));
