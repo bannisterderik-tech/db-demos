@@ -210,16 +210,11 @@ main{position:relative;overflow:hidden}
 .np-pill span{overflow:hidden;text-overflow:ellipsis}
 .status .ic{width:52px;height:52px}
 
-/* theater guide */
-#theater{position:fixed;inset:0;z-index:70;display:grid;place-items:center;padding:24px;background:radial-gradient(ellipse at 50% 30%,#1a0508,#000 70%);opacity:0;pointer-events:none;transition:opacity .35s}
-#theater.on{opacity:1;pointer-events:auto}
-.th-card{width:min(860px,100%);padding:44px 48px}
-.th-card h2{font-family:var(--display);font-weight:400;font-size:clamp(28px,3.4vw,44px);letter-spacing:.16em}
-.th-steps{list-style:none;counter-reset:st;margin:28px 0 30px;display:grid;gap:18px}
-.th-steps li{counter-increment:st;display:grid;grid-template-columns:52px 1fr;gap:16px;align-items:start;font-size:19px;line-height:1.45;color:#e2e2e6}
-.th-steps li::before{content:counter(st);width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-family:var(--display);font-size:16px;color:#0a0a0a;background:radial-gradient(circle at 35% 30%,#fff,#9a9aa2 60%,#4a4a52)}
-.th-steps code{font-family:var(--cond);font-size:17px;letter-spacing:.04em;color:#fff;background:rgba(255,255,255,.07);padding:3px 8px;border-radius:6px;word-break:break-all}
-.th-acts{display:flex;gap:14px;flex-wrap:wrap}
+/* immersive: app fills the page when the browser has no full-screen support */
+body.immersive .app{grid-template-rows:0 1fr}
+body.immersive header{overflow:hidden;border:0;padding:0}
+#exitImm{position:fixed;top:14px;right:16px;z-index:40;width:52px;height:52px;border-radius:50%;display:none;place-items:center;color:#ddd;background:rgba(10,10,12,.85);box-shadow:inset 0 0 0 1px var(--line-hi)}
+body.immersive #exitImm{display:grid}
 
 /* ignition extras */
 #ignite .laser{height:2px;width:0;background:linear-gradient(90deg,transparent,#ff2340 20%,#fff 50%,#ff2340 80%,transparent);box-shadow:0 0 18px #ff2340;margin-top:-34px;animation:laser 1.6s .9s cubic-bezier(.2,.8,.2,1) forwards}
@@ -477,7 +472,7 @@ body.lit #ignite{opacity:0;visibility:hidden}
       <svg class="ring" viewBox="0 0 24 24"><path d="M12 3v8"/><path d="M6.3 6.8a8 8 0 1 0 11.4 0"/></svg>
       <span>IGNITE</span>
     </button>
-    <button class="theater-link" id="thLink1">⛶ THEATER MODE · FULL SCREEN</button>
+    <button class="theater-link" id="thLink1">⛶ FULL SCREEN</button>
   </div>
 </section>
 
@@ -493,7 +488,7 @@ body.lit #ignite{opacity:0;visibility:hidden}
       <button class="rl-btn" id="rlBtn"><i></i>RED LIGHT</button>
       <span class="clock" id="hdrClock">--:--</span>
       <button class="ic" id="muteBtn" aria-label="Sound"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h4l5-4v14l-5-4H4z"/><path class="w1" d="M16 9a4 4 0 0 1 0 6"/><path class="w2" d="M18.5 6.5a7.5 7.5 0 0 1 0 11"/><path class="x" d="M16 9l5 6M21 9l-5 6" style="display:none"/></svg></button>
-      <button class="ic" id="fsBtn" aria-label="Theater mode"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+      <button class="ic" id="fsBtn" aria-label="Full screen"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
     </div>
   </header>
 
@@ -726,16 +721,7 @@ body.lit #ignite{opacity:0;visibility:hidden}
   <svg class="kc-heart" viewBox="0 0 32 29"><defs><linearGradient id="kch" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff6a80"/><stop offset="1" stop-color="#b30f27"/></linearGradient></defs><path d="M16 29 2.6 15.6A8.5 8.5 0 0 1 16 4.3a8.5 8.5 0 0 1 13.4 11.3Z" fill="url(#kch)"/></svg>
   <div class="kc-sub">The whole crowd is watching</div>
 </div></div>
-<div id="theater"><div class="card th-card">
-  <div class="label">Tesla browser</div>
-  <h2 class="chrome">THEATER MODE</h2>
-  <ol class="th-steps">
-    <li><span>Tap <b>Go full screen</b> below. (Or type <code>youtube.com/redirect?q=bannisterderik-tech.github.io/db-demos/tesla/</code> in the address bar.)</span></li>
-    <li><span>YouTube asks if you want to leave. Tap <b>Go to site</b>.</span></li>
-    <li><span>Bannister reopens edge to edge, no address bar. Tap the <b>✕</b> in the top-right corner to exit.</span></li>
-  </ol>
-  <div class="th-acts"><button class="btn red" id="thGo">Go full screen</button><button class="btn ghost" id="thClose">Not now</button></div>
-</div></div>
+<button id="exitImm" aria-label="Exit full screen"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5"/></svg></button>
 <canvas id="fx"></canvas>
 
 <script>
@@ -871,26 +857,23 @@ $('#startBtn').addEventListener('click', () => {
   setTimeout(()=>{ document.body.classList.add('lit'); setTimeout(sweepAll, 700) }, 500);
   startGeo();
 });
-/* theater mode: the Tesla shows youtube.com chromeless, and its redirect page carries that over */
-const HOME = /github\.io$/.test(location.hostname) ? location.origin + location.pathname : 'https://bannisterderik-tech.github.io/db-demos/tesla/';
+/* full screen: the browser's own full screen; if the car's browser can't, hide the app chrome instead */
 const fsEl = () => document.fullscreenElement || document.webkitFullscreenElement;
 function nativeFull(){
   const el = document.documentElement, req = el.requestFullscreen || el.webkitRequestFullscreen;
   if(!req) return Promise.reject();
   try{ return Promise.resolve(req.call(el, {navigationUI:'hide'})) }catch(e){ return Promise.reject(e) }
 }
-// one tap: real browser full screen if the car allows it, otherwise straight into the YouTube theater route
+const setImm = on => { document.body.classList.toggle('immersive', on); store.set('imm', on) };
 function openTheater(){
   SFX.nav();
-  if(fsEl()){ (document.exitFullscreen || document.webkitExitFullscreen)?.call(document); return }
-  if(/youtube\.com/.test(document.referrer)) return toast('Already in theater mode — ✕ top-right exits');
-  nativeFull().then(() => setTimeout(() => { if(!fsEl()) location.href = 'https://www.youtube.com/redirect?q=' + encodeURIComponent(HOME) }, 350))
-              .catch(() => { location.href = 'https://www.youtube.com/redirect?q=' + encodeURIComponent(HOME) });
+  if(fsEl()) return (document.exitFullscreen || document.webkitExitFullscreen)?.call(document);
+  if(document.body.classList.contains('immersive')) return setImm(false);
+  nativeFull().then(() => setTimeout(() => { if(!fsEl()) setImm(true) }, 350)).catch(() => setImm(true));
 }
 $('#fsBtn').addEventListener('click', openTheater);
-$('#thLink1').addEventListener('click', openTheater);
-$('#thClose').addEventListener('click', () => $('#theater').classList.remove('on'));
-$('#thGo').addEventListener('click', () => { location.href = 'https://www.youtube.com/redirect?q=' + encodeURIComponent(HOME) });
+$('#thLink1').addEventListener('click', () => { nativeFull().catch(() => {}); $('#startBtn').click() });
+$('#exitImm').addEventListener('click', () => { SFX.nav(); setImm(false) });
 
 /* ================= nav ================= */
 $$('nav button').forEach(b => b.addEventListener('click', () => {
