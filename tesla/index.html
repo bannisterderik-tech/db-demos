@@ -318,10 +318,10 @@ main{position:relative;overflow:hidden}
 .scanning .pad::after{opacity:1;animation:scan 1s ease-in-out infinite alternate}
 @keyframes scan{to{top:105%}}
 .vibe-mid{padding:30px 34px;text-align:center}
-.vbig{font-family:var(--display);font-size:clamp(64px,8vw,120px);line-height:1;margin:14px 0 6px}
+.vbig{font-family:var(--display);font-size:clamp(52px,6.4vw,104px);white-space:nowrap;line-height:1;margin:14px 0 6px}
 .vverdict{font-size:clamp(18px,1.8vw,24px);font-weight:300;min-height:1.5em}
 .bars{display:grid;gap:12px;margin:24px 0 22px;text-align:left}
-.bar{display:grid;grid-template-columns:170px 1fr 52px;align-items:center;gap:14px;font-family:var(--cond);letter-spacing:.16em;font-size:13px;color:var(--dim);text-transform:uppercase}
+.bar{display:grid;grid-template-columns:170px 1fr 70px;align-items:center;gap:14px;font-family:var(--cond);letter-spacing:.16em;font-size:13px;color:var(--dim);text-transform:uppercase}
 .bar .tr{height:8px;border-radius:4px;background:#17171a;overflow:hidden}
 .bar .fl{height:100%;width:0;border-radius:4px;background:linear-gradient(90deg,#8e8e96,#fff 60%,#ff2340);transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
 .bar b{font-family:var(--display);font-weight:400;color:var(--txt);font-size:14px;text-align:right}
@@ -916,7 +916,7 @@ nameEl.textContent = store.get('name2', 'Cam Bannister');
 nameEl.addEventListener('input', () => store.set('name2', nameEl.textContent.trim()));
 nameEl.addEventListener('keydown', e => { if(e.key==='Enter'){ e.preventDefault(); nameEl.blur() } });
 const PUBLICHOUSE = 'PublicHouse, 418 A St, Springfield, OR 97477';
-$('#planPlace').value = store.get('place', '') || PUBLICHOUSE; $('#planTime').value = store.get('time', '');
+$('#planPlace').value = store.get('place', '') || PUBLICHOUSE; $('#planTime').value = store.get('time', '') || '16:00';
 function venue(){
   $('#venueInfo').innerHTML = /publichouse/i.test($('#planPlace').value)
     ? '<b>PublicHouse</b> · beer hall, whiskey bar and food carts in a converted church. Saturday hours listed until 10 PM.' : '';
@@ -1536,15 +1536,13 @@ $$('.pad').forEach(pd => pd.addEventListener('pointerdown', e => {
 function scanVibe(){
   scanning = true; $('#vibeWrap').classList.add('scanning'); $('#vVerdict').textContent = 'Scanning…';
   const t0 = performance.now();
-  const tick = setInterval(() => { $('#vScore').textContent = 40 + Math.floor(Math.random()*60) + '%'; tone(400 + Math.random()*900, .03, 'square', .02) }, 90);
+  const tick = setInterval(() => { $('#vScore').textContent = Math.min(999, Math.floor(Math.pow((performance.now() - t0)/2800, 2)*1000 + Math.random()*40)) + '%'; tone(400 + Math.random()*900, .03, 'square', .02) }, 90);
   setTimeout(() => {
     clearInterval(tick); scanning = false; scanned = true; $('#vibeWrap').classList.remove('scanning');
-    const score = Math.random() < .12 ? 100 : 88 + Math.floor(Math.random()*12);
-    $('#vScore').textContent = score + '%';
-    $('#vVerdict').textContent = score === 100 ? 'Off the charts. Literally broke the scale.' : score >= 95 ? 'Ludicrous-mode compatibility.' : score >= 91 ? 'Dangerously high chemistry.' : 'Strong signal. Keep driving.';
+    $('#vScore').textContent = '1000%'; $('#vScore').animate([{transform:'scale(1.6)',filter:'blur(8px)'},{transform:'scale(1)',filter:'blur(0)'}], {duration:600, easing:'cubic-bezier(.2,1.6,.4,1)'});
+    $('#vVerdict').textContent = 'Off the charts. You broke the scale.';
     $$('#vBars .bar').forEach((b, i) => {
-      const v = i === BARS.length - 1 ? 100 : 80 + Math.floor(Math.random()*21);
-      setTimeout(() => { b.querySelector('.fl').style.width = v + '%'; b.querySelector('b').textContent = v + '%' }, 150*i);
+      setTimeout(() => { b.querySelector('.fl').style.width = '100%'; b.querySelector('b').textContent = '1000%' }, 150*i);
     });
     chime(); SFX.cheer(); burst('hearts', 80);
   }, 2800);
