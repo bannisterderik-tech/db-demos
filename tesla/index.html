@@ -166,6 +166,29 @@ main{position:relative;overflow:hidden}
 .eq i:nth-child(2){animation-delay:-.3s}.eq i:nth-child(3){animation-delay:-.6s}.eq i:nth-child(4){animation-delay:-.15s}
 @keyframes eq{from{height:20%}to{height:100%}}
 
+/* ---------- rotation (embedded player) ---------- */
+.rotation{display:grid;grid-template-columns:minmax(300px,1fr) 1.55fr;gap:22px;height:calc(100% - 96px);min-height:520px}
+.roster{display:flex;flex-direction:column;gap:12px}
+.artist{position:relative;flex:1;min-height:70px;display:flex;align-items:center;gap:20px;padding:0 24px;text-align:left;border-radius:18px;overflow:hidden;
+  background:linear-gradient(160deg,#111114,#070708);box-shadow:inset 0 0 0 1px var(--line);transition:transform .2s,box-shadow .3s}
+.artist:active{transform:scale(.98)}
+.artist .n{font-family:var(--display);font-size:13px;color:var(--mute);letter-spacing:.2em;width:26px}
+.artist .nm{font-family:var(--display);font-size:clamp(17px,1.6vw,22px);letter-spacing:.1em;color:var(--dim);transition:color .3s}
+.artist .tg{font-size:13.5px;color:var(--mute);margin-top:4px;letter-spacing:.03em}
+.artist .eq{margin-left:auto;opacity:0;transition:opacity .3s}
+.artist.on{box-shadow:inset 0 0 0 1px rgba(255,255,255,.35),0 0 40px -10px rgba(227,25,55,.6);background:linear-gradient(100deg,rgba(227,25,55,.22),#0b0b0d 55%)}
+.artist.on::before{content:"";position:absolute;left:0;top:14%;bottom:14%;width:4px;border-radius:0 4px 4px 0;background:#ff2340;box-shadow:0 0 14px #ff2340}
+.artist.on .nm{background:var(--chrome);-webkit-background-clip:text;background-clip:text;color:transparent}
+.artist.on .eq{opacity:1}
+.stage{display:flex;flex-direction:column;padding:24px 26px;gap:16px;min-height:0}
+.stage-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px}
+.np{font-family:var(--display);font-size:clamp(26px,2.8vw,40px);letter-spacing:.06em;margin-top:6px;line-height:1.1}
+.stage-acts{display:flex;gap:10px}
+.stage-acts .btn{min-height:50px;font-size:13px;padding:0 18px;white-space:nowrap}
+.stage iframe{flex:1;width:100%;min-height:352px;border:0;border-radius:14px;background:#121214}
+.venue{color:var(--dim);font-size:15px;line-height:1.5;letter-spacing:.02em}
+.venue b{color:var(--txt);font-weight:500}
+
 /* ---------- play ---------- */
 .seg{display:inline-flex;padding:6px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--line-hi);gap:4px}
 .seg button{min-height:52px;padding:0 26px;border-radius:999px;font-family:var(--cond);letter-spacing:.24em;text-transform:uppercase;font-size:14px;color:var(--dim)}
@@ -295,6 +318,8 @@ body.lit #ignite{opacity:0;visibility:hidden}
   .hero{grid-row:auto;padding:30px 24px}
   .scenes,.vibes{grid-template-columns:1fr 1fr}
   .wyr{grid-template-columns:1fr}
+  .rotation{grid-template-columns:1fr;height:auto}
+  .stage-head{flex-direction:column;align-items:flex-start}
   .wyr .opt{min-height:150px;padding:28px}
   .face{padding:30px}
   .wheel-box{margin:0 auto;width:min(80vw,400px);height:min(80vw,400px)}
@@ -377,6 +402,7 @@ body.lit #ignite{opacity:0;visibility:hidden}
             <div class="countdown chrome" id="countdown">Set a time</div>
             <div class="countdown-sub" id="countdownSub">until reservation</div>
           </div>
+          <div class="venue" id="venueInfo"></div>
           <div class="row">
             <button class="btn" id="goMaps" style="flex:1">Route it</button>
             <button class="btn ghost" id="goNearby" style="flex:1">Find spots</button>
@@ -407,8 +433,22 @@ body.lit #ignite{opacity:0;visibility:hidden}
 
     <!-- SOUND -->
     <section class="panel" id="p-sound">
-      <div class="ph"><div><h2 class="chrome">SOUNDTRACK</h2><p>Pick the vibe. Opens in Spotify or YouTube Music — crank it through the premium audio.</p></div><div class="eq"><i></i><i></i><i></i><i></i></div></div>
-      <div class="vibes stagger" id="vibes"></div>
+      <div class="ph"><div><h2 class="chrome">TONIGHT'S ROTATION</h2><p>Six artists, one ride. Tap a name and it plays right here, even when you switch screens.</p></div><div class="eq"><i></i><i></i><i></i><i></i></div></div>
+      <div class="rotation">
+        <div class="roster stagger" id="roster"></div>
+        <div class="card stage">
+          <div class="stage-head">
+            <div><div class="label">Now spinning</div><div class="np chrome" id="npName">—</div></div>
+            <div class="stage-acts">
+              <button class="btn ghost" id="shuffleArtist">Shuffle</button>
+              <button class="btn ghost" id="openSpotify">Spotify</button>
+              <button class="btn ghost" id="openYT">YT Music</button>
+            </div>
+          </div>
+          <iframe id="spot" title="Spotify player" allow="autoplay; clipboard-write; encrypted-media *; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          <p class="fine">Full songs: sign in once at open.spotify.com in this browser. Not signed in, Spotify only plays 30-second previews.</p>
+        </div>
+      </div>
     </section>
 
     <!-- PLAY -->
@@ -604,7 +644,7 @@ function tick(){
     if(diff > 0){
       const hh = Math.floor(diff/3600), mm = Math.floor(diff%3600/60), ss = diff%60;
       $('#countdown').textContent = (hh?hh+':':'') + String(mm).padStart(hh?2:1,'0') + ':' + String(ss).padStart(2,'0');
-      $('#countdownSub').textContent = 'until ' + ($('#planPlace').value || 'reservation');
+      $('#countdownSub').textContent = 'until ' + ($('#planPlace').value.split(',')[0] || 'reservation');
     } else { $('#countdown').textContent = "It's go time"; $('#countdownSub').textContent = 'enjoy the night' }
   } else { $('#countdown').textContent = 'Set a time'; $('#countdownSub').textContent = 'until reservation' }
 }
@@ -615,7 +655,13 @@ const nameEl = $('#dateName');
 nameEl.textContent = store.get('name', 'someone special');
 nameEl.addEventListener('input', () => store.set('name', nameEl.textContent.trim()));
 nameEl.addEventListener('keydown', e => { if(e.key==='Enter'){ e.preventDefault(); nameEl.blur() } });
-$('#planPlace').value = store.get('place', ''); $('#planTime').value = store.get('time', '');
+const PUBLICHOUSE = 'PublicHouse, 418 A St, Springfield, OR 97477';
+$('#planPlace').value = store.get('place', '') || PUBLICHOUSE; $('#planTime').value = store.get('time', '');
+function venue(){
+  $('#venueInfo').innerHTML = /publichouse/i.test($('#planPlace').value)
+    ? '<b>PublicHouse</b> · beer hall, whiskey bar and food carts in a converted church. Saturday hours listed until 10 PM.' : '';
+}
+$('#planPlace').addEventListener('input', venue); venue();
 $('#planPlace').addEventListener('input', e => store.set('place', e.target.value));
 $('#planTime').addEventListener('input', e => { store.set('time', e.target.value); tick() });
 tick();
@@ -879,22 +925,30 @@ function setBright(v){ $('#ambDim').style.opacity = (1 - v/100)*.92; $('#ambBrig
 br.value = store.get('bright', 70); setBright(br.value);
 br.addEventListener('input', () => setBright(br.value));
 
-/* ================= soundtrack ================= */
-const VIBES = [
-  {n:'Late Night Drive', d:'Dark R&B, smooth bass, city lights in the rearview.', q:'late night drive r&b'},
-  {n:'Slow Jams', d:'Classic and modern slow burners. Keep the volume at a whisper.', q:'slow jams'},
-  {n:'Jazz Lounge', d:'Upright bass, brushed drums, a dim corner booth.', q:'jazz lounge'},
-  {n:'Synthwave Cruise', d:'Neon arpeggios for the highway on-ramp.', q:'synthwave night drive'},
-  {n:'Bossa Nova', d:'Warm, breezy, a little bit Rio at sunset.', q:'bossa nova romance'},
-  {n:'Throwback Love', d:'90s and 00s singalongs. Duet rights reserved.', q:'90s 2000s r&b love songs'}
+/* ================= rotation: embedded Spotify ================= */
+const ARTISTS = [
+  {n:'bbno$', t:'Vancouver chaos, maximum bounce', type:'artist', id:'41X1TR6hrK8Q2ZCpp2EqCz'},
+  {n:'Connor Price', t:'Spin the globe, windows down', type:'artist', id:'5zixe6AbgXPqt4c1uSl94L'},
+  {n:'Anderson .Paak', t:'Malibu soul, drums up front', type:'artist', id:'3jK9MiCrA42lLAdMGUZpwa'},
+  {n:'Logic', t:'Rockville speed, Bobby season', type:'artist', id:'4xRYI6VqpkE3UwrDrAZL8L'},
+  {n:'Futuristic', t:'Arizona hustle, The Greatest', type:'playlist', id:'37i9dQZF1DZ06evO3wOizK'},
+  {n:'Lupe Fiasco', t:'Kick, push, coast', type:'artist', id:'01QTIT5P1pFP3QnnFSdsJf'}
 ];
-$('#vibes').innerHTML = VIBES.map((v,i)=>`<div class="card vibe"><div class="num">0${i+1}</div><h3 class="chrome">${v.n.toUpperCase()}</h3><p>${v.d}</p>
-  <div class="acts"><button class="btn" data-s="${encodeURIComponent(v.q)}">Spotify</button><button class="btn ghost" data-y="${encodeURIComponent(v.q)}">YT Music</button></div></div>`).join('');
-$('#vibes').addEventListener('click', e => {
-  const b = e.target.closest('button'); if(!b) return;
-  if(b.dataset.s) open(`https://open.spotify.com/search/${b.dataset.s}/playlists`, '_blank');
-  if(b.dataset.y) open(`https://music.youtube.com/search?q=${b.dataset.y}`, '_blank');
-});
+$('#roster').innerHTML = ARTISTS.map((a,i) => `<button class="artist" data-i="${i}"><span class="n">0${i+1}</span>
+  <span><div class="nm">${a.n.toUpperCase()}</div><div class="tg">${a.t}</div></span><span class="eq"><i></i><i></i><i></i><i></i></span></button>`).join('');
+let cur = -1;
+function pick(i){
+  if(i === cur) return; cur = i; const a = ARTISTS[i];
+  $$('.artist').forEach((b,k) => b.classList.toggle('on', k === i));
+  $('#npName').textContent = a.n.toUpperCase();
+  $('#spot').src = `https://open.spotify.com/embed/${a.type}/${a.id}?utm_source=generator&theme=0`;
+  store.set('artist', i);
+}
+$('#roster').addEventListener('click', e => { const b = e.target.closest('.artist'); if(b) pick(+b.dataset.i) });
+$('#shuffleArtist').addEventListener('click', () => pick((cur + 1 + Math.floor(Math.random()*(ARTISTS.length-1))) % ARTISTS.length));
+$('#openSpotify').addEventListener('click', () => { const a = ARTISTS[cur]; open(`https://open.spotify.com/${a.type}/${a.id}`, '_blank') });
+$('#openYT').addEventListener('click', () => open('https://music.youtube.com/search?q=' + encodeURIComponent(ARTISTS[cur].n), '_blank'));
+pick(Math.min(store.get('artist', 0), ARTISTS.length - 1));
 
 /* ================= play: question deck ================= */
 const DECK = {
