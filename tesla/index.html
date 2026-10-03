@@ -84,7 +84,7 @@ main{position:relative;overflow:hidden}
 .panel{position:absolute;inset:0;padding:34px 40px 40px;overflow-y:auto;opacity:0;pointer-events:none;transform:translateY(14px) scale(.995);transition:opacity .5s,transform .6s cubic-bezier(.2,.8,.2,1)}
 .panel.on{opacity:1;pointer-events:auto;transform:none}
 .panel::-webkit-scrollbar{width:0}
-.ph{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:28px;gap:20px}
+.ph{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;margin-bottom:28px;gap:20px}
 .ph h2{font-family:var(--display);font-size:clamp(26px,3vw,40px);letter-spacing:.18em;font-weight:400}
 .ph p{color:var(--dim);font-size:16px;margin-top:8px;letter-spacing:.04em}
 
@@ -217,6 +217,66 @@ main{position:relative;overflow:hidden}
 .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
 .chips button{min-height:48px;padding:0 20px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--line-hi);font-family:var(--cond);letter-spacing:.16em;text-transform:uppercase;font-size:14px;color:var(--dim)}
 .chips button.on{color:#000;background:#e8e8ec}
+.chips button.rl.on{color:#fff;background:linear-gradient(180deg,#ff3b55,#b30f27);box-shadow:0 0 24px rgba(227,25,55,.5)}
+.wheel-box.redlight canvas{animation:redglow 1.6s ease-in-out infinite}
+@keyframes redglow{0%,100%{box-shadow:0 0 0 10px #0c0c0e,0 0 0 12px rgba(255,60,85,.5),0 0 50px rgba(227,25,55,.35),0 40px 80px -20px #000}50%{box-shadow:0 0 0 10px #0c0c0e,0 0 0 12px rgba(255,60,85,.95),0 0 110px rgba(227,25,55,.75),0 40px 80px -20px #000}}
+.wheel-box.redlight .pin{border-top-color:#ff2340;filter:drop-shadow(0 0 10px #ff2340)}
+.seg .kc{color:#ff4a62}
+
+/* red light button in the header */
+.status .rl-btn{display:inline-flex;align-items:center;justify-content:center;width:auto;border-radius:999px;white-space:nowrap;box-shadow:0 0 30px rgba(227,25,55,.45),inset 0 1px 1px rgba(255,255,255,.4)}
+.rl-btn{display:inline-flex;align-items:center;gap:12px;height:52px;padding:0 22px;border-radius:999px;font-family:var(--cond);font-weight:700;font-size:15px;letter-spacing:.24em;color:#fff;
+  background:linear-gradient(180deg,#ff3b55,#a50d22);box-shadow:0 0 30px rgba(227,25,55,.45),inset 0 1px 1px rgba(255,255,255,.4)}
+.rl-btn i{width:12px;height:12px;border-radius:50%;background:#fff;box-shadow:0 0 10px #fff;animation:blink 1s infinite}
+.rl-btn:active{transform:scale(.95)}
+
+/* full-screen wheel reveal */
+#reveal{position:fixed;inset:0;z-index:60;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;
+  background:radial-gradient(ellipse at center,rgba(120,0,20,.55),rgba(0,0,0,.94) 65%);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);opacity:0;pointer-events:none;transition:opacity .35s}
+#reveal.on{opacity:1;pointer-events:auto}
+#reveal .rv-big{font-family:var(--display);font-size:clamp(54px,9vw,140px);letter-spacing:.06em;line-height:1.05;margin:18px 0 22px}
+#reveal.on .rv-big{animation:slam .7s cubic-bezier(.2,1.6,.4,1)}
+@keyframes slam{0%{transform:scale(2.4);opacity:0;filter:blur(14px)}60%{opacity:1;filter:none}100%{transform:none}}
+#reveal .rv-sub{font-size:clamp(20px,2.2vw,30px);font-weight:300;color:#e9e9ec;max-width:900px;margin:0 auto;line-height:1.35}
+#reveal .rv-acts{display:flex;gap:14px;justify-content:center;margin-top:36px;flex-wrap:wrap}
+#reveal .rv-tap{margin-top:28px;font-family:var(--cond);letter-spacing:.4em;font-size:12px;color:var(--mute)}
+#fx{position:fixed;inset:0;z-index:80;pointer-events:none}
+
+/* vibe check */
+.vibe-wrap{display:grid;grid-template-columns:auto 1fr auto;gap:36px;align-items:center}
+.pad{position:relative;width:min(30vh,240px);aspect-ratio:1;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;overflow:hidden;touch-action:none;
+  background:radial-gradient(circle at 50% 40%,#17171b,#050506 70%);box-shadow:0 0 0 3px #000,0 0 0 8px #8e8e96,0 0 0 9px #fff,0 0 0 11px #222,0 30px 60px #000;transition:box-shadow .3s}
+.pad svg{width:46%;stroke:#3a3a42;fill:none;stroke-width:2.2;stroke-linecap:round;transition:stroke .3s,filter .3s}
+.pad span{font-family:var(--cond);letter-spacing:.34em;font-size:13px;color:var(--dim)}
+.pad.on{box-shadow:0 0 0 3px #000,0 0 0 8px #ff2340,0 0 0 9px #ffb3bf,0 0 0 11px #300,0 0 60px rgba(227,25,55,.6)}
+.pad.on svg{stroke:#ff4a62;filter:drop-shadow(0 0 6px #ff2340)}
+.pad.on span{color:#fff}
+.pad::after{content:"";position:absolute;left:0;right:0;height:3px;top:-10%;background:linear-gradient(90deg,transparent,#fff,transparent);box-shadow:0 0 18px #fff;opacity:0}
+.scanning .pad::after{opacity:1;animation:scan 1s ease-in-out infinite alternate}
+@keyframes scan{to{top:105%}}
+.vibe-mid{padding:30px 34px;text-align:center}
+.vbig{font-family:var(--display);font-size:clamp(64px,8vw,120px);line-height:1;margin:14px 0 6px}
+.vverdict{font-size:clamp(18px,1.8vw,24px);font-weight:300;min-height:1.5em}
+.bars{display:grid;gap:12px;margin:24px 0 22px;text-align:left}
+.bar{display:grid;grid-template-columns:170px 1fr 52px;align-items:center;gap:14px;font-family:var(--cond);letter-spacing:.16em;font-size:13px;color:var(--dim);text-transform:uppercase}
+.bar .tr{height:8px;border-radius:4px;background:#17171a;overflow:hidden}
+.bar .fl{height:100%;width:0;border-radius:4px;background:linear-gradient(90deg,#8e8e96,#fff 60%,#ff2340);transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+.bar b{font-family:var(--display);font-weight:400;color:var(--txt);font-size:14px;text-align:right}
+
+/* kiss cam */
+#kisscam{position:fixed;inset:0;z-index:65;display:grid;place-items:center;background:#000;opacity:0;pointer-events:none;transition:opacity .4s}
+#kisscam.on{opacity:1;pointer-events:auto}
+.kc-frame{position:relative;width:min(88vw,1200px);height:min(78vh,700px);border-radius:30px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;
+  background:radial-gradient(ellipse at center,#3a0010,#0a0002 70%);box-shadow:0 0 0 6px #8e8e96,0 0 0 8px #fff,0 0 0 11px #222,0 0 120px rgba(227,25,55,.5)}
+.kc-frame .bulb{position:absolute;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;background:#fff;box-shadow:0 0 12px #fff,0 0 24px #ff4a62;animation:bulb .5s steps(1) infinite}
+.kc-frame .bulb.alt{animation-delay:-.25s}
+@keyframes bulb{50%{background:#5a1020;box-shadow:none}}
+.kc-title{font-family:var(--display);font-size:clamp(44px,7vw,112px);letter-spacing:.12em;padding-left:.12em;line-height:1}
+.kc-heart{width:clamp(90px,12vw,160px);animation:beat 1s ease-in-out infinite;filter:drop-shadow(0 0 30px #ff2340)}
+@keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.18)}30%{transform:scale(1)}45%{transform:scale(1.12)}}
+.kc-sub{font-family:var(--cond);letter-spacing:.5em;font-size:clamp(14px,1.4vw,20px);color:#ffb3bf;text-transform:uppercase}
+
+
 
 /* ---------- race ---------- */
 .carbon{background:
@@ -318,6 +378,9 @@ body.lit #ignite{opacity:0;visibility:hidden}
   .hero{grid-row:auto;padding:30px 24px}
   .scenes,.vibes{grid-template-columns:1fr 1fr}
   .wyr{grid-template-columns:1fr}
+  .vibe-wrap{grid-template-columns:1fr 1fr}.vibe-mid{grid-column:1/-1;grid-row:1}.pad{margin:0 auto}
+  .bar{grid-template-columns:110px 1fr 44px}
+  .rl-btn{padding:0 14px;letter-spacing:.12em}
   .rotation{grid-template-columns:1fr;height:auto}
   .stage-head{flex-direction:column;align-items:flex-start}
   .wyr .opt{min-height:150px;padding:28px}
@@ -355,6 +418,7 @@ body.lit #ignite{opacity:0;visibility:hidden}
     </div>
     <div class="status">
       <span class="wx" id="hdrWx">—</span>
+      <button class="rl-btn" id="rlBtn"><i></i>RED LIGHT</button>
       <span class="clock" id="hdrClock">--:--</span>
       <button id="fsBtn" aria-label="Fullscreen"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
     </div>
@@ -454,15 +518,17 @@ body.lit #ignite{opacity:0;visibility:hidden}
     <!-- PLAY -->
     <section class="panel" id="p-play">
       <div class="ph">
-        <div><h2 class="chrome">PASSENGER SEAT</h2><p>Something to talk about while you wait for the table.</p></div>
+        <div><h2 class="chrome">PASSENGER SEAT</h2><p>Games for red lights, parking lots and waiting on the table.</p></div>
         <div class="seg" id="playSeg">
-          <button data-g="deck" class="on">Ask Me</button>
+          <button data-g="wheel" class="on">Spin</button>
+          <button data-g="vibe">Vibe Check</button>
+          <button data-g="deck">Ask Me</button>
           <button data-g="wyr">Would You</button>
-          <button data-g="wheel">Decide</button>
+          <button class="kc" id="kcBtn">Kiss Cam</button>
         </div>
       </div>
 
-      <div class="game on" id="g-deck">
+      <div class="game" id="g-deck">
         <div class="deck-wrap">
           <div class="deck"><div class="flip" id="flip">
             <div class="card face"><div class="front-mark chrome-sheen">ASK ME</div><div class="label" style="text-align:center;margin-top:24px">Tap draw</div></div>
@@ -485,15 +551,28 @@ body.lit #ignite{opacity:0;visibility:hidden}
         <div style="display:flex;justify-content:center;margin-top:28px"><button class="btn" id="wyrNext">Next one</button></div>
       </div>
 
-      <div class="game" id="g-wheel">
+      <div class="game on" id="g-wheel">
         <div class="wheel-wrap">
-          <div class="wheel-box"><canvas id="wheel" width="920" height="920"></canvas><div class="pin"></div><div class="hub">SPIN</div></div>
+          <div class="wheel-box" id="wheelBox"><canvas id="wheel" width="920" height="920"></canvas><div class="pin"></div><div class="hub">SPIN</div></div>
           <div class="wheel-side">
             <div class="label">The wheel says</div>
             <div class="result chrome" id="wheelResult">—</div>
             <button class="btn red" id="wheelSpin">Spin it</button>
             <div class="chips" id="wheelSets"></div>
           </div>
+        </div>
+      </div>
+      <div class="game" id="g-vibe">
+        <div class="vibe-wrap" id="vibeWrap">
+          <button class="pad" data-who="0"><svg viewBox="0 0 100 110" class="fp"></svg><span>DRIVER</span></button>
+          <div class="card vibe-mid">
+            <div class="label">Compatibility scan</div>
+            <div class="vbig chrome" id="vScore">--</div>
+            <div class="vverdict" id="vVerdict">Both thumbs on the pads</div>
+            <div class="bars" id="vBars"></div>
+            <button class="btn ghost" id="vReset">Scan again</button>
+          </div>
+          <button class="pad" data-who="1"><svg viewBox="0 0 100 110" class="fp"></svg><span>PASSENGER</span></button>
         </div>
       </div>
     </section>
@@ -545,6 +624,14 @@ body.lit #ignite{opacity:0;visibility:hidden}
 
 <div id="ambient"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><canvas id="ambCanvas"></canvas><div class="breath"></div><div class="amb-time" id="ambTime"></div><div class="amb-word" id="ambWord"></div><div id="ambDim"></div></div>
 <div class="toast" id="toast"></div>
+<div id="reveal"><div><div class="label" id="rvSet">The wheel says</div><div class="rv-big chrome-sheen" id="rvBig"></div><div class="rv-sub" id="rvSub"></div><div class="rv-acts" id="rvActs"></div><div class="rv-tap">TAP ANYWHERE TO CLOSE</div></div></div>
+<div id="kisscam"><div class="kc-frame" id="kcFrame">
+  <div class="kc-sub">Live · Section 3P</div>
+  <div class="kc-title chrome-sheen">KISS CAM</div>
+  <svg class="kc-heart" viewBox="0 0 32 29"><defs><linearGradient id="kch" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff6a80"/><stop offset="1" stop-color="#b30f27"/></linearGradient></defs><path d="M16 29 2.6 15.6A8.5 8.5 0 0 1 16 4.3a8.5 8.5 0 0 1 13.4 11.3Z" fill="url(#kch)"/></svg>
+  <div class="kc-sub">The whole crowd is watching</div>
+</div></div>
+<canvas id="fx"></canvas>
 
 <script>
 (() => {
@@ -1035,36 +1122,97 @@ $$('.wyr .opt').forEach(o => o.addEventListener('click', () => { $$('.wyr .opt')
 $('#wyrNext').addEventListener('click', wyr); wyr();
 
 /* game tabs */
-$$('#playSeg button').forEach(b => b.addEventListener('click', () => {
-  $$('#playSeg button').forEach(x=>x.classList.toggle('on',x===b));
+$$('#playSeg button[data-g]').forEach(b => b.addEventListener('click', () => {
+  $$('#playSeg button[data-g]').forEach(x=>x.classList.toggle('on',x===b));
   $$('.game').forEach(g=>g.classList.toggle('on', g.id==='g-'+b.dataset.g));
   if(b.dataset.g==='wheel') drawWheel();
 }));
 
-/* decision wheel */
+/* ================= fx: hearts + sparks ================= */
+const fx = $('#fx'), fctx = fx.getContext('2d'), parts = [];
+let fxRun = false;
+function heartPath(c, x, y, s){
+  c.beginPath(); c.moveTo(x, y + s*.3);
+  c.bezierCurveTo(x, y, x - s*.5, y - s*.1, x - s*.5, y + s*.25);
+  c.bezierCurveTo(x - s*.5, y + s*.55, x - s*.1, y + s*.75, x, y + s);
+  c.bezierCurveTo(x + s*.1, y + s*.75, x + s*.5, y + s*.55, x + s*.5, y + s*.25);
+  c.bezierCurveTo(x + s*.5, y - s*.1, x, y, x, y + s*.3); c.fill();
+}
+function burst(kind, n = 70, ox = innerWidth/2, oy = innerHeight*.55){
+  for(let i = 0; i < n; i++){
+    const a = Math.random()*Math.PI*2, v = 4 + Math.random()*10;
+    parts.push(kind === 'hearts'
+      ? {k:'h', x:ox, y:oy, vx:Math.cos(a)*v*.7, vy:Math.sin(a)*v*.7 - 6, g:.12, s:14 + Math.random()*26, life:1, d:.008 + Math.random()*.008, col:['#ff2340','#ff6a80','#ffffff','#ffb3bf'][i%4], r:Math.random()*.6 - .3}
+      : {k:'s', x:ox, y:oy, vx:Math.cos(a)*v*1.4, vy:Math.sin(a)*v*1.4, g:.18, s:2 + Math.random()*3, life:1, d:.012 + Math.random()*.01, col:i%3 ? '#ffffff' : '#ff2340'});
+  }
+  if(!fxRun){ fxRun = true; requestAnimationFrame(fxLoop) }
+}
+function fxLoop(){
+  fx.width !== innerWidth && (fx.width = innerWidth); fx.height !== innerHeight && (fx.height = innerHeight);
+  fctx.clearRect(0,0,fx.width,fx.height);
+  for(let i = parts.length - 1; i >= 0; i--){
+    const p = parts[i]; p.x += p.vx; p.y += p.vy; p.vy += p.g; p.vx *= .985; p.life -= p.d;
+    if(p.life <= 0){ parts.splice(i,1); continue }
+    fctx.globalAlpha = Math.min(1, p.life*1.5); fctx.fillStyle = p.col;
+    if(p.k === 'h'){ fctx.save(); fctx.translate(p.x, p.y); fctx.rotate(p.r); heartPath(fctx, 0, -p.s/2, p.s); fctx.restore() }
+    else { fctx.shadowColor = p.col; fctx.shadowBlur = 10; fctx.fillRect(p.x, p.y, p.s, p.s); fctx.shadowBlur = 0 }
+  }
+  fctx.globalAlpha = 1;
+  if(parts.length) requestAnimationFrame(fxLoop); else { fxRun = false; fctx.clearRect(0,0,fx.width,fx.height) }
+}
+function tone(f, d = .03, type = 'square', vol = .04, when = 0){
+  try{
+    actx = actx || new (window.AudioContext||window.webkitAudioContext)();
+    const t = actx.currentTime + when, o = actx.createOscillator(), g = actx.createGain();
+    o.type = type; o.frequency.value = f; g.gain.setValueAtTime(vol, t); g.gain.exponentialRampToValueAtTime(.0001, t + d);
+    o.connect(g); g.connect(actx.destination); o.start(t); o.stop(t + d + .02);
+  }catch{}
+}
+const chime = () => [880, 1108, 1320, 1760].forEach((f,i) => tone(f, .35, 'sine', .07, i*.09));
+const go = tab => $(`nav button[data-p="${tab}"]`).click();
+const pickQ = lvl => DECK[lvl][Math.floor(Math.random()*DECK[lvl].length)];
+
+/* ================= wheel ================= */
 const SETS = {
+  'Red Light': ['Kiss','Tickle','Hold hands','Go fast','Pick the song','Compliment','Selfie','Seat dance','Truth','Wild card'],
   Dessert: ['Gelato','Crème brûlée','Molten cake','Cheesecake','Churros','Tiramisu','Donuts','Skip it — drinks'],
   'Next stop': ['Rooftop bar','Scenic overlook','Late-night diner','Arcade','Live music','Bookstore','Long drive home','Stargazing'],
   Drinks: ['Old fashioned','Espresso martini','Champagne','Margarita','Negroni','Mocktail','Red wine','Surprise me'],
   Loser: ['Picks the music','Buys dessert','Gives a compliment','Plans next date','Slow dances in the parking lot','Tells a secret']
 };
-let setName = 'Dessert', rot = 0, spinning = false;
-$('#wheelSets').innerHTML = Object.keys(SETS).map(k=>`<button data-k="${k}" class="${k===setName?'on':''}">${k}</button>`).join('');
+// what each Red Light result says and does: [subtitle, effect, [button label, action]]
+const RED = {
+  'Kiss': ['Before the light turns green.', 'hearts', ['Kiss Cam', () => kissCam()]],
+  'Tickle': ['Ten seconds. No mercy. Driver keeps their hands on the wheel.', 'sparks'],
+  'Hold hands': ['Until the next red light.', 'hearts'],
+  'Go fast': ['When it’s green — and legal. Launch control is standing by.', 'sparks', ['Launch it', () => { go('race'); setTimeout(() => $('#demoBtn').click(), 450) }]],
+  'Pick the song': ['Passenger has the aux. Choose wisely.', 'sparks', ['Open rotation', () => go('sound')]],
+  'Compliment': ['A specific one. With eye contact.', 'hearts'],
+  'Selfie': ['Mood lighting on. Say cheese.', 'sparks', ['Rosé glow', () => $('.scene[data-i="5"]').click()]],
+  'Seat dance': ['Passenger performs. Driver rates it out of ten.', 'sparks', ['Shuffle music', () => { go('sound'); $('#shuffleArtist').click() }]],
+  'Truth': [() => pickQ('Warm'), 'sparks'],
+  'Wild card': [() => pickQ('Spicy'), 'hearts']
+};
+const SUBS = {Dessert:'Find it at the food carts.', 'Next stop':'Set the nav.', Drinks:'Cheers to that.', Loser:'No take-backs.'};
+let setName = 'Red Light', rot = 0, spinning = false;
+$('#wheelSets').innerHTML = Object.keys(SETS).map(k=>`<button data-k="${k}" class="${k==='Red Light'?'rl ':''}${k===setName?'on':''}">${k}</button>`).join('');
 $('#wheelSets').addEventListener('click', e => {
   const b = e.target.closest('button'); if(!b || spinning) return;
   setName = b.dataset.k; $$('#wheelSets button').forEach(x=>x.classList.toggle('on',x===b)); $('#wheelResult').textContent='—'; drawWheel();
 });
 function drawWheel(){
-  const c = $('#wheel'), x = c.getContext('2d'), S = c.width, R = S/2, opts = SETS[setName], n = opts.length, a = 2*Math.PI/n;
+  const c = $('#wheel'), x = c.getContext('2d'), S = c.width, R = S/2, opts = SETS[setName], n = opts.length, a = 2*Math.PI/n, red = setName === 'Red Light';
+  $('#wheelBox').classList.toggle('redlight', red);
   x.clearRect(0,0,S,S); x.save(); x.translate(R,R); x.rotate(rot);
   for(let i=0;i<n;i++){
     const g = x.createLinearGradient(-R,-R,R,R);
-    if(i%2){ g.addColorStop(0,'#f2f2f5'); g.addColorStop(.5,'#8a8a92'); g.addColorStop(1,'#d6d6dc') }
+    if(i%2){ red ? (g.addColorStop(0,'#ff4a62'), g.addColorStop(.5,'#c0102a'), g.addColorStop(1,'#7a0716'))
+                 : (g.addColorStop(0,'#f2f2f5'), g.addColorStop(.5,'#8a8a92'), g.addColorStop(1,'#d6d6dc')) }
     else { g.addColorStop(0,'#1d1d21'); g.addColorStop(1,'#050506') }
     x.beginPath(); x.moveTo(0,0); x.arc(0,0,R,i*a,(i+1)*a); x.closePath(); x.fillStyle = g; x.fill();
     x.strokeStyle = 'rgba(255,255,255,.25)'; x.lineWidth = 2; x.stroke();
     x.save(); x.rotate(i*a + a/2); x.textAlign='right'; x.textBaseline='middle';
-    x.fillStyle = i%2 ? '#0a0a0a' : '#f2f2f5'; x.font = `500 ${n>6?34:40}px Saira, sans-serif`;
+    x.fillStyle = i%2 && !red ? '#0a0a0a' : '#f2f2f5'; x.font = `500 ${n>8?32:n>6?34:40}px Saira, sans-serif`;
     x.fillText(opts[i].length>18 ? opts[i].slice(0,17)+'…' : opts[i], R-36, 0); x.restore();
   }
   x.restore();
@@ -1074,17 +1222,94 @@ function spinWheel(){
   if(spinning) return; spinning = true; $('#wheelResult').textContent = '…';
   const opts = SETS[setName], n = opts.length, a = 2*Math.PI/n;
   const start = rot, extra = 2*Math.PI*(5+Math.random()*3) + Math.random()*2*Math.PI, dur = 4800, t0 = performance.now();
+  const seg = r => Math.floor((((-Math.PI/2 - r) % (2*Math.PI) + 2*Math.PI) % (2*Math.PI))/a);
+  let last = seg(rot);
   (function step(t){
     const p = Math.min((t-t0)/dur,1), e = 1 - Math.pow(1-p, 4);
     rot = start + extra*e; drawWheel();
+    const now = seg(rot); if(now !== last){ last = now; tone(1900, .025) }
     if(p<1) return requestAnimationFrame(step);
     spinning = false;
-    // pointer is at top (-PI/2)
-    const ang = ((-Math.PI/2 - rot) % (2*Math.PI) + 2*Math.PI) % (2*Math.PI);
-    $('#wheelResult').textContent = opts[Math.floor(ang/a)];
+    const res = opts[seg(rot)];
+    $('#wheelResult').textContent = res;
+    reveal(res);
   })(t0);
 }
+function reveal(res){
+  const fxDef = setName === 'Red Light' ? RED[res] : [SUBS[setName] || '', 'sparks'];
+  const sub = typeof fxDef[0] === 'function' ? fxDef[0]() : fxDef[0];
+  $('#rvSet').textContent = setName === 'Red Light' ? 'Red light says' : setName;
+  $('#rvBig').textContent = res;
+  $('#rvSub').textContent = sub;
+  const acts = $('#rvActs'); acts.innerHTML = '';
+  const again = document.createElement('button'); again.className = 'btn red'; again.textContent = 'Spin again';
+  again.onclick = e => { e.stopPropagation(); closeReveal(); setTimeout(spinWheel, 350) };
+  if(fxDef[2]){ const b = document.createElement('button'); b.className = 'btn'; b.textContent = fxDef[2][0]; b.onclick = e => { e.stopPropagation(); closeReveal(); fxDef[2][1]() }; acts.append(b) }
+  acts.append(again);
+  $('#reveal').classList.add('on'); chime();
+  setTimeout(() => burst(fxDef[1], fxDef[1] === 'hearts' ? 60 : 90), 250);
+}
+const closeReveal = () => $('#reveal').classList.remove('on');
+$('#reveal').addEventListener('click', closeReveal);
 document.fonts?.ready.then(drawWheel);
+
+/* red light button: straight to a Red Light spin */
+$('#rlBtn').addEventListener('click', () => {
+  go('play'); $('#playSeg button[data-g="wheel"]').click();
+  if(setName !== 'Red Light') $('#wheelSets button[data-k="Red Light"]').click();
+  setTimeout(spinWheel, 400);
+});
+
+/* ================= vibe check ================= */
+$$('.fp').forEach(svg => svg.innerHTML = Array.from({length:7}, (_,i) => {
+  const rx = 8 + i*6, ry = 10 + i*7.2, c = 2*Math.PI*Math.sqrt((rx*rx + ry*ry)/2);
+  return `<ellipse cx="50" cy="58" rx="${rx}" ry="${ry}" stroke-dasharray="${c*(.5 + (i%3)*.12)} ${c*.12} ${c*.2} ${c}" transform="rotate(${i*23} 50 58)"/>`;
+}).join(''));
+const BARS = ['Chemistry','Banter','Music taste','Snack sharing','Kiss probability'];
+$('#vBars').innerHTML = BARS.map(b => `<div class="bar"><span>${b}</span><div class="tr"><div class="fl"></div></div><b>—</b></div>`).join('');
+let scanning = false, scanned = false;
+$$('.pad').forEach(pd => pd.addEventListener('pointerdown', e => {
+  e.preventDefault(); if(scanning || scanned) return;
+  pd.classList.toggle('on'); tone(pd.classList.contains('on') ? 1320 : 660, .08, 'sine', .06);
+  if($$('.pad.on').length === 2) scanVibe();
+}));
+function scanVibe(){
+  scanning = true; $('#vibeWrap').classList.add('scanning'); $('#vVerdict').textContent = 'Scanning…';
+  const t0 = performance.now();
+  const tick = setInterval(() => { $('#vScore').textContent = 40 + Math.floor(Math.random()*60) + '%'; tone(400 + Math.random()*900, .03, 'square', .02) }, 90);
+  setTimeout(() => {
+    clearInterval(tick); scanning = false; scanned = true; $('#vibeWrap').classList.remove('scanning');
+    const score = Math.random() < .12 ? 100 : 88 + Math.floor(Math.random()*12);
+    $('#vScore').textContent = score + '%';
+    $('#vVerdict').textContent = score === 100 ? 'Off the charts. Literally broke the scale.' : score >= 95 ? 'Ludicrous-mode compatibility.' : score >= 91 ? 'Dangerously high chemistry.' : 'Strong signal. Keep driving.';
+    $$('#vBars .bar').forEach((b, i) => {
+      const v = i === BARS.length - 1 ? 100 : 80 + Math.floor(Math.random()*21);
+      setTimeout(() => { b.querySelector('.fl').style.width = v + '%'; b.querySelector('b').textContent = v + '%' }, 150*i);
+    });
+    chime(); burst('hearts', 80);
+  }, 2800);
+}
+$('#vReset').addEventListener('click', () => {
+  scanned = false; $$('.pad').forEach(p => p.classList.remove('on'));
+  $('#vScore').textContent = '--'; $('#vVerdict').textContent = 'Both thumbs on the pads';
+  $$('#vBars .fl').forEach(f => f.style.width = 0); $$('#vBars b').forEach(b => b.textContent = '—');
+});
+
+/* ================= kiss cam ================= */
+(function bulbs(){
+  const f = $('#kcFrame'), pos = [];
+  for(let i = 0; i <= 24; i++){ pos.push([i/24*100, 0], [i/24*100, 100]) }
+  for(let i = 1; i < 12; i++){ pos.push([0, i/12*100], [100, i/12*100]) }
+  f.insertAdjacentHTML('beforeend', pos.map(([x,y],i) => `<i class="bulb${i%4<2?'':' alt'}" style="left:${x}%;top:${y}%"></i>`).join(''));
+})();
+let kcTimer = 0;
+function kissCam(){
+  $('#kisscam').classList.add('on'); keepAwake();
+  [523, 659, 784, 1047].forEach((f,i) => tone(f, .25, 'triangle', .07, i*.12));
+  burst('hearts', 70); kcTimer = setInterval(() => burst('hearts', 14, innerWidth*(.2 + Math.random()*.6), innerHeight*.8), 700);
+}
+$('#kcBtn').addEventListener('click', kissCam);
+$('#kisscam').addEventListener('click', () => { $('#kisscam').classList.remove('on'); clearInterval(kcTimer) });
 
 /* ================= race ================= */
 const LEDN = 15;
